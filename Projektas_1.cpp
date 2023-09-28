@@ -24,8 +24,8 @@ using namespace std;
 int main() {
     srand(static_cast<unsigned int>(time(0)));
 
-    string header1, header2, choice, inputMethod;
-    vector<Studentas> studentai;
+    string header1, header2, choice, inputMethod;  //kintamieji
+    vector<Studentas> studentai; //vektorius
 
 
     do {
@@ -67,7 +67,7 @@ int main() {
         do {
             file.open(filename);
             if (!file) {
-                cerr << "Nepavyko atidaryti failo '" << filename << "'. Prašome įvesti naują failo pavadinimą: ";
+                cerr << "Nepavyko atidaryti failo '" << filename << "'. Prasome ivesti nauja failo pavadinima: ";
                 cin >> filename;  // naujai 
             }
         } while (!file);  //kol atidarys
@@ -177,7 +177,7 @@ int main() {
             
 
             if (autoGenChoice == "ne") {
-                cout << "Įveskite " << j + 1 << "-ojo studento pažymius (dešimtbalė sistema) ir spauskite ENTER 2x, kad baigtumėte įvedimą:" << endl;
+                cout << "Iveskite " << j + 1 << "-ojo studento pazymius (desimtbale sistema) ir spauskite ENTER 2x, kad baigtumete ivedima:" << endl;
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 string input;
                 while (getline(cin, input) && !input.empty()) {
@@ -188,13 +188,13 @@ int main() {
                             suma += pazymys;
                         }
                         else {
-                            cout << "Neteisinga įvesta. Prašome įvesti pažymį nuo 1 iki 10: ";
+                            cout << "Neteisinga ivesta. Prasome ivesti pazymi nuo 1 iki 10: ";
                             klaida = true;
                             break;
                         }
                     }
                     catch (const invalid_argument&) {
-                        cout << "Neteisinga įvesta. Prašome įvesti pažymį nuo 1 iki 10: ";
+                        cout << "Neteisinga ivesta. Prasome ivesti pazymi nuo 1 iki 10: ";
                         klaida = true;
                         break;
                     }
@@ -218,7 +218,7 @@ int main() {
         else {
             bool validEgzaminas = false;
             while (!validEgzaminas) {
-                cout << "Įveskite " << j + 1 << "-ojo studento egzamino rezultata nuo 1 iki 10:" << endl;
+                cout << "iveskite " << j + 1 << "-ojo studento egzamino rezultata nuo 1 iki 10:" << endl;
                 if (cin >> egzaminas) {
                     if (egzaminas >= 1 && egzaminas <= 10) {
                         validEgzaminas = true;
