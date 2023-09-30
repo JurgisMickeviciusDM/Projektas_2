@@ -1,4 +1,9 @@
-﻿#include <iostream>
+﻿#include "studentas.h"
+#include "Mediana.h"
+#include "vidurkis.h"
+#include <fstream>
+#include <chrono>
+#include <iostream>
 #include <limits>
 #include <string>
 #include <vector>
@@ -9,14 +14,7 @@
 #include <fstream>
 #include <sstream>
 #include <numeric>
-#include "studentas.h"
-#include "Mediana.h"
-#include <chrono>
-#include "vidurkis.h"
-#include <fstream>
 
-
-//STUDENTAS APIBRĖŽTA STUDETAS.H
 using namespace std;
 
 //double Mediana.h
@@ -35,7 +33,7 @@ int main() {
             cout << "Neteisingai parasete! Bandykite dar karta." << endl;
         }
     } while (inputMethod != "Duomenys" && inputMethod != "Ranka");
-         
+
     do {
         cout << "Prasome pasirinkti ka norite skaiciuoti vidurki ar mediana. Parasykite('Vidurkis') arba ('Mediana') arba ('ABU'):";
         cin >> choice;
@@ -57,12 +55,11 @@ int main() {
     } while (choice != "Vidurkis" && choice != "Mediana" && choice != "ABU");
     cin.ignore();
 
-
     int skaicius = 0;
     auto start = std::chrono::high_resolution_clock::now();
     if (inputMethod == "Duomenys") {
         ifstream file;
-        string filename = "Studentai10000.txt";  // failo vardas
+        string filename = "studentai100000.txt";  // failo vardas
 
         do {
             file.open(filename);
@@ -83,7 +80,6 @@ int main() {
         }
 
         int ndCount = static_cast<int>(headers.size()) - 3;// Minus Vardas, Pavarde, ir Egzaminas
-       
 
         //duomenu skaitymas 
         Studentas s;
@@ -95,7 +91,7 @@ int main() {
                     int grade = stoi(gradeStr);
                     s.pazymiai.push_back(grade);
                 }
-               catch (const std::invalid_argument& e) {
+                catch (const std::invalid_argument& e) {
                     // Ignoruojame netinkamą pažymį, bet skaitymą tęsiame toliau
                     continue;
                 }
@@ -109,7 +105,7 @@ int main() {
                 s.vidurkis = 0.40 * vidurkis + 0.60 * egzaminas;
             }
             if (choice == "Mediana" || choice == "ABU") {
-              
+
                 double mediana = calculateMedian(s.pazymiai);
                 s.mediana = 0.40 * mediana + 0.60 * egzaminas;
             }
@@ -134,12 +130,10 @@ int main() {
         vector<int> pazymiai;
         int suma = 0;
 
-
         do {
             cout << "Iveskite " << j + 1 << "-ojo studento/studentes varda (tik raides): ";
             cin >> s.vardas;
         } while (!all_of(s.vardas.begin(), s.vardas.end(), ::isalpha));
-
 
         do {
             cout << "Iveskite " << j + 1 << "-ojo studento/studentes pavarde (tik raides): ";
@@ -174,7 +168,6 @@ int main() {
         bool klaida;
         do {
             klaida = false;
-            
 
             if (autoGenChoice == "ne") {
                 cout << "Iveskite " << j + 1 << "-ojo studento pazymius (desimtbale sistema) ir spauskite ENTER 2x, kad baigtumete ivedima:" << endl;
@@ -201,15 +194,11 @@ int main() {
                 }
             }
 
-
             if (pazymiai.empty() && autoGenChoice == "ne") {
                 cout << "Klaida! Jus neivedete jokiu pazymiu. Negalima skaiciuoti vidurkio ar medianos be pazymiu." << endl;
                 klaida = true;
             }
         } while (klaida);
-
-
-
 
         int egzaminas;
         if (autoGenChoice == "taip") {
@@ -261,9 +250,8 @@ int main() {
         return a.pavarde < b.pavarde;
         };
 
-    // 
     if (inputMethod == "Duomenys") {
-        
+
         sort(studentai.begin(), studentai.end(), compareFromFile);
     }
     else {
@@ -305,10 +293,10 @@ int main() {
     }
 
     std::cout << output.str();
-   
-auto finish = std::chrono::high_resolution_clock::now();
-std::chrono::duration<double> elapsed = finish - start;
-std::cout << "\nLaikas: " << elapsed.count() << " s\n";
 
-return 0;
+    auto finish = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = finish - start;
+    std::cout << "\nLaikas: " << elapsed.count() << " s\n";
+
+    return 0;
 }
