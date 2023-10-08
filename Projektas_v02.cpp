@@ -17,11 +17,16 @@
 #include "Generavimasv02.h"
 #include <io.h>
 
-
-
 using namespace std;
 
+void generateStudents(int n, const string& filename);
+void readStudentsFromFile(const string& filename, vector<Studentas>& studentai);
+void groupAndSaveStudents(const vector<Studentas>& studentai, const string& baseFilename);
+void saveToFile(const vector<Studentas>& studentai, const string& filename);
+
 int main() {
+    auto startOverall = std::chrono::high_resolution_clock::now();
+
     srand(static_cast<unsigned int>(time(0)));
     string header1, header2, choice, inputMethod;  //kintamieji
     naudotojas(inputMethod, choice, header1, header2);//naudotojo funkcija
@@ -31,13 +36,12 @@ int main() {
     auto start = std::chrono::high_resolution_clock::now();
 
     if (inputMethod == "auto") {
-        
-
-        srand(static_cast<unsigned int>(time(0)));
-
-        vector<int> studentuSkaiciai = { 1000, 10000 };
+        vector<int> studentuSkaiciai = { 1000, 10000, 100000, 1000000 };
 
         for (int n : studentuSkaiciai) {
+            auto startOverallForN = std::chrono::high_resolution_clock::now();
+
+
             string filename = "studentai" + to_string(n) + ".txt";
 
             if (_access(filename.c_str(), 0) == 0) {
@@ -47,7 +51,7 @@ int main() {
 
             ofstream out(filename);
             if (!out) {
-                cerr << "Klaida atidarant failą rašymui: " << filename << endl;
+                cerr << "Klaida atidarant failą rasymui: " << filename << endl;
                 return 1; // Grąžiname klaidos kodą, jei nepavyksta atidaryti failo.
             }
 
@@ -66,11 +70,15 @@ int main() {
             }
 
             out.close();
+
+            auto finish = std::chrono::high_resolution_clock::now();
+            std::chrono::duration<double> elapsed = finish - start;
+            std::cout << "Generavimas studentai " << n << " " << elapsed.count() << " sekundes" << std::endl;
+    
         }
     
-
-
         for (int n : studentuSkaiciai) {
+            auto start = std::chrono::high_resolution_clock::now();
             string filename = "studentai" + to_string(n) + ".txt";
             ifstream in(filename);
 
@@ -90,41 +98,48 @@ int main() {
 
                 ss >> studentas.egzaminas;
 
-                if (inputMethod == "vidurkis") {
-                    double vidurkis = calculateVidurkis(studentas.pazymiai);
-                    studentas.vidurkis = 0.40 * vidurkis + 0.60 * studentas.egzaminas;
-                }
-                else if (inputMethod == "mediana") {
-                    double mediana = calculateMedian(studentas.pazymiai);
-                    studentas.mediana = 0.40 * mediana + 0.60 * studentas.egzaminas;
-                }
+                studentas.vidurkis = calculateVidurkis(studentas.pazymiai);
+                studentas.mediana = calculateMedian(studentas.pazymiai);
 
                 studentai.push_back(studentas);
             }
+            auto finish = std::chrono::high_resolution_clock::now(); // Pabaigos laiko žymė
+            std::chrono::duration<double> elapsed = finish - start; // Apskaičiuojame praėjusį laiką
+            std::cout << "Duomenu nuskaitymas " << n  << ": " << elapsed.count() << " sekundes" << std::endl;
+
 
             in.close();
-            auto start = std::chrono::high_resolution_clock::now();
-            if (inputMethod == "vidurkis") {
-                sort(studentai.begin(), studentai.end(), [](const Studentas& a, const Studentas& b) {
-                    return a.vidurkis > b.vidurkis;
-                    });
+
+            auto startSorting = std::chrono::high_resolution_clock::now();
+
+            vector<Studentas> vargsiukai;
+            vector<Studentas> kietiakiai;
+
+            for (const auto& studentas : studentai) {
+
+                if ((studentas.vidurkis < 5.0) ) {
+                    vargsiukai.push_back(studentas);
+                }
+                else {
+                    kietiakiai.push_back(studentas);
+                }
             }
-            else if (inputMethod == "mediana") {
-                sort(studentai.begin(), studentai.end(), [](const Studentas& a, const Studentas& b) {
-                    return a.mediana > b.mediana;
-                    });
-            }
+            auto finishSorting = std::chrono::high_resolution_clock::now(); // Pabaigos laiko žymė rūšiavimui
+            std::chrono::duration<double> elapsedSorting = finishSorting - startSorting; // Apskaičiuojame rūšiavimo laiką
+            std::cout << "Duomenu rusiavimas " << n << ": " << elapsedSorting.count() << " sekundes" << std::endl;
 
-            string outputFilename = inputMethod + "_" + to_string(n) + ".txt";
+            string vargsiukaiFilename = "vargsiukai_" + choice + to_string(n) + ".txt";
+            string kietiakiaiFilename = "kietiakiai_" + choice + to_string(n) + ".txt";
 
-            auto end = std::chrono::high_resolution_clock::now();
-            std::chrono::duration<double> elapsed = end - start;
-            cout << "Vidurkis funkcijos vykdymo laikas: " << elapsed.count() << " sekundžių." << endl;
-
-            saveToFile(studentai, outputFilename);
+            saveToFile(vargsiukai, vargsiukaiFilename);
+            saveToFile(kietiakiai, kietiakiaiFilename);
+        
+        auto finishOverall = std::chrono::high_resolution_clock::now(); // End overall timer here
+        std::chrono::duration<double> elapsedOverall = finishOverall - startOverall;
+        std::cout << "Bendras laikas " << n << " students: " << elapsedOverall.count() << " sekundes" << std::endl;
         }
+    }
 
-      }
     else if (inputMethod == "duomenys") {
 
         ifstream file;// Sukuriamas įvesties srautas failo skaitymui.
@@ -318,20 +333,20 @@ int main() {
     }
 
     cout << fixed << setprecision(2);// 2 sk po kablelio 
-    if (inputMethod == "duomenys" && inputMethod == "ranka") {
-        cout << setw(20) << left << "pavarde"
-            << setw(20) << left << "vardas";
+    if (inputMethod == "duomenys" && inputMethod=="ranka") {
+    cout << setw(20) << left << "pavarde"
+        << setw(20) << left << "vardas";
 
-        if (choice == "vidurkis" || choice == "abu") {
-            cout << setw(20) << left << "Galutinis(vid.)"; // 20 zenklu suteikaima 
-        }
-        if (choice == "mediana" || choice == "abu") {
-            cout << setw(20) << left << "Galutinis(med.)";
-        }
+    if (choice == "vidurkis" || choice == "abu") {
+        cout << setw(20) << left << "Galutinis(vid.)"; // 20 zenklu suteikaima 
+    }
+    if (choice == "mediana" || choice == "abu") {
+        cout << setw(20) << left << "Galutinis(med.)";
+    }
 
-        cout << endl;
+    cout << endl;
 
-        cout << "________________________________________________________________________________________" << endl;
+    cout << "________________________________________________________________________________________" << endl;
     }
     std::ostringstream output;
     output << std::fixed << std::setprecision(2);  // kad butu 0,00
@@ -350,10 +365,6 @@ int main() {
     }
 
     std::cout << output.str();//prideda nauja line prie outputo 
-
-    auto finish = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> elapsed = finish - start;
-    std::cout << "\nLaikas: " << elapsed.count() << " s\n";
 
     return 0;
 }

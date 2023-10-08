@@ -1,5 +1,5 @@
 #include "Naudotojasv02.h"
-#include <algorithm> // Reikalinga funkcijai std::transform
+#include <algorithm> 
 using namespace std;
 
 void toLowercase(string& str) {
@@ -17,27 +17,25 @@ void naudotojas(string& inputMethod, string& choice, string& header1, string& he
     } while (inputMethod != "duomenys" && inputMethod != "ranka" && inputMethod != "auto");
 
     if (inputMethod == "auto") {
-       
-
         do {
-            cout << "Prasome pasirinkti ka norite skaiciuoti vidurki ar mediana. Parasykite('vidurkis') arba ('mediana') arba ('abu')-tik AUTO REZIME:";
+            cout << "Prasome pasirinkti ka norite skaiciuoti vidurki  mediana abu ar galutinis (GENERAVIMO REZIME)";
             cin >> choice;
             toLowercase(choice);
 
-            if (choice == "vidurkis") {
+            if (choice == "galutinis") {
                 header1 = "Galutinis(vid.)";
-                header2 = ""; // Ataskaitoje rodoma tik viena antraðtë
+                header2 = ""; 
             }
-            else if (choice == "mediana") {
+            /*else if (choice == "mediana") {
                 header1 = "Galutinis(med.)";
-                header2 = ""; // Ataskaitoje rodoma tik viena antraðtë
-            }
+                header2 = ""; 
+            }*/
             else {
-                cout << "Neteisinga pasirinkimas! Bandykite dar karta. GALIMA TIK VIDURKIS arba MEDIANA" << endl;
+                cout << "Neteisinga pasirinkimas! Bandykite dar karta. GALIMA TIK GALUTINIS" << endl;
             }
-        } while (choice != "vidurkis" && choice != "mediana");
+        } while (choice != "galutinis"/* && choice != "mediana"*/);
 
-        // Jûsø papildomi veiksmai AUTO reþime
+        
     }
     else {
         do {
