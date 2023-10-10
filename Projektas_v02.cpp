@@ -19,10 +19,8 @@
 
 using namespace std;
 
-void generateStudents(int n, const string& filename);
-void readStudentsFromFile(const string& filename, vector<Studentas>& studentai);
-void groupAndSaveStudents(const vector<Studentas>& studentai, const string& baseFilename);
 void saveToFile(const vector<Studentas>& studentai, const string& filename);
+void Generavimas(int n);
 
 int main() {
     auto startOverall = std::chrono::high_resolution_clock::now();
@@ -36,45 +34,9 @@ int main() {
     auto start = std::chrono::high_resolution_clock::now();
 
     if (inputMethod == "auto") {
-        vector<int> studentuSkaiciai = { 1000, 10000, 100000, 1000000 };
-
-        for (int n : studentuSkaiciai) {
-            auto startOverallForN = std::chrono::high_resolution_clock::now();
-
-
-            string filename = "studentai" + to_string(n) + ".txt";
-
-            if (_access(filename.c_str(), 0) == 0) {
-                cout << "Failas " << filename << " jau egzistuoja." << endl;
-                continue; // Tęsiamas kitas ciklo žingsnis, nekuriant failo iš naujo.
-            }
-
-            ofstream out(filename);
-            if (!out) {
-                cerr << "Klaida atidarant failą rasymui: " << filename << endl;
-                return 1; // Grąžiname klaidos kodą, jei nepavyksta atidaryti failo.
-            }
-
-            out << left << setw(20) << "Vardas" << setw(20) << "Pavarde";
-            for (int i = 1; i <= 13; i++) {
-                out << setw(7) << "ND" << i;
-            }
-            out << setw(7) << "Egz." << endl;
-
-            for (int i = 1; i <= n; i++) {
-                out << setw(20) << "Vardas" + to_string(i) << setw(20) << "Pavarde" + to_string(i);
-                for (int j = 0; j < 15; j++) {
-                    out << setw(10) << rand() % 10 + 1;
-                }
-                out << setw(10) << rand() % 10 + 1 << endl;
-            }
-
-            out.close();
-
-            auto finish = std::chrono::high_resolution_clock::now();
-            std::chrono::duration<double> elapsed = finish - start;
-            std::cout << "Generavimas studentai " << n << " " << elapsed.count() << " sekundes" << std::endl;
-    
+        vector<int> studentuSkaiciai = { 1000, 10000};
+            for (int n : studentuSkaiciai) {
+                Generavimas(n);
         }
     
         for (int n : studentuSkaiciai) {
@@ -105,7 +67,7 @@ int main() {
             }
             auto finish = std::chrono::high_resolution_clock::now(); // Pabaigos laiko žymė
             std::chrono::duration<double> elapsed = finish - start; // Apskaičiuojame praėjusį laiką
-            std::cout << "Duomenu nuskaitymas " << n  << ": " << elapsed.count() << " sekundes" << std::endl;
+            std::cout << "Duomenu nuskaitymas " << n  << "studentu: " << elapsed.count() << " sekundes" << std::endl;
 
 
             in.close();
@@ -136,7 +98,7 @@ int main() {
         
         auto finishOverall = std::chrono::high_resolution_clock::now(); // End overall timer here
         std::chrono::duration<double> elapsedOverall = finishOverall - startOverall;
-        std::cout << "Bendras laikas " << n << " students: " << elapsedOverall.count() << " sekundes" << std::endl;
+        std::cout << "Bendras laikas " << n << " studentu: " << elapsedOverall.count() << " sekundes" << std::endl;
         }
     }
 
