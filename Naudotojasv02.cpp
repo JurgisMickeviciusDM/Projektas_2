@@ -39,7 +39,7 @@ void naudotojas(string& inputMethod, string& choice, string& header1, string& he
     }
     else {
         do {
-            cout << "Prasome pasirinkti ka norite skaiciuoti vidurki ar mediana. Parasykite('vidurkis') arba ('mediana') arba ('abu')-tik AUTO REZIME:";
+            cout << "Prasome pasirinkti ka norite skaiciuoti vidurki ar mediana. Parasykite('vidurkis') arba ('mediana') arba ('abu')";
             cin >> choice;
             toLowercase(choice);
 

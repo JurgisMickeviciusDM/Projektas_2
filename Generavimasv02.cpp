@@ -20,6 +20,7 @@ using namespace std;
 namespace fs = std::filesystem;
 
 void saveToFile(const vector<Studentas>& studentas, const string& filename) {
+
     auto start = std::chrono::high_resolution_clock::now();
 
     ofstream out(filename);
@@ -27,19 +28,21 @@ void saveToFile(const vector<Studentas>& studentas, const string& filename) {
         cerr << "Klaida atidarant failà raðymui: " << filename << endl;
         return;
     }
+    string output;
+    output.reserve(studentas.size() * 200);
 
     out << left << setw(20) << "Vardas" << setw(20) << "Pavarde";
-    for (int i = 1; i <= 15; i++) {
-        out << setw(4) << "ND" + to_string(i);
+    for (int i = 1; i <= 9; i++) {
+        out << setw(7) << "ND" + to_string(i);
     }
-    out << setw(5) << "Egz." << " Galutinis(Vid.)" << endl;
+    out << setw(11) << "Egz." << " Galutinis(Vid.)" << endl;
 
     for (const auto& studentas : studentas) {
         out << setw(20) << studentas.vardas << setw(20) << studentas.pavarde;
         for (int grade : studentas.pazymiai) {
-            out << setw(4) << grade;
+            out << setw(7) << grade;
         }
-        out << setw(5) << studentas.egzaminas << " " << studentas.vidurkis << endl;
+        out << setw(11) << studentas.egzaminas << " " << studentas.vidurkis << endl;
     }
 
     out.close();
@@ -50,32 +53,32 @@ void saveToFile(const vector<Studentas>& studentas, const string& filename) {
 }
 
 void Generavimas(int n) {
-    auto start = std::chrono::high_resolution_clock::now(); // Added start timepoint here
+    auto start = std::chrono::high_resolution_clock::now();
 
     string filename = "studentai" + to_string(n) + ".txt";
     if (_access(filename.c_str(), 0) == 0) {
         cout << "Failas " << filename << " jau egzistuoja." << endl;
-        return; // Exiting the function early instead of 'continue'
+        return;
     }
 
     ofstream out(filename);
     if (!out) {
         cerr << "Klaida atidarant failà rasymui: " << filename << endl;
-        return; // Exiting the function early instead of 'return 1'
+        return;
     }
 
     out << left << setw(20) << "Vardas" << setw(20) << "Pavarde";
-    for (int i = 1; i <= 13; i++) {
-        out << setw(7) << "ND" << i;
+    for (int i = 1; i <= 9; i++) {
+        out << setw(7) << "ND" + to_string(i);
     }
-    out << setw(7) << "Egz." << endl;
+    out << setw(11) << "Egz." << endl;
 
     for (int i = 1; i <= n; i++) {
         out << setw(20) << "Vardas" + to_string(i) << setw(20) << "Pavarde" + to_string(i);
-        for (int j = 0; j < 15; j++) {
-            out << setw(10) << rand() % 10 + 1;
+        for (int j = 0; j < 9; j++) {
+            out << setw(7) << rand() % 10 + 1;
         }
-        out << setw(10) << rand() % 10 + 1 << endl;
+        out << setw(11) << rand() % 10 + 1 << endl;
     }
 
     out.close();
