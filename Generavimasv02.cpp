@@ -11,6 +11,12 @@
 #include <chrono>
 #include <io.h>
 #include <windows.h> 
+#include <sstream>
+#include <vector>
+#include <numeric>
+#include <algorithm>
+#include <iostream>
+#include <string>
 
 
 
@@ -19,7 +25,7 @@ using namespace std;
 
 namespace fs = std::filesystem;
 
-void saveToFile(const vector<Studentas>& studentas, const string& filename) {
+/*void saveToFile(const vector<Studentas>& studentas, const string& filename) {
 
     auto start = std::chrono::high_resolution_clock::now();
 
@@ -50,7 +56,7 @@ void saveToFile(const vector<Studentas>& studentas, const string& filename) {
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;
     cout << "Isvesta " << studentas.size() << " irasu i " << filename << ". Vykdymo laikas: " << elapsed.count() << " sekundziu." << endl;
-}
+} */
 
 void Generavimas(int n) {
     auto start = std::chrono::high_resolution_clock::now();
@@ -86,4 +92,70 @@ void Generavimas(int n) {
     auto finish = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = finish - start;
     std::cout << "Generavimas studentu " << n << " " << elapsed.count() << " sekundes" << std::endl;
+}
+
+void saveToFile(const vector<Studentas>& studentai, const string& filename) {
+    auto start = std::chrono::high_resolution_clock::now();
+
+    //stringstream ss;
+    //ss.reserve(studentai.size() * 200);  
+
+
+    std::string preallocated;
+    preallocated.reserve(studentai.size() * 140);
+    stringstream ss(preallocated);
+
+    ss << left << setw(20) << "Vardas" << setw(20) << "Pavarde";
+    for (int i = 1; i <= 9; i++) {
+        ss << setw(7) << "ND" + to_string(i);
+    }
+    ss << setw(11) << "Egz." << " Galutinis(Vid.)\n";
+
+    for (const auto& studentas : studentai) {
+        ss << setw(20) << studentas.vardas << setw(20) << studentas.pavarde;
+        for (int grade : studentas.pazymiai) {
+            ss << setw(7) << grade;
+        }
+        ss << setw(11) << studentas.egzaminas << " " << studentas.vidurkis << "\n";
+    }
+
+    
+    ofstream out(filename);
+    if (!out) {
+        cerr << "Klaida atidarant failà raðymui: " << filename << endl;
+        return;
+    }
+
+ 
+    const size_t bufSize = 1 << 16;  
+    char buf[bufSize];
+    out.rdbuf()->pubsetbuf(buf, bufSize);
+
+    out << ss.str();
+
+    out.close();
+
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    cout << "Isvesta " << studentai.size() << " irasu i " << filename << ". Vykdymo laikas: " << elapsed.count() << " sekundziu." << endl;
+}
+
+
+// Implementation for calculateVidurkis function
+double calculateVidurkis(const std::vector<int>& nums) {
+    return static_cast<double>(std::accumulate(nums.begin(), nums.end(), 0)) / nums.size();
+}
+
+// Implementation for calculateMedian function
+double calculateMedian(const vector<int>& grades) {
+    vector<int> sortedGrades = grades;
+    sort(sortedGrades.begin(), sortedGrades.end());
+
+    size_t size = sortedGrades.size();
+    if (size % 2 == 0) {
+        return (static_cast<double>(sortedGrades[size / 2 - 1]) + sortedGrades[size / 2]) / 2.00;
+    }
+    else {
+        return sortedGrades[size / 2];
+    }
 }

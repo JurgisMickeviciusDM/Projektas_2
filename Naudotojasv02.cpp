@@ -8,7 +8,7 @@ void toLowercase(string& str) {
 
 void naudotojas(string& inputMethod, string& choice, string& header1, string& header2) {
     do {
-        cout << "Pasirinkite ar naudosite duomenis is failo, rasyti ,,Duomenys'' ar naudosite rankiniu budu ivedamus duomenis, rasyti ,,Ranka'':  ar naudosite autogeneruojamus failus ,,AUTO'' ";
+        cout << "Pasirinkite ar naudosite duomenis is failo, rasyti ,,Duomenys'' ar naudosite rankiniu budu ivedamus duomenis, rasyti ,,Ranka'' ar naudosite autogeneruojamus failus ,,Auto'' ";
         cin >> inputMethod;
         toLowercase(inputMethod); // Konvertuojame ávestá á maþàsias raides
         if (inputMethod != "duomenys" && inputMethod != "ranka" && inputMethod != "auto") {
@@ -18,7 +18,7 @@ void naudotojas(string& inputMethod, string& choice, string& header1, string& he
 
     if (inputMethod == "auto") {
         do {
-            cout << "Prasome pasirinkti ka norite skaiciuoti vidurki  mediana abu ar galutinis (GENERAVIMO REZIME)";
+            cout << "Nor4ami suskaiciuoti galutini auto rezime prasome parasyti ,,Galutinis'' ";
             cin >> choice;
             toLowercase(choice);
 

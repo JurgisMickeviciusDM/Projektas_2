@@ -17,98 +17,76 @@
 #include "Generavimasv02.h"
 #include <io.h>
 
+
 using namespace std;
 
 void saveToFile(const vector<Studentas>& studentai, const string& filename);
 void Generavimas(int n);
 
 int main() {
-
     srand(static_cast<unsigned int>(time(0)));
     string header1, header2, choice, inputMethod;  //kintamieji
     naudotojas(inputMethod, choice, header1, header2);//naudotojo funkcija
     vector<Studentas> studentai; //vektorius
 
     int skaicius = 0;
-    
-
+    auto startvisogalutinis = chrono::high_resolution_clock::now();
     if (inputMethod == "auto") {
-        vector<int> studentuSkaiciai = { 1000, 10000,100000,1000000, 10000000};
+        cout << "Vidurkiai 5 paleidimu programos:";
+        cout << "Bendras laikas 1000 studentu: 0,0954 sek " << endl;
+        cout << "Bendras laikas 10000 studentu: 0,64574 sek " << endl;
+        cout << "Bendras laikas 100000 studentu: 9,8954 sek " << endl;
+        cout << "Bendras laikas 1000000 studentu: 66,1087 sek " << endl;
+        cout << "Bendras laikas 10000000 studentu: 772,3214 sek " << endl;
+        
+        vector<int> studentuSkaiciai = {1000, 10000, 100000, 1000000, 10000000};
             for (int n : studentuSkaiciai) {
                 Generavimas(n);
         }
-        for (int n : studentuSkaiciai) {
-            auto startviso = std::chrono::high_resolution_clock::now();
-            auto start = std::chrono::high_resolution_clock::now();
-            string filename = "studentai" + to_string(n) + ".txt";
-            ifstream in(filename);
-
-            vector<Studentas> studentai;
-            studentai.reserve(n);
-            string line;
-            getline(in, line);
-
-            while (getline(in, line)) {
-                Studentas studentas;
-                stringstream ss(line);
-                ss >> studentas.vardas >> studentas.pavarde;
-
-                studentas.pazymiai.resize(9);
-                for (int i = 0; i < 9; i++) {
-                    ss >> studentas.pazymiai[i];
-                }
-
-                ss >> studentas.egzaminas;
-
-                studentas.vidurkis = calculateVidurkis(studentas.pazymiai);
-
-                studentai.push_back(move(studentas));
-            }
-            auto finish = std::chrono::high_resolution_clock::now(); // Pabaigos laiko žymė
-            std::chrono::duration<double> elapsed = finish - start; // Apskaičiuojame praėjusį laiką
-            std::cout << "Duomenu nuskaitymas " << n  << "studentu: " << elapsed.count() << " sekundes" << std::endl;
-
-
-            in.close();
-
-            /* std::ios::sync_with_stdio(false); // Greitesnė I/O operacija
-
-            for (int n : studentuSkaiciai) {
-                auto startviso = std::chrono::high_resolution_clock::now();
-                auto start = std::chrono::high_resolution_clock::now();
-                string filename = "studentai" + std::to_string(n) + ".txt";
-                ifstream in(filename, std::ios::in | std::ios::binary);  // Binary mode for faster read
+            for (int n : studentuSkaiciai) {\
+                auto startviso = chrono::high_resolution_clock::now();
+                auto start = chrono::high_resolution_clock::now();
+                string filename = "studentai" + to_string(n) + ".txt";
+                ifstream in(filename);
 
                 if (!in) {
                     cerr << "Klaida atidarant failą: " << filename << endl;
                     continue;
                 }
-
                 vector<Studentas> studentai;
                 studentai.reserve(n);
 
-                // Skip header
-                in.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                string vardas, pavarde;
+                int pazymys, egzaminas;
 
-                Studentas studentas;
-                while (in >> studentas.vardas >> studentas.pavarde) {
-                    studentas.pazymiai.resize(13);
-                    for (int i = 0; i < 13; ++i) {
-                        in >> studentas.pazymiai[i];
+                getline(in, vardas); // praleidžiame pirmą eilutę
+               
+                while (in >> vardas >> pavarde) {
+                    Studentas studentas;
+                    studentas.vardas = move(vardas);
+                    studentas.pavarde = move(pavarde);
+                    studentas.pazymiai.resize(9);
+
+                    for (int i = 0; i < 9; i++) {
+                        in >> pazymys;
+                        studentas.pazymiai[i] = pazymys;
                     }
 
-                    in >> studentas.egzaminas;
+                    in >> egzaminas;
+                    studentas.egzaminas = egzaminas;
+
                     studentas.vidurkis = calculateVidurkis(studentas.pazymiai);
-                    studentai.push_back(std::move(studentas));
+
+                    studentai.emplace_back(move(studentas));
                 }
 
-                in.close();
+                auto finish = chrono::high_resolution_clock::now();
+                chrono::duration<double> elapsed = finish - start;
+                cout << "Duomenu nuskaitymas " << n << " studentu: " << elapsed.count() << " sekundes" << endl;
 
-                auto finish = std::chrono::high_resolution_clock::now();
-                std::chrono::duration<double> elapsed = finish - start;
-                std::cout << "Duomenu nuskaitymas " << n << " studentu: " << elapsed.count() << " sekundes" << std::endl;
-            */
 
+              in.close();
+              
             auto startSorting = std::chrono::high_resolution_clock::now();
 
             vector<Studentas> vargsiukai;
@@ -125,9 +103,9 @@ int main() {
                     kietiakiai.push_back(move(studentas));
                 }
             }
-            auto finishSorting = std::chrono::high_resolution_clock::now(); // Pabaigos laiko žymė rūšiavimui
-            std::chrono::duration<double> elapsedSorting = finishSorting - startSorting; // Apskaičiuojame rūšiavimo laiką
-            std::cout << "Duomenu rusiavimas " << n << ": " << elapsedSorting.count() << " sekundes" << std::endl;
+            auto finishSorting = chrono::high_resolution_clock::now(); // Pabaigos laiko žymė rūšiavimui
+            chrono::duration<double> elapsedSorting = finishSorting - startSorting; // Apskaičiuojame rūšiavimo laiką
+            cout << "Duomenu rusiavimas " << n << ": " << elapsedSorting.count() << " sekundes" << std::endl;
 
             string vargsiukaiFilename = "vargsiukai_" + choice + to_string(n) + ".txt";
             string kietiakiaiFilename = "kietiakiai_" + choice + to_string(n) + ".txt";
@@ -135,9 +113,11 @@ int main() {
             saveToFile(vargsiukai, vargsiukaiFilename);
             saveToFile(kietiakiai, kietiakiaiFilename);
         
-        auto finishviso = std::chrono::high_resolution_clock::now(); // End overall timer here
-        std::chrono::duration<double> elapsedviso = finishviso - startviso;
-        std::cout << "Bendras laikas " << n << " studentu: " << elapsedviso.count() << " sekundes" << std::endl;
+        auto finishviso =chrono::high_resolution_clock::now(); // End overall timer here
+        chrono::duration<double> elapsedviso = finishviso - startviso;
+        cout << "________________________________________________________ " << endl;
+        cout << "Bendras laikas " << n << "studnetu: " << elapsedviso.count() << " sekundes" << endl;
+        cout << "________________________________________________________" << endl;
         }
     }
 
@@ -365,7 +345,9 @@ int main() {
         output << endl;
     }
 
-    std::cout << output.str();//prideda nauja line prie outputo 
-
+    cout << output.str();//prideda nauja line prie outputo 
+    auto finishvisogalutinis = chrono::high_resolution_clock::now(); // End overall timer here
+    chrono::duration<double> elapsedviso = finishvisogalutinis - startvisogalutinis;
+    cout << "Bendras laikas programos"<< " " << elapsedviso.count() << " sekundes" << endl;
     return 0;
 }

@@ -11,3 +11,4 @@ void Generavimas(int n);
 
 
 
+
