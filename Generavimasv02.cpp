@@ -141,12 +141,10 @@ void saveToFile(const vector<Studentas>& studentai, const string& filename) {
 }
 
 
-// Implementation for calculateVidurkis function
 double calculateVidurkis(const std::vector<int>& nums) {
     return static_cast<double>(std::accumulate(nums.begin(), nums.end(), 0)) / nums.size();
 }
 
-// Implementation for calculateMedian function
 double calculateMedian(const vector<int>& grades) {
     vector<int> sortedGrades = grades;
     sort(sortedGrades.begin(), sortedGrades.end());
