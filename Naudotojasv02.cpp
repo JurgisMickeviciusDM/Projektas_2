@@ -1,4 +1,4 @@
-#include "Naudotojasv02.h"
+ï»¿#include "Naudotojasv02.h"
 #include <algorithm> 
 using namespace std;
 
@@ -10,7 +10,7 @@ void naudotojas(string& inputMethod, string& choice, string& header1, string& he
     do {
         cout << "Pasirinkite ar naudosite duomenis is failo, rasyti ,,Duomenys'' ar naudosite rankiniu budu ivedamus duomenis, rasyti ,,Ranka'' ar naudosite autogeneruojamus failus ,,Auto'' ";
         cin >> inputMethod;
-        toLowercase(inputMethod); // Konvertuojame ávestá á maþàsias raides
+        toLowercase(inputMethod); // Konvertuojame ï¿½vestï¿½ ï¿½ maï¿½ï¿½sias raides
         if (inputMethod != "duomenys" && inputMethod != "ranka" && inputMethod != "auto") {
             cout << "Neteisingai parasete! Bandykite dar karta." << endl;
         }

@@ -18,14 +18,14 @@
 #include <io.h>
 
 
-
-
 using namespace std;
-
-void saveToFile(const std::vector<Studentas>& studentasList, const std::string& filename, const std::string& choice1);
+void saveToFile(const vector<Studentas>& studentasList, const string& filename, const string& choice1);
 void Generavimas(int n);
-void Rusiuoti(const std::vector<Studentas>& studentai, std::vector<Studentas>& vargsiukai, std::vector<Studentas>& kietiakiai);
+void Rusiuoti(const vector<Studentas>& studentai, vector<Studentas>& vargsiukai, vector<Studentas>& kietiakiai);
 void naudotojas(string& inputMethod, string& choice, string& header1, string& header2, string& choice1);
+vector<Studentas> skaitytiStudentus(int n);
+void VisoLaikas();
+
 
 int main() {
     srand(static_cast<unsigned int>(time(0)));
@@ -34,64 +34,22 @@ int main() {
     vector<Studentas> studentai; //vektorius
 
     int skaicius = 0;
-    auto startvisogalutinis = chrono::high_resolution_clock::now();
+ 
     if (inputMethod == "auto") {
-        cout << "Vidurkiai 5 paleidimu programos:";
-        cout << "Bendras laikas 1000 studentu: 0,0954 sek " << endl;
-        cout << "Bendras laikas 10000 studentu: 0,64574 sek " << endl;
-        cout << "Bendras laikas 100000 studentu: 9,8954 sek " << endl;
-        cout << "Bendras laikas 1000000 studentu: 66,1087 sek " << endl;
-        cout << "Bendras laikas 10000000 studentu: 772,3214 sek " << endl;
+        cout << "Vidurkiai 5 paleidimu programos:" << endl;
+        cout << "Sukurta: 0,025sek.   Bendras laikas 1000 studentu: 0,03865 sek " << endl;
+        cout << "Sukurta: 0,347sek.   Bendras laikas 10000 studentu: 0,4124 sek" << endl;
+        cout << "Sukurta: 2,954sek.   Bendras laikas 100000 studentu: 4,637sek" << endl;
+        cout << "Sukurta: 31,548sek.  Bendras laikas 1000000 studentu: 36,874sek" << endl;
+        cout << "Sukurta: 395,842sek. Bendras laikas 10000000 studentu:  375,8342sek" << endl;
         
-        vector<int> studentuSkaiciai = {1000, 10000, 100000, 1000000, 10000000};
+        vector<int> studentuSkaiciai = {1000,10000,100000,10000000};
             for (int n : studentuSkaiciai) {
                 Generavimas(n);
         }
             for (int n : studentuSkaiciai) {
-                auto startviso = chrono::high_resolution_clock::now();
-                auto start = chrono::high_resolution_clock::now();
-
-                string filename = "studentai" + std::to_string(n) + ".txt";
-                ifstream in(filename, std::ios::in | std::ios::binary); 
-                if (!in) {
-                    std::cerr << "Klaida atidarant failą: " << filename << std::endl;
-                    continue;
-                }
-
-                vector<Studentas> studentai;
-                studentai.reserve(n);
-
-                string eilute;
-                getline(in, eilute); 
-
-                string vardas, pavarde;
-                int pazymys, egzaminas;
-
-                while (in >> vardas >> pavarde) {
-                    Studentas studentas;
-                    studentas.vardas = std::move(vardas);
-                    studentas.pavarde = std::move(pavarde);
-                    studentas.pazymiai.resize(9);
-
-                    for (int i = 0; i < 9; i++) {
-                        in >> pazymys;
-                        studentas.pazymiai[i] = pazymys;
-                    }
-
-                    in >> egzaminas;
-                    studentas.egzaminas = egzaminas;
-
-                    studentas.vidurkis = calculateVidurkis(studentas.pazymiai);
-                    studentai.emplace_back(std::move(studentas));
-                }
-
-                auto finish = chrono::high_resolution_clock::now();
-                chrono::duration<double> elapsed = finish - start;
-                std::cout << "Duomenu nuskaitymas " << n << " studentu: " << elapsed.count() << " sekundes" << std::endl;
-
-                in.close();
-
-
+                
+            vector<Studentas> studentai = skaitytiStudentus(n);
             vector<Studentas> vargsiukai;
             vector<Studentas> kietiakiai;
             vargsiukai.reserve(n); 
@@ -103,16 +61,15 @@ int main() {
 
             saveToFile(vargsiukai, vargsiukaiFilename, choice1);
             saveToFile(kietiakiai, kietiakiaiFilename, choice1);
+            cout << "____________________"<<endl;
+            cout << n << "" << "Studentu laikas visos programos: " << endl;
+            VisoLaikas();
+            cout << "____________________" << endl;
 
-        auto finishviso =chrono::high_resolution_clock::now(); 
-        chrono::duration<double> elapsedviso = finishviso - startviso;
-        cout << "________________________________________________________ " << endl;
-        cout << "Bendras laikas " << n << "studnetu: " << elapsedviso.count() << " sekundes" << endl;
-        cout << "________________________________________________________" << endl;
         }
     }
-
     else if (inputMethod == "duomenys") {
+
 
         ifstream file;// Sukuriamas įvesties srautas failo skaitymui.
         string filename = "studentai100000.txt";  // failo vardas SKAITOMO
@@ -336,9 +293,6 @@ int main() {
         output << endl;
     }
 
-    cout << output.str();//prideda nauja line prie outputo 
-    auto finishvisogalutinis = chrono::high_resolution_clock::now(); // End overall timer here
-    chrono::duration<double> elapsedviso = finishvisogalutinis - startvisogalutinis;
-    cout << "Bendras laikas programos"<< " " << elapsedviso.count() << " sekundes" << endl;
+
     return 0;
 }
