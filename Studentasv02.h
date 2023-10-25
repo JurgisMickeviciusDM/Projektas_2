@@ -1,13 +1,13 @@
 #ifndef STUDENTASV02_H
 #define STUDENTASV02_H
 
-#include <vector>
+#include <list>
 #include <string>
 
 struct Studentas {//studento struktura 
     std::string vardas;
     std::string pavarde;
-    std::vector<int> pazymiai;//pazymiai saugomi vektorius
+    std::list<int> pazymiai;//pazymiai saugomi vektorius
     double vidurkis = 0.00;
     double mediana = 0.00;
     double galutinis = 0.00;

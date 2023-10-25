@@ -24,7 +24,7 @@ void naudotojas(string& inputMethod, string& choice, string& header1, string& he
 
             if (choice == "galutinis") {
                 header1 = "Galutinis(vid.)";
-                header2 = ""; 
+                header2 = "";
             }
             else {
                 cout << "Neteisinga pasirinkimas! Bandykite dar karta. GALIMA TIK GALUTINIS" << endl;
@@ -37,10 +37,10 @@ void naudotojas(string& inputMethod, string& choice, string& header1, string& he
             toLowercase(choice1);
 
             if (choice1 == "vardus") {
-                
+
             }
             else if (choice1 == "pavardes") {
-                
+
             }
             else if (choice1 == "vidurkius") {
 
@@ -48,8 +48,8 @@ void naudotojas(string& inputMethod, string& choice, string& header1, string& he
             else {
                 cout << "Neteisinga pasirinkimas! Bandykite dar karta. GALIMA TIK GALUTINIS" << endl;
             }
-        } while (choice1 != "vardus" && choice1 != "pavardes"&& choice1 != "vidurkius");
-        
+        } while (choice1 != "vardus" && choice1 != "pavardes" && choice1 != "vidurkius");
+
     }
     else {
         do {
