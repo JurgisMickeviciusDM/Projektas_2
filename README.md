@@ -15,5 +15,5 @@ Galutinė su vector
 
 
 
-
+vcgfd
 ![Ekrano nuotrauka 2023-10-25 215531](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/c1b74400-7a5f-4fc1-b927-c3a219978b30)
