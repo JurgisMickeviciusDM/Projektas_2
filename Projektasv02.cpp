@@ -235,8 +235,9 @@ int main() {
             double mediana = calculateMedian(pazymiai);// funkciaj is pazymiu saraso
             s.mediana = 0.40 * mediana + 0.60 * egzaminas;
         }
-
+        
         studentai.push_back(s);//prideda prie studentu saraso 
+        cout << j + 1 << "-ojo studento objekto adresas atmintyje: " << static_cast<void*>(&s) << endl;
     }
 
     auto compareFromFile = [](const Studentas& a, const Studentas& b) {
