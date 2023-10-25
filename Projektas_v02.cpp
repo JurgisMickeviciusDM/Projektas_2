@@ -43,7 +43,7 @@ int main() {
         cout << "Sukurta: 31,548sek.  Bendras laikas 1000000 studentu: 36,874sek" << endl;
         cout << "Sukurta: 395,842sek. Bendras laikas 10000000 studentu:  375,8342sek" << endl;
         
-        vector<int> studentuSkaiciai = {1000,10000,100000,10000000};
+        vector<int> studentuSkaiciai = {1000,10000,100000, 1000000,10000000};
             for (int n : studentuSkaiciai) {
                 Generavimas(n);
         }
@@ -239,6 +239,7 @@ int main() {
         }
 
         studentai.push_back(s);//prideda prie studentu saraso 
+        cout << j + 1 << "-ojo studento objekto adresas atmintyje: " << static_cast<void*>(&s) << endl;
     }
 
     auto compareFromFile = [](const Studentas& a, const Studentas& b) {
