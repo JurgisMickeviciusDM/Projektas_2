@@ -11,3 +11,4 @@ Galutinė su vector
 | Įrašymas į vargšiukus 	| 0,0008    	| 0,0712 	| 0,6827 	| 6,9926    	| 65,4676  	|
 | Įrašymas į kietiakus  	| 0,0028   	| 0,1769 	| 1,9491 	| 19,7519  	| 170,4570 	|
 | Bendras               	        | 0,0335 	| 0,3966	| 4,8142 	| 45,5061 	        | 526,2396 	|
+![Ekrano nuotrauka 2023-10-25 215531](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/c1b74400-7a5f-4fc1-b927-c3a219978b30)
