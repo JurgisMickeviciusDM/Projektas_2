@@ -36,14 +36,8 @@ int main() {
     int skaicius = 0;
 
     if (inputMethod == "auto") {
-        cout << "Vidurkiai 5 paleidimu programos:" << endl;
-        cout << "Sukurta: 0,025sek.   Bendras laikas 1000 studentu: 0,03865 sek " << endl;
-        cout << "Sukurta: 0,347sek.   Bendras laikas 10000 studentu: 0,4124 sek" << endl;
-        cout << "Sukurta: 2,954sek.   Bendras laikas 100000 studentu: 4,637sek" << endl;
-        cout << "Sukurta: 31,548sek.  Bendras laikas 1000000 studentu: 36,874sek" << endl;
-        cout << "Sukurta: 395,842sek. Bendras laikas 10000000 studentu:  375,8342sek" << endl;
 
-        list<int> studentuSkaiciai = { 1000,10000,100000,1000000 };
+        list<int> studentuSkaiciai = { 100000,1000000};
         for (int n : studentuSkaiciai) {
             Generavimas(n);
         }
