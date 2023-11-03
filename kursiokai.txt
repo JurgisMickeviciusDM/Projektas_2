@@ -1,4 +1,0 @@
-Pavarde Vardas   ND1 ND2 ND3 ND4 ND5 Egzaminas
-Vardas1 Pavarde1 8   9   10  6   10  9	
-Vardas2 Pavarde2 10   8  8   8   10   10  
-Algis   Limpinas 1   2   8  5   6    1                
