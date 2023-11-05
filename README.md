@@ -36,7 +36,7 @@ Ekrano kopijos su visais laikais yra suagomos atskirame pdf faile, kuris yra pat
 
 ![Ekrano nuotrauka 2023-10-25 215531](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/c1b74400-7a5f-4fc1-b927-c3a219978b30)
 
-# List
+# List Naudojo S strategiją 
 Su list labai prailgėjo 10milijonų failo veikimas, nes teko naudoti SSD, kadangi atminties neužteko RAM
 ![Ekrano nuotrauka 2023-10-26 005122](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/3e34be52-927a-497c-8719-9aa68a7ed374)
 ![Ekrano nuotrauka 2023-10-26 004900](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/8e88139f-bd12-4b84-b78e-925ebcd6b0b8)
