@@ -5,12 +5,22 @@ using namespace std;
 void toLowercase(string& str) {
     transform(str.begin(), str.end(), str.begin(), ::tolower);
 }
+void pasirinkimas(std::string& pasirinkimass) {
+    do {
+        cout << "Pasirinkite ar naudosite vectro V ar list L ";
+        cin >> pasirinkimass;
+        toLowercase(pasirinkimass);
+        if (pasirinkimass != "v" && pasirinkimass != "l") {
+            cout << "Neteisingai parasete! Bandykite dar karta." << endl;
+        }
+    } while (pasirinkimass != "l" && pasirinkimass != "v");
+}
 
-void naudotojas(string& inputMethod, string& choice, string& header1, string& header2, string& choice1, string& choice2 ) {
+void naudotojas(string& inputMethod, string& choice, string& header1, string& header2, string& choice1, string& choice2) {
     do {
         cout << "Pasirinkite ar naudosite duomenis is failo, rasyti ,,Duomenys'' ar naudosite rankiniu budu ivedamus duomenis, rasyti ,,Ranka'' ar naudosite autogeneruojamus failus ,,Auto'' ";
         cin >> inputMethod;
-        toLowercase(inputMethod); // Konvertuojame �vest� � ma��sias raides
+        toLowercase(inputMethod);
         if (inputMethod != "duomenys" && inputMethod != "ranka" && inputMethod != "auto") {
             cout << "Neteisingai parasete! Bandykite dar karta." << endl;
         }
@@ -49,21 +59,24 @@ void naudotojas(string& inputMethod, string& choice, string& header1, string& he
                 cout << "Neteisinga pasirinkimas! Bandykite dar karta. GALIMA TIK GALUTINIS" << endl;
             }
         } while (choice1 != "vardus" && choice1 != "pavardes" && choice1 != "vidurkius");
-        
+
         do {
-            cout << "Prasome pasirinkti strategija S arba D " << endl;
+            cout << "Prasome pasirinkti strategija S arba D arba TOBULESNIA strategija DT " << endl;
             cin >> choice2;
             toLowercase(choice2);
             if (choice2 == "s") {
-                
+
             }
             else if (choice2 == "d") {
-                
+
+            }
+            else if (choice2 == "dt") {
+
             }
             else {
                 cout << "Neteisingas pasirinkimas strategijos, reikia rasyti s arba d " << endl;
             }
-        } while (choice2 != "s" && choice2 != "d");
+        } while (choice2 != "s" && choice2 != "d" && choice2 != "dt");
 
     }
     else {
@@ -89,3 +102,4 @@ void naudotojas(string& inputMethod, string& choice, string& header1, string& he
     }
     cin.ignore(); // leis per nauj ivesti 
 }
+
