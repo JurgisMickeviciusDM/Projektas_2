@@ -14,9 +14,15 @@
 5.Rasome  cmake --build .\build
 ![image](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/bf0443a5-828e-4dac-a948-0b23c2252f8c)
 5.1 SVarbu nepamiršti į Debug folderį įsikelti studentų failų, kad nereikėtų laukti, kol sugeneruos, kadangi, tai gali atimti daug laiko.
+![image](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/989b341f-174e-4e42-ac34-2bf1fafc6af3)
+
 6. Atsidarome nauja folderį build. Jame saugomas exe failas, reikalingas paleisti programą
+![image](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/a8511df2-958c-4d5a-876f-e2a11ffdf4b1)
+
 7. Einame į Build folderį, spaudžiame Debuf, tada projektasv10.exe
-8. Programa pradeda darbą
+8. ![image](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/82ccb74c-05cf-46e6-ab16-ba30649d9d9d)
+
+9. Programa pradeda darbą
 
 # Reikalavimai
 cmake_minimum_required(VERSION 3.28)
