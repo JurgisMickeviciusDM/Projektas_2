@@ -57,7 +57,6 @@ Atlikus pakartotinius galutinius matavimus ir išvedus matavimų vidurkį gauti 
 |    <br>Bendras               	|    <br>0,0545 	|    <br>0,7989 	|    <br>9,8848 	|    <br>116,4869 	|    <br>1639,183    	|
 
 # Vektorius Naudojo DT strategija  
-
 |          Testavimas          	|      1000      	|     10000     	|     100000    	|     1000000     	|      10000000      	|
 |:----------------------------:	|:--------------:	|:-------------:	|:-------------:	|:---------------:	|:------------------:	|
 |    <br>Failo nuskaitymas     	|    <br>0,017   	|    <br>0,2237 	|    <br>2,1475 	|    <br>21,8651  	|    <br>232,7451    	|
