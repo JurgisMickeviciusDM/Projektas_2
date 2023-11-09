@@ -38,8 +38,8 @@ int main() {
 
 
         srand(static_cast<unsigned int>(time(0)));
-        std::string header1, header2, choice, inputMethod, choice1, choice2;  // Variables
-        naudotojas(inputMethod, choice, header1, header2, choice1, choice2); // User input function
+        std::string header1, header2, choice, inputMethod, choice1, choice2;  
+        naudotojas(inputMethod, choice, header1, header2, choice1, choice2); 
         char sortChoice = choice2.empty() ? ' ' : choice2[0];
         int skaicius = 0;
         vector<Studentas> studentai;
@@ -253,9 +253,7 @@ int main() {
             return numA < numB;
             };
 
-        //auto simpleCompare = [](const Studentas& a, const Studentas& b) {
-       //     return a.pavarde < b.pavarde;
-        //    };
+
 
         if (inputMethod == "duomenys") {
 

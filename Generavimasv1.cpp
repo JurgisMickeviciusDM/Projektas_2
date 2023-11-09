@@ -288,7 +288,7 @@ double calculateMedianV(const vector<int>& grades) {
 void saveToFileV(const std::vector<Studentas>& studentasList, const std::string& filename, const std::string& choice1) {
     std::vector<Studentas> sortedStudents = studentasList;
     auto start = std::chrono::high_resolution_clock::now();
-    auto startSort = std::chrono::high_resolution_clock::now(); // Start the sort timer
+    auto startSort = std::chrono::high_resolution_clock::now(); 
     if (choice1 == "vardus") {
         sort(sortedStudents.begin(), sortedStudents.end(),
             [](const Studentas& a, const Studentas& b) {
