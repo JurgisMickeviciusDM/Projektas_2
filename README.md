@@ -10,8 +10,8 @@
 3.Paleidžiame Windows PoweShell
 ![image](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/4ce6cab1-534f-4644-ae29-3a8ee9ae9a9c)
 
-4.Rasome  cmake -S . -B .\build
-5.Rasome  cmake --build .\build
+4.RaŠome  cmake -S . -B .\build
+5.RaŠome  cmake --build .\build
 ![image](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/bf0443a5-828e-4dac-a948-0b23c2252f8c)
 5.1 SVarbu nepamiršti į Debug folderį įsikelti studentų failų, kad nereikėtų laukti, kol sugeneruos, kadangi, tai gali atimti daug laiko.
 ![image](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/989b341f-174e-4e42-ac34-2bf1fafc6af3)
@@ -24,10 +24,7 @@
 
 9. Programa pradeda darbą
 
-# Reikalavimai
-cmake_minimum_required(VERSION 3.28)
-
-# Parametrai 
+# Parametrai įrenginio, su kuriuo buvo testuojamas laikas 
 
 | CPU                                                       	| RAM                          	| SSD                  	|
 |-----------------------------------------------------------	|------------------------------	|----------------------	|
@@ -48,9 +45,9 @@ Programoje išlieka tie patys pakeitimai, kaip ir senose versijose,  tačiau esm
 # V1.0 Versija:
 Naujausioje versijoje vyksta testavimas skirtingų strategijų. Jos yra 3. 1-Strategija duomenų rūšiavimui naudoja tokį pat rūšiavimo principą, kaip ir senosiose versijose. 2-Strategija naudoja rūšiavimui, tik vieną konteinerį, tiesiog vargšiukus ištrina iš bendro, juos perkelia į vargšiukų konteinerį, o kietiakai lieka senąjame ir nėra perkeliami į naują konteinerį. 3-Strategija yra patobulinta (2-strategija), kadangi buvo pastebėta atliekant spartos matavimus, jog ši strategija yra spartesnė, negu 1-strategija. 3-Strategijoje naudojamas stable_partition rūšiavimo metu, jis pertvarko elementus diapazone [first,last)taip, kad visi elementai, kuriems grąžina pred true, būtų pirmesni už visus tuos, kuriems jis grąžina false.
 # Strategijų tipai S D DT
-S-
-D-
-DT-
+S-Bendro studentai konteinerio (vector ir list tipų) skaidymas (rūšiavimas) į du naujus to paties tipo konteinerius: "vargšiukų" ir "kietiakų". 
+D-Bendro studentų konteinerio (vector ir list) skaidymas (rūšiavimas) panaudojant tik vieną naują konteinerį: "vargšiukai". Tokiu būdu, jei studentas yra vargšiukas, jį turime įkelti į naująjį "vargšiukų" konteinerį ir ištrinti iš bendro studentai konteinerio
+DT-Patobulinta D versija 
 # Vektorius Naudojo S strategija  
 Ekrano kopijos su visais laikais yra suagomos atskirame pdf faile, kuris yra patalpintas GitHub sistemoje prie failų ,,[Atminties matavimai su List Vektor ir S,D,DT strategijomis.pdf](https://github.com/JurgisMickeviciusDM/Projektas1/files/13259074/Atminties.matavimai.su.List.Vektor.ir.S.D.DT.strategijomis.pdf) "
 Atlikus pakartotinius galutinius matavimus ir išvedus matavimų vidurkį gauti rezultatai ,,pablogėo", kadangi prieš tai matavau Vector viską tik su RAM, o List iškilus problemoms, kad nulužinėja programa, nes neužtenka atminties, pradėjau naudoti SSD, talpos nekeičiau ir permatuojant Vector, kadangi yra, tik 8GB RAM, o Windows sistema vien paleidus ir kitos porgramos iš kart ,,suvalgo'' 5GB RAM, tad laisvų lieka geriausiu atveju, tik 3GB. Tad sistema automatiškai dalį atminties pradėjo imti iš SSD, kai suteikiau tokią galimybę, tai yra atlaisvinau, leidau sistemai naudoti 40GB SSD. 
