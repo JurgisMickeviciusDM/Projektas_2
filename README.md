@@ -78,24 +78,15 @@ Atlikus pakartotinius galutinius matavimus ir išvedus matavimų vidurkį gauti 
 |    <br>Bendras               	|    <br>0,06248 	|    <br>0,6016 	|    <br>6,6788 	|    <br>41,2465 	|    <br>1235,943    	|
 
 # List Naudojo D strategiją 
-|          Testavimas          	|      1000     	|     10000     	|     100000     	|     1000000     	|      10000000      	|
-|:----------------------------:	|:-------------:	|:-------------:	|:--------------:	|:---------------:	|:------------------:	|
-Failo nuskaitymas	0,0311	0,241	2,489	25,4014	278,5874
-					
-Rušiavimas	0,0017	0,0117	0,1174	1,212	194,5896
-					
-Sortinimas	0,002	0,0295	0,3465	4,7321	60,551
-					
-Įrašymas į vargšiukus	0,0085	0,0623	0,7741	7,9542	105,8452
-					
-Sortinimas	0,0034	0,0432	0,6512	7,14	129,5645
-					
-Įrašymas į kietiakus	0,0103	0,094	1,084	11,7552	176,2552
-					
-Bendras	0,057	0,4817	5,4622	58,1949	945,3929
-					
-![image](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/a009d977-f0b0-4ce9-a8a9-55dd215fd785)
-
+|          Testavimas          	|      1000     	|     10000     	|     100000    	|     1000000    	|      10000000      	|
+|:----------------------------:	|:-------------:	|:-------------:	|:-------------:	|:--------------:	|:------------------:	|
+|    <br>Failo nuskaitymas     	|    <br>0,0311 	|    <br>0,241  	|    <br>2,489  	|    <br>25,4014 	|    <br>278,5874    	|
+|    <br>Rušiavimas            	|    <br>0,0017 	|    <br>0,0117 	|    <br>0,1174 	|    <br>1,212   	|    <br>194,5896    	|
+|    <br>Sortinimas            	|    <br>0,002  	|    <br>0,0295 	|    <br>0,3465 	|    <br>4,7321  	|    <br>60,551      	|
+|    <br>Įrašymas į vargšiukus 	|    <br>0,0085 	|    <br>0,0623 	|    <br>0,7741 	|    <br>7,9542  	|    <br>105,8452    	|
+|    <br>Sortinimas            	|    <br>0,0034 	|    <br>0,0432 	|    <br>0,6512 	|    <br>7,14    	|    <br>129,5645    	|
+|    <br>Įrašymas į kietiakus  	|    <br>0,0103 	|    <br>0,094  	|    <br>1,084  	|    <br>11,7552 	|    <br>176,2552    	|
+|    <br>Bendras               	|    <br>0,057  	|    <br>0,4817 	|    <br>5,4622 	|    <br>58,1949 	|    <br>945,3929    	|
 
 # List Naudojo DT strategiją 
 |          Testavimas          	|      1000     	|     10000     	|     100000     	|     1000000     	|      10000000      	|
