@@ -47,7 +47,7 @@ int main() {
         if (inputMethod == "auto") {
 
 
-            std::vector<int> studentuSkaiciai = { 10000000 };
+            std::vector<int> studentuSkaiciai = { 1000, 10000, 100000,1000000 };
             for (int n : studentuSkaiciai) {
                 Generavimas(n);
             }
@@ -106,7 +106,7 @@ int main() {
                     file >> gradeStr; // Nuskaitomas  pažymys.
                     try {
                         int grade = stoi(gradeStr);// su stoi i sveik konvertuoojam, jei netai invalid  
-                        s.pazymiai.push_back(grade);/// ok prides prie stud paz sar
+                        s.pazymiaiV.push_back(grade);/// ok prides prie stud paz sar
                     }
                     catch (const std::invalid_argument& e) {
                         //jei konvertavimas nepavyksta tai su catch pagauname ir tesiame su kitais pazymiais darba
@@ -134,6 +134,7 @@ int main() {
             }
 
             file.close();
+            cout << "Ivykdyta" << endl;
         }
         else if (inputMethod == "ranka") {
             cout << "Pasirinkite norima skaiciu studentu. Iveskite ju skaiciu(naudoti tik skaicius): ";
@@ -316,7 +317,7 @@ int main() {
         if (inputMethod == "auto") {
 
 
-            list<int> studentuSkaiciai = { 1000, 10000, 100000, 1000000 };
+            list<int> studentuSkaiciai = { 1000, 10000, 100000};
 
             for (int n : studentuSkaiciai) {
                 Generavimas(n);

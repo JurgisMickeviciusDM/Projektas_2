@@ -227,7 +227,7 @@ void RusiuotiV(std::vector<Studentas>& studentai, std::vector<Studentas>& vargsi
     auto startSorting = std::chrono::high_resolution_clock::now();
 
     if (choice2 == 's') {
-        // Simple split based on average
+        
         for (const auto& studentas : studentai) {
             if (studentas.vidurkis < 5.0) {
                 vargsiukai.push_back(studentas);
@@ -263,7 +263,7 @@ void RusiuotiV(std::vector<Studentas>& studentai, std::vector<Studentas>& vargsi
 
     auto finishSorting = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsedSorting = finishSorting - startSorting;
-    // Assuming 'd' is a variable previously defined to accumulate durations
+    
     d += elapsedSorting.count();
     std::cout << "Rusiavimas uþtruko: " << elapsedSorting.count() << " sekundes" << std::endl;
 }
