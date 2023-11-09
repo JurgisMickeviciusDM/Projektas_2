@@ -1,10 +1,25 @@
 # PROJEKTAS_1 
 # Paleidimas
 
------
------
+1. Parsisiunčiame reikalingus failus iš GitHub.(Generavimasv1.cpp ; Naudotojasv1.cpp; Projektasv10.cpp; Studentas1000; Studentas10000; Studentas100000; Studentas1000000; Studentas10000000; RUNMEE; CMakeLists; Generavimasv1; Naudotojasv1; Skaičiavimasv1; Studentasv1)
+2. Visus cpp sudedame į folderį ,,src'':(Generavimasv1.cpp ; Naudotojasv1.cpp; Projektasv10.cpp)
+   Header tipo failus ir studentu sąrašus sudėti į ,,Include" folderį:(Studentas1000; Studentas10000; Studentas100000; Studentas1000000; Studentas10000000; Generavimasv1; Naudotojasv1; Skaičiavimasv1; Studentasv1)
+   Atskirai prie folderių įsidedame ,,RUNMEE'' ir CMakeLists. Bendrai turi būti 4 atskiri failai/folderiai
+   ![image](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/d2eb11ec-951f-4b87-a9ab-7cea818ba07b)
+
+3.Paleidžiame Windows PoweShell
+![image](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/4ce6cab1-534f-4644-ae29-3a8ee9ae9a9c)
+
+4.Rasome  cmake -S . -B .\build
+5.Rasome  cmake --build .\build
+![image](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/bf0443a5-828e-4dac-a948-0b23c2252f8c)
+5.1 SVarbu nepamiršti į Debug folderį įsikelti studentų failų, kad nereikėtų laukti, kol sugeneruos, kadangi, tai gali atimti daug laiko.
+6. Atsidarome nauja folderį build. Jame saugomas exe failas, reikalingas paleisti programą
+7. Einame į Build folderį, spaudžiame Debuf, tada projektasv10.exe
+8. Programa pradeda darbą
 
 # Reikalavimai
+cmake_minimum_required(VERSION 3.28)
 
 # Parametrai 
 
@@ -89,13 +104,13 @@ Atlikus pakartotinius galutinius matavimus ir išvedus matavimų vidurkį gauti 
 |    <br>Bendras               	|    <br>0,057  	|    <br>0,4817 	|    <br>5,4622 	|    <br>58,1949 	|    <br>945,3929    	|
 
 # List Naudojo DT strategiją 
-|          Testavimas          	|      1000     	|     10000     	|     100000     	|     1000000     	|      10000000      	|
-|:----------------------------:	|:-------------:	|:-------------:	|:--------------:	|:---------------:	|:------------------:	|
-|    <br>Failo nuskaitymas     	|    <br>0,001  	|    <br>0,1634 	|    <br>2,1478  	|    <br>22,5653  	|    <br>235,5489    	|
-|    <br>Rušiavimas            	|    <br>0,0016 	|    <br>0,0254 	|    <br>0,2232  	|    <br>2,4963   	|    <br>105,8744    	|
-|    <br>Sortinimas            	|    <br>0,005  	|    <br>0,08   	|    <br>1,254   	|    <br>16,8954  	|    <br>210,594     	|
-|    <br>Įrašymas į vargšiukus 	|    <br>0,0115 	|    <br>0,1014 	|    <br>1,745   	|    <br>22,9546  	|    <br>248,6545    	|
-|    <br>Sortinimas            	|    <br>0,0174 	|    <br>0,1345 	|    <br>2,4579  	|    <br>30,8746  	|    <br>289,5456    	|
-|    <br>Įrašymas į kietiakus  	|    <br>0,017  	|    <br>0,2454 	|    <br>3,2478  	|    <br>32,5475  	|    <br>338,5616    	|
-|    <br>Bendras               	|    <br>0,0535 	|    <br>0,7501 	|    <br>11,0757 	|    <br>128,3337 	|    <br>1428,779    	|
+|          Testavimas          	|      1000     	|     10000     	|     100000    	|     1000000    	|      10000000      	|
+|:----------------------------:	|:-------------:	|:-------------:	|:-------------:	|:--------------:	|:------------------:	|
+|    <br>Failo nuskaitymas     	|    <br>0,0221 	|    <br>0,2454 	|    <br>2,454  	|    <br>26,8954 	|    <br>258,7851    	|
+|    <br>Rušiavimas            	|    <br>0,0011 	|    <br>0,0103 	|    <br>0,1021 	|    <br>1,4678  	|    <br>208,6141    	|
+|    <br>Sortinimas            	|    <br>0,001  	|    <br>0,0274 	|    <br>0,3867 	|    <br>5,2321  	|    <br>78,9612     	|
+|    <br>Įrašymas į vargšiukus 	|    <br>0,0068 	|    <br>0,0594 	|    <br>0,6451 	|    <br>9,5751  	|    <br>112,1145    	|
+|    <br>Sortinimas            	|    <br>0,0038 	|    <br>0,0467 	|    <br>0,5879 	|    <br>9,1574  	|    <br>97,8964     	|
+|    <br>Įrašymas į kietiakus  	|    <br>0,0101 	|    <br>0,0894 	|    <br>1,05   	|    <br>14,712  	|    <br>141,7864    	|
+|    <br>Bendras               	|    <br>0,0449 	|    <br>0,4786 	|    <br>5,2258 	|    <br>67,0398 	|    <br>898,1577    	|
 
