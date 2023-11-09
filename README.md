@@ -1,9 +1,9 @@
 # PROJEKTAS_1 
 # Paleidimas
 
-1. Parsisiunčiame reikalingus failus iš GitHub.(Generavimasv1.cpp ; Naudotojasv1.cpp; Projektasv10.cpp; Studentas1000; Studentas10000; Studentas100000; Studentas1000000; Studentas10000000; RUNMEE; CMakeLists; Generavimasv1; Naudotojasv1; Skaičiavimasv1; Studentasv1)
+1. Parsisiunčiame reikalingus failus iš GitHub.(Generavimasv1.cpp ; Naudotojasv1.cpp; Projektasv10.cpp;RUNMEE; CMakeLists; Generavimasv1; Naudotojasv1; Skaičiavimasv1; Studentasv1)
 2. Visus cpp sudedame į folderį ,,src'':(Generavimasv1.cpp ; Naudotojasv1.cpp; Projektasv10.cpp)
-   Header tipo failus ir studentu sąrašus sudėti į ,,Include" folderį:(Studentas1000; Studentas10000; Studentas100000; Studentas1000000; Studentas10000000; Generavimasv1; Naudotojasv1; Skaičiavimasv1; Studentasv1)
+   Header tipo failus ir studentu sąrašus sudėti į ,,Include" folderį:( Generavimasv1; Naudotojasv1; Skaičiavimasv1; Studentasv1)
    Atskirai prie folderių įsidedame ,,RUNMEE'' ir CMakeLists. Bendrai turi būti 4 atskiri failai/folderiai
    ![image](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/d2eb11ec-951f-4b87-a9ab-7cea818ba07b)
 
