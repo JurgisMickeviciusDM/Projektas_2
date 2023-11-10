@@ -10,8 +10,8 @@
 3.Paleidžiame Windows PoweShell
 ![image](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/4ce6cab1-534f-4644-ae29-3a8ee9ae9a9c)
 
-4.RaŠome  cmake -S . -B .\build
-5.RaŠome  cmake --build .\build
+4.Rašome  cmake -S . -B .\build
+5.Rašome  cmake --build .\build
 ![image](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/bf0443a5-828e-4dac-a948-0b23c2252f8c)
 5.1 SVarbu nepamiršti į Debug folderį įsikelti studentų failų, kad nereikėtų laukti, kol sugeneruos, kadangi, tai gali atimti daug laiko.
 ![image](https://github.com/JurgisMickeviciusDM/Projektas1/assets/144474535/989b341f-174e-4e42-ac34-2bf1fafc6af3)
