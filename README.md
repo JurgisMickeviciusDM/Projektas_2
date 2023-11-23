@@ -135,15 +135,17 @@ Atlikus pakartotinius galutinius matavimus ir išvedus matavimų vidurkį gauti 
 # Vektorius Naudojo DT strategija naudojant klase studentas 
 |          Testavimas          	|      1000      	|     10000     	|     100000    	|     1000000     	|      10000000      	|
 |:----------------------------:	|:--------------:	|:-------------:	|:-------------:	|:---------------:	|:------------------:	|
-|    <br>Failo nuskaitymas     	|    <br>0,017   	|    <br>0,2237 	|    <br>2,1475 	|    <br>21,8651  	|    <br>232,7451    	|
-|    <br>Rušiavimas            	|    <br>0,0024  	|    <br>0,0296 	|    <br>0,3358 	|    <br>3,7863   	|    <br>329,102     	|
-|    <br>Sortinimas            	|    <br>0,0023  	|    <br>0,0831 	|    <br>1,2972 	|    <br>16,3789  	|    <br>219,1107    	|
-|    <br>Įrašymas į vargšiukus 	|    <br>0,009   	|    <br>0,1478 	|    <br>1,6258 	|    <br>19,5587  	|    <br>252,1138    	|
-|    <br>Sortinimas            	|    <br>0,01035 	|    <br>0,1145 	|    <br>1,941  	|    <br>24,1078  	|    <br>294,7841    	|
-|    <br>Įrašymas į kietiakus  	|    <br>0,014   	|    <br>0,1675 	|    <br>2,2178 	|    <br>28,8466  	|    <br>348,1716    	|
-|    <br>Bendras               	|    <br>0,05505 	|    <br>0,7662 	|    <br>9,5651 	|    <br>114,5434 	|    <br>1676,027    	|
+|    <br>Failo nuskaitymas     	|    <br>0,017   	|    <br>0,2541 	|    <br>2,754 	|    <br>28,7546 	|    <br>289,54    	|
+|    <br>Rušiavimas            	|    <br>0,0024  	|    <br>0,0247	|    <br>0,2745	|    <br>3,456  	|    <br>38,213     	|
+|    <br>Sortinimas            	|    <br>0,0023  	|    <br>0,0145 	|    <br>0,1456	|    <br>1,387  	|    <br>13,5546    	|
+|    <br>Įrašymas į vargšiukus 	|    <br>0,009   	|    <br>0,056 	|    <br>0,3784 	|    <br>4,512  	|    <br>40,3541   	|
+|    <br>Sortinimas            	|    <br>0,0101 	|    <br>0,0,074	|    <br>0,487 	|    <br>3,7981 	|    <br>30,613    	|
+|    <br>Įrašymas į kietiakus  	|    <br>0,0014   	|    <br>0,105 	|    <br>1,345	|    <br>11,2253  	|    <br>158,1132    	|
+|    <br>Bendras               	|    <br>0,0422 	|    <br>0,4543	|    <br>5,3845 	|    <br>53,133	|    <br> 570,3879   	|
 
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/6cc20ff5-5d87-4a8e-8129-597ef7ba2489)
+
+Atlikus testavimus su vektorius DT ir vektorius DT klasė studentas, buvo pastebėta, kad su klase vektorius DT žymiai paspartino rūšiavimą ir įrašymą į failus, greitis padidėjo beveik dvigubai, kaip pvz 100000 su vektorius DT 114,5434s, tuo tarpu vektorius DT klasė 53,133.
 
 # Vektorius su klase ir strategijomis O1, O2, O3: 
 |          Testavimas          	|      o1_100000      	|     o2_100000     	|     o3_100000   	|      o1_1000000      	|     o2_1000000     	|     o3_1000000  |
