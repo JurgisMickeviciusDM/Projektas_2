@@ -272,50 +272,56 @@ void RusiuotiV(std::vector<Studentas>& studentai, std::vector<Studentas>& vargsi
 
 
 void saveToFileV(const std::vector<Studentas>& studentasList, const std::string& filename, const std::string& choice1) {
-    std::vector<Studentas> sortedStudents = studentasList;
+    std::vector<Studentas> sortedStudents = studentasList; 
     auto startSort = std::chrono::high_resolution_clock::now();
 
+    
     if (choice1 == "vardus") {
-        sort(sortedStudents.begin(), sortedStudents.end(), [](const Studentas& a, const Studentas& b) {
+        std::sort(sortedStudents.begin(), sortedStudents.end(), [](const Studentas& a, const Studentas& b) {
             return a.getVardas() < b.getVardas();
             });
     }
     else if (choice1 == "pavardes") {
-        sort(sortedStudents.begin(), sortedStudents.end(), [](const Studentas& a, const Studentas& b) {
-            return a.getPavarde() < b.getPavarde(); 
+        std::sort(sortedStudents.begin(), sortedStudents.end(), [](const Studentas& a, const Studentas& b) {
+            return a.getPavarde() < b.getPavarde();
             });
     }
     else if (choice1 == "vidurkius") {
-        sort(sortedStudents.begin(), sortedStudents.end(), [](const Studentas& a, const Studentas& b) {
+        std::sort(sortedStudents.begin(), sortedStudents.end(), [](const Studentas& a, const Studentas& b) {
             return a.getVidurkis() < b.getVidurkis();
             });
     }
 
     auto finishSort = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsedSort = finishSort - startSort;
+
+    
+    extern double g; 
+    extern double b; 
     g += elapsedSort.count();
-    std::cout << "Sortinimas: " << elapsedSort.count() << " sekundes" << std::endl;
+    std::cout << "Rusiavimas: " << elapsedSort.count() << " sekundes." << std::endl;
 
-    ios::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    ofstream out(filename);
+    std::ofstream out(filename);
     if (!out) {
-        cerr << "Klaida atidarant failà raðymui: " << filename << endl;
+        std::cerr << "Klaida atidarant faila irasimui: " << filename << std::endl;
         return;
     }
 
-    out << left << setw(20) << "Vardas" << setw(20) << "Pavarde" << setw(15) << "Galutinis(Vid.)" << endl;
-    for (const auto& studentas : studentasList) {
-        out << setw(20) << studentas.getVardas() << setw(20) << studentas.getPavarde()
-            << setw(15) << fixed << setprecision(2) << studentas.getVidurkis() << endl;
+    // Output headers
+    out << std::left << std::setw(20) << "Vardas" << std::setw(20) << "Pavarde" << std::setw(15) << "Galutinis(Vid.)" << std::endl;
+
+    // Write the sorted list
+    for (const auto& studentas : sortedStudents) {
+        out << std::setw(20) << studentas.getVardas() << std::setw(20) << studentas.getPavarde()
+            << std::setw(15) << std::fixed << std::setprecision(2) << studentas.getVidurkis() << std::endl;
     }
+
     out.close();
 
     auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> elapsed = end - startSort; // Note: startSort used here for consistency
+    std::chrono::duration<double> elapsed = end - startSort;
     b += elapsed.count();
-    std::cout << "Isvesta " << studentasList.size() << " irasu i " << filename << ". Vykdymo laikas: " << elapsed.count() << " sekundziu." << std::endl;
+    std::cout << "Irasyta  " << sortedStudents.size() << " irasu i faila " << filename << ". Vykdymo laikas: " << elapsed.count() << " sekundziu." << std::endl;
 }
 
 vector<Studentas> skaitytiStudentusV(int n) {
@@ -323,7 +329,7 @@ vector<Studentas> skaitytiStudentusV(int n) {
     string filename = "studentai" + to_string(n) + ".txt";
     ifstream in(filename, ios::in | ios::binary);
     if (!in) {
-        cerr << "Klaida atidarant failà: " << filename << std::endl;
+        cerr << "Klaida atidarant faila: " << filename << std::endl;
         return {};
     }
 
