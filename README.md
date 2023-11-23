@@ -116,6 +116,8 @@ Atlikus pakartotinius galutinius matavimus ir išvedus matavimų vidurkį gauti 
 |    <br>Sortinimas            	|    <br>0,0038 	|    <br>0,0467 	|    <br>0,5879 	|    <br>9,1574  	|    <br>97,8964     	|
 |    <br>Įrašymas į kietiakus  	|    <br>0,0101 	|    <br>0,0894 	|    <br>1,05   	|    <br>14,712  	|    <br>141,7864    	|
 |    <br>Bendras               	|    <br>0,0449 	|    <br>0,4786 	|    <br>5,2258 	|    <br>67,0398 	|    <br>898,1577    	|
-#PROJEKTAS_2
+
+# ________________________________________________________________________________________________________________________________
+# PROJEKTAS_2
 
 
