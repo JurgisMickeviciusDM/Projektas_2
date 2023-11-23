@@ -150,12 +150,15 @@ Atlikus testavimus su vektorius DT ir vektorius DT klasė studentas, buvo pasteb
 # Vektorius su klase ir strategijomis O1, O2, O3: 
 |          Testavimas          	|      o1_100000      	|     o2_100000     	|     o3_100000   	|      o1_1000000      	|     o2_1000000     	|     o3_1000000  |
 |:----------------------------:	|:--------------:      	|:-------------:	   |:-------------:	   |:---------------:	   |:------------------:	|:------------------: |
-|    <br>Failo nuskaitymas     	|    <br>0,017   	      |    <br>0,2237 	   |    <br>2,1475 	   |    <br>21,8651  	   |    <br>232,7451    	|   <br>232,7451  |
-|    <br>Rušiavimas            	|    <br>0,0024  	      |    <br>0,0296 	   |    <br>0,3358 	   |    <br>3,7863   	   |    <br>329,102     	|<br>232,7451    	|
-|    <br>Sortinimas            	|    <br>0,0023  	      |    <br>0,0831 	   |    <br>1,2972 	   |    <br>16,3789  	   |    <br>219,1107    	|<br>232,7451    	|
-|    <br>Įrašymas į vargšiukus 	|    <br>0,009         	|    <br>0,1478 	   |    <br>1,6258 	   |    <br>19,5587  	   |    <br>252,1138    	|<br>232,7451    	|
-|    <br>Sortinimas            	|    <br>0,01035       	|    <br>0,1145 	   |    <br>1,941  	   |    <br>24,1078  	   |    <br>294,7841    	|<br>232,7451    	|
-|    <br>Įrašymas į kietiakus  	|    <br>0,014   	      |    <br>0,1675 	   |    <br>2,2178    	|    <br>28,8466  	   |    <br>348,1716    	|<br>232,7451    	|
-|    <br>Bendras               	|    <br>0,05505 	      |    <br>0,7662 	   |    <br>9,5651 	   |    <br>114,5434 	   |    <br>1676,027    	|<br>232,7451    	|
+|    <br>Failo nuskaitymas     	|    <br>2,6954   	      |    <br>0,2237 	   |    <br>2,1475 	   |    <br>24,745 	   |    <br>232,7451    	|   <br>232,7451  |
+|    <br>Rušiavimas            	|    <br>0,2871 	      |    <br>0,0296 	   |    <br>0,3358 	   |    <br>2,7884  	   |    <br>329,102     	|<br>232,7451    	|
+|    <br>Sortinimas            	|    <br>0,1032  	      |    <br>0,0831 	   |    <br>1,2972 	   |    <br>1,1407	   |    <br>219,1107    	|<br>232,7451    	|
+|    <br>Įrašymas į vargšiukus 	|    <br>0,3894         	|    <br>0,1478 	   |    <br>1,6258 	   |    <br>3,8991  	   |    <br>252,1138    	|<br>232,7451    	|
+|    <br>Sortinimas            	|    <br>0,3995       	|    <br>0,1145 	   |    <br>1,941  	   |    <br>3,1045 	   |    <br>294,7841    	|<br>232,7451    	|
+|    <br>Įrašymas į kietiakus  	|    <br>1,087  	      |    <br>0,1675 	   |    <br>2,2178    	|    <br>10,7451 	   |    <br>348,1716    	|<br>232,7451    	|
+|    <br>Bendras               	|    <br> 	      |    <br> 	   |    <br> 	   |    <br> 	   |    <br>    	|<br>  	|
+
+Su O1 100000 ir 1000000
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/6f2d1f49-c693-4d58-a311-ea028c0300f6)
 
 
