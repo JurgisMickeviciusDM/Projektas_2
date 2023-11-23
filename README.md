@@ -160,5 +160,10 @@ Atlikus testavimus su vektorius DT ir vektorius DT klasė studentas, buvo pasteb
 
 Su O1 100000 ir 1000000
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/6f2d1f49-c693-4d58-a311-ea028c0300f6)
+Su O2 100000 ir 1000000
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/1324ecf9-2c17-40e6-95bd-57bf28d8f4d5)
+Su O3 100000 ir 1000000
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/8d920694-cce9-4958-a3c1-59f0c2244686)
+
 
 
