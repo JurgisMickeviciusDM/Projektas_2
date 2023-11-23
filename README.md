@@ -120,4 +120,5 @@ Atlikus pakartotinius galutinius matavimus ir išvedus matavimų vidurkį gauti 
 # ________________________________________________________________________________________________________________________________
 # PROJEKTAS_2
 
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/6cc20ff5-5d87-4a8e-8129-597ef7ba2489)
 
