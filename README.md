@@ -1,4 +1,4 @@
-# PROJEKTAS_1 
+# PROJEKTAS_1(Senos užduoties aprašas-> NAUJAS Projektas_2 v1.1 pateikta žemiau, ties PROJEKTAS_2)
 # Paleidimas
 
 1. Parsisiunčiame reikalingus failus iš GitHub.(Generavimasv1.cpp ; Naudotojasv1.cpp; Projektasv10.cpp;RUNMEE; CMakeLists; Generavimasv1; Naudotojasv1; Skaičiavimasv1; Studentasv1)
@@ -116,4 +116,6 @@ Atlikus pakartotinius galutinius matavimus ir išvedus matavimų vidurkį gauti 
 |    <br>Sortinimas            	|    <br>0,0038 	|    <br>0,0467 	|    <br>0,5879 	|    <br>9,1574  	|    <br>97,8964     	|
 |    <br>Įrašymas į kietiakus  	|    <br>0,0101 	|    <br>0,0894 	|    <br>1,05   	|    <br>14,712  	|    <br>141,7864    	|
 |    <br>Bendras               	|    <br>0,0449 	|    <br>0,4786 	|    <br>5,2258 	|    <br>67,0398 	|    <br>898,1577    	|
+#PROJEKTAS_2
+
 
