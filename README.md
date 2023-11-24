@@ -12,6 +12,7 @@
 |    <br>Sortinimas            	|    <br>0,01035 	|    <br>0,1145 	|    <br>1,941  	|    <br>24,1078  	|    <br>294,7841    	|
 |    <br>Įrašymas į kietiakus  	|    <br>0,014   	|    <br>0,1675 	|    <br>2,2178 	|    <br>28,8466  	|    <br>348,1716    	|
 |    <br>Bendras               	|    <br>0,05505 	|    <br>0,7662 	|    <br>9,5651 	|    <br>114,5434 	|    <br>1676,027    	|
+
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/d877c01f-f2fd-4ca0-a6b2-367701b56e52)
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/68ddb570-eb26-48cf-9c88-ad0e02710c86)
 
