@@ -1,4 +1,66 @@
-# PROJEKTAS_1(Senos užduoties aprašas-> NAUJAS Projektas_2 v1.1 pateikta žemiau, ties PROJEKTAS_2)
+# PROJEKTAS_2(Senos užduoties aprašas pateikta žemiau)
+
+# PROJEKTAS_2
+
+# Vektorius Naudojo DT strategija  
+|          Testavimas          	|      1000      	|     10000     	|     100000    	|     1000000     	|      10000000      	|
+|:----------------------------:	|:--------------:	|:-------------:	|:-------------:	|:---------------:	|:------------------:	|
+|    <br>Failo nuskaitymas     	|    <br>0,017   	|    <br>0,2237 	|    <br>2,1475 	|    <br>21,8651  	|    <br>232,7451    	|
+|    <br>Rušiavimas            	|    <br>0,0024  	|    <br>0,0296 	|    <br>0,3358 	|    <br>3,7863   	|    <br>329,102     	|
+|    <br>Sortinimas            	|    <br>0,0023  	|    <br>0,0831 	|    <br>1,2972 	|    <br>16,3789  	|    <br>219,1107    	|
+|    <br>Įrašymas į vargšiukus 	|    <br>0,009   	|    <br>0,1478 	|    <br>1,6258 	|    <br>19,5587  	|    <br>252,1138    	|
+|    <br>Sortinimas            	|    <br>0,01035 	|    <br>0,1145 	|    <br>1,941  	|    <br>24,1078  	|    <br>294,7841    	|
+|    <br>Įrašymas į kietiakus  	|    <br>0,014   	|    <br>0,1675 	|    <br>2,2178 	|    <br>28,8466  	|    <br>348,1716    	|
+|    <br>Bendras               	|    <br>0,05505 	|    <br>0,7662 	|    <br>9,5651 	|    <br>114,5434 	|    <br>1676,027    	|
+
+
+# Vektorius Naudojo DT strategija naudojant klase studentas 
+|          Testavimas          	|      1000      	|     10000     	|     100000    	|     1000000     	|      10000000      	|
+|:----------------------------:	|:--------------:	|:-------------:	|:-------------:	|:---------------:	|:------------------:	|
+|    <br>Failo nuskaitymas     	|    <br>0,017   	|    <br>0,2541 	|    <br>2,754 	|    <br>28,7546 	|    <br>289,54    	|
+|    <br>Rušiavimas            	|    <br>0,0024  	|    <br>0,0247	|    <br>0,2745	|    <br>3,456  	|    <br>38,213     	|
+|    <br>Sortinimas            	|    <br>0,0023  	|    <br>0,0145 	|    <br>0,1456	|    <br>1,387  	|    <br>13,5546    	|
+|    <br>Įrašymas į vargšiukus 	|    <br>0,009   	|    <br>0,056 	|    <br>0,3784 	|    <br>4,512  	|    <br>40,3541   	|
+|    <br>Sortinimas            	|    <br>0,0101 	|    <br>0,0,074	|    <br>0,487 	|    <br>3,7981 	|    <br>30,613    	|
+|    <br>Įrašymas į kietiakus  	|    <br>0,0014   	|    <br>0,105 	|    <br>1,345	|    <br>11,2253  	|    <br>158,1132    	|
+|    <br>Bendras               	|    <br>0,0422 	|    <br>0,4543	|    <br>5,3845 	|    <br>53,133	|    <br> 570,3879   	|
+
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/6cc20ff5-5d87-4a8e-8129-597ef7ba2489)
+# Išvada DT vektorius klasė ir struktūra
+Atlikus testavimus su vektorius DT ir vektorius DT klasė studentas, buvo pastebėta, kad su klase vektorius DT žymiai paspartino rūšiavimą ir įrašymą į failus, greitis padidėjo beveik dvigubai, kaip pvz 100000 su vektorius DT 114,5434s, tuo tarpu vektorius DT klasė 53,133.
+
+# Vektorius su klase ir strategijomis O1, O2, O3: 
+|          Testavimas          	|      o1_100000      	|     o2_100000     	|     o3_100000   	|      o1_1000000      	|     o2_1000000     	|     o3_1000000  |
+|:----------------------------:	|:--------------:      	|:-------------:	   |:-------------:	   |:---------------:	   |:------------------:	|:------------------: |
+|    <br>Failo nuskaitymas     	|    <br>2,6954   	      |    <br>2,7854 	   |    <br>2,6875 	   |    <br>24,745 	   |    <br>28,7843    	|   <br>26,0377  |
+|    <br>Rušiavimas            	|    <br>0,2871 	      |    <br>0,2451	   |    <br>0,2015 	   |    <br>2,7884  	   |    <br>2,2874      |<br>2,2356   	|
+|    <br>Sortinimas            	|    <br>0,1032  	      |    <br>0,0822 	   |    <br>0,0829	   |    <br>1,1407	   |    <br>0,899    	|<br>0,9497    	|
+|    <br>Įrašymas į vargšiukus 	|    <br>0,3894         	|    <br>0,4587	   |    <br>0,3254	   |    <br>3,8991  	   |    <br>3,7810   	|<br>3,736   	|
+|    <br>Sortinimas            	|    <br>0,3995       	|    <br>0,3874 	   |    <br>0,2971  	   |    <br>3,1045 	   |    <br>3,201   	|<br>3,1945    	|
+|    <br>Įrašymas į kietiakus  	|    <br>1,087  	      |    <br>1,075 	   |    <br>1,0056    	|    <br>10,7451 	   |    <br>9,6933    	|<br>9,6641    	|
+|    <br>Bendras               	|    <br>4,9616 	      |    <br>5,0338 	   |    <br>4,6 	   |    <br>46,4228 	   |    <br>46,3586    	|<br>43,582  	|
+
+|          Failas          	|      Failo dydis exe      	|   
+|:----------------------------:	|:--------------:      	|
+|    <br>Failo dydis "DEBUG"  	  |  <br> 533KB  |
+|    <br>Failo dydis "Realease"  	  |  <br> 115KB  |
+
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/401e9f8f-5e1c-4d4f-b20d-ba6d993d244b)
+Debug failo dydis 
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/a08643d9-d226-4e1d-a718-66a8730d2aa3)
+Realease failo dydis
+# Su O1 100000 ir 1000000
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/6f2d1f49-c693-4d58-a311-ea028c0300f6)
+# Su O2 100000 ir 1000000
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/1324ecf9-2c17-40e6-95bd-57bf28d8f4d5)
+# Su O3 100000 ir 1000000
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/8d920694-cce9-4958-a3c1-59f0c2244686)
+# Išvada O1, O2, O3
+Atlikus optimizavimą su flag'ais klasėje pastebėta, kad O1 ir O2 laikas atlikimo yra lygiai tas pats, tačiau su O3 greitis padidėja apie 6.5%, o tai yra reikšmingas laiko sumažėjimas, nes kuo didesnis failas, duomenų kuo daugiau, tuo greičiua vyks darbas su duomenimis, failu.
+
+# ________________________________________________________
+# Aprašas pirmos užduoties
+
 # Paleidimas
 
 1. Parsisiunčiame reikalingus failus iš GitHub.(Generavimasv1.cpp ; Naudotojasv1.cpp; Projektasv10.cpp;RUNMEE; CMakeLists; Generavimasv1; Naudotojasv1; Skaičiavimasv1; Studentasv1)
@@ -116,54 +178,5 @@ Atlikus pakartotinius galutinius matavimus ir išvedus matavimų vidurkį gauti 
 |    <br>Sortinimas            	|    <br>0,0038 	|    <br>0,0467 	|    <br>0,5879 	|    <br>9,1574  	|    <br>97,8964     	|
 |    <br>Įrašymas į kietiakus  	|    <br>0,0101 	|    <br>0,0894 	|    <br>1,05   	|    <br>14,712  	|    <br>141,7864    	|
 |    <br>Bendras               	|    <br>0,0449 	|    <br>0,4786 	|    <br>5,2258 	|    <br>67,0398 	|    <br>898,1577    	|
-
-# ________________________________________________________________________________________________________________________________
-# PROJEKTAS_2
-
-# Vektorius Naudojo DT strategija  
-|          Testavimas          	|      1000      	|     10000     	|     100000    	|     1000000     	|      10000000      	|
-|:----------------------------:	|:--------------:	|:-------------:	|:-------------:	|:---------------:	|:------------------:	|
-|    <br>Failo nuskaitymas     	|    <br>0,017   	|    <br>0,2237 	|    <br>2,1475 	|    <br>21,8651  	|    <br>232,7451    	|
-|    <br>Rušiavimas            	|    <br>0,0024  	|    <br>0,0296 	|    <br>0,3358 	|    <br>3,7863   	|    <br>329,102     	|
-|    <br>Sortinimas            	|    <br>0,0023  	|    <br>0,0831 	|    <br>1,2972 	|    <br>16,3789  	|    <br>219,1107    	|
-|    <br>Įrašymas į vargšiukus 	|    <br>0,009   	|    <br>0,1478 	|    <br>1,6258 	|    <br>19,5587  	|    <br>252,1138    	|
-|    <br>Sortinimas            	|    <br>0,01035 	|    <br>0,1145 	|    <br>1,941  	|    <br>24,1078  	|    <br>294,7841    	|
-|    <br>Įrašymas į kietiakus  	|    <br>0,014   	|    <br>0,1675 	|    <br>2,2178 	|    <br>28,8466  	|    <br>348,1716    	|
-|    <br>Bendras               	|    <br>0,05505 	|    <br>0,7662 	|    <br>9,5651 	|    <br>114,5434 	|    <br>1676,027    	|
-
-
-# Vektorius Naudojo DT strategija naudojant klase studentas 
-|          Testavimas          	|      1000      	|     10000     	|     100000    	|     1000000     	|      10000000      	|
-|:----------------------------:	|:--------------:	|:-------------:	|:-------------:	|:---------------:	|:------------------:	|
-|    <br>Failo nuskaitymas     	|    <br>0,017   	|    <br>0,2541 	|    <br>2,754 	|    <br>28,7546 	|    <br>289,54    	|
-|    <br>Rušiavimas            	|    <br>0,0024  	|    <br>0,0247	|    <br>0,2745	|    <br>3,456  	|    <br>38,213     	|
-|    <br>Sortinimas            	|    <br>0,0023  	|    <br>0,0145 	|    <br>0,1456	|    <br>1,387  	|    <br>13,5546    	|
-|    <br>Įrašymas į vargšiukus 	|    <br>0,009   	|    <br>0,056 	|    <br>0,3784 	|    <br>4,512  	|    <br>40,3541   	|
-|    <br>Sortinimas            	|    <br>0,0101 	|    <br>0,0,074	|    <br>0,487 	|    <br>3,7981 	|    <br>30,613    	|
-|    <br>Įrašymas į kietiakus  	|    <br>0,0014   	|    <br>0,105 	|    <br>1,345	|    <br>11,2253  	|    <br>158,1132    	|
-|    <br>Bendras               	|    <br>0,0422 	|    <br>0,4543	|    <br>5,3845 	|    <br>53,133	|    <br> 570,3879   	|
-
-![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/6cc20ff5-5d87-4a8e-8129-597ef7ba2489)
-
-Atlikus testavimus su vektorius DT ir vektorius DT klasė studentas, buvo pastebėta, kad su klase vektorius DT žymiai paspartino rūšiavimą ir įrašymą į failus, greitis padidėjo beveik dvigubai, kaip pvz 100000 su vektorius DT 114,5434s, tuo tarpu vektorius DT klasė 53,133.
-
-# Vektorius su klase ir strategijomis O1, O2, O3: 
-|          Testavimas          	|      o1_100000      	|     o2_100000     	|     o3_100000   	|      o1_1000000      	|     o2_1000000     	|     o3_1000000  |
-|:----------------------------:	|:--------------:      	|:-------------:	   |:-------------:	   |:---------------:	   |:------------------:	|:------------------: |
-|    <br>Failo nuskaitymas     	|    <br>2,6954   	      |    <br>0,2237 	   |    <br>2,1475 	   |    <br>24,745 	   |    <br>232,7451    	|   <br>232,7451  |
-|    <br>Rušiavimas            	|    <br>0,2871 	      |    <br>0,0296 	   |    <br>0,3358 	   |    <br>2,7884  	   |    <br>329,102     	|<br>232,7451    	|
-|    <br>Sortinimas            	|    <br>0,1032  	      |    <br>0,0831 	   |    <br>1,2972 	   |    <br>1,1407	   |    <br>219,1107    	|<br>232,7451    	|
-|    <br>Įrašymas į vargšiukus 	|    <br>0,3894         	|    <br>0,1478 	   |    <br>1,6258 	   |    <br>3,8991  	   |    <br>252,1138    	|<br>232,7451    	|
-|    <br>Sortinimas            	|    <br>0,3995       	|    <br>0,1145 	   |    <br>1,941  	   |    <br>3,1045 	   |    <br>294,7841    	|<br>232,7451    	|
-|    <br>Įrašymas į kietiakus  	|    <br>1,087  	      |    <br>0,1675 	   |    <br>2,2178    	|    <br>10,7451 	   |    <br>348,1716    	|<br>232,7451    	|
-|    <br>Bendras               	|    <br> 	      |    <br> 	   |    <br> 	   |    <br> 	   |    <br>    	|<br>  	|
-
-Su O1 100000 ir 1000000
-![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/6f2d1f49-c693-4d58-a311-ea028c0300f6)
-Su O2 100000 ir 1000000
-![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/1324ecf9-2c17-40e6-95bd-57bf28d8f4d5)
-Su O3 100000 ir 1000000
-![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/8d920694-cce9-4958-a3c1-59f0c2244686)
-
 
 
