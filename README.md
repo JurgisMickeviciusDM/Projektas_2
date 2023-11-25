@@ -29,6 +29,9 @@
 |    <br>Bendras               	|    <br>0,0422 	|    <br>0,4543	|    <br>5,3845 	|    <br>53,133	|    <br> 570,3879   	|
 
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/6cc20ff5-5d87-4a8e-8129-597ef7ba2489)
+
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/9d26fff2-98fa-4bcb-b7fe-e129f1204c2c)
+
 # Išvada DT vektorius klasė ir struktūra
 Atlikus testavimus su vektorius DT ir vektorius DT klasė studentas, buvo pastebėta, kad su klase vektorius DT žymiai paspartino rūšiavimą ir įrašymą į failus, greitis padidėjo beveik dvigubai, kaip pvz 100000 su vektorius DT 114,5434s, tuo tarpu vektorius DT klasė 53,133.
 
