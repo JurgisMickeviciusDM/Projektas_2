@@ -1,5 +1,5 @@
 # PROJEKTAS_2(Senos užduoties aprašas pateikta žemiau)
-
+# V1.1
 # Vektorius Naudojo DT strategija  
 |          Testavimas          	|      1000      	|     10000     	|     100000    	|     1000000     	|      10000000      	|
 |:----------------------------:	|:--------------:	|:-------------:	|:-------------:	|:---------------:	|:------------------:	|
