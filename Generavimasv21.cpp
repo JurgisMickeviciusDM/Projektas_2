@@ -1,6 +1,6 @@
 #include "Generavimasv21.h"
 #include "Studentasv21.h"
-#include "Skaiciavimasv21.h"
+
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
@@ -273,10 +273,10 @@ void RusiuotiV(std::vector<Studentas>& studentai, std::vector<Studentas>& vargsi
 
 void saveToFileV(const std::vector<Studentas>& studentasList, const std::string& filename, const std::string& choice1) {
     std::vector<Studentas> sortedStudents = studentasList; 
-    auto startSort = std::chrono::high_resolution_clock::now();
+    auto startSort = std::chrono::high_resolution_clock::now(); //isaugome studentus  pagal kriteriiju choice 1
 
     
-    if (choice1 == "vardus") {
+    if (choice1 == "vardus") { 
         std::sort(sortedStudents.begin(), sortedStudents.end(), [](const Studentas& a, const Studentas& b) {
             return a.getVardas() < b.getVardas();
             });
@@ -296,7 +296,7 @@ void saveToFileV(const std::vector<Studentas>& studentasList, const std::string&
     std::chrono::duration<double> elapsedSort = finishSort - startSort;
 
     
-    extern double g; 
+    extern double g; // tam kad graziai rusiuotu vidurkius jie naudojami kaip globalûs kintamieji,
     extern double b; 
     g += elapsedSort.count();
     std::cout << "Rusiavimas: " << elapsedSort.count() << " sekundes." << std::endl;
@@ -307,10 +307,9 @@ void saveToFileV(const std::vector<Studentas>& studentasList, const std::string&
         return;
     }
 
-    // Output headers
     out << std::left << std::setw(20) << "Vardas" << std::setw(20) << "Pavarde" << std::setw(15) << "Galutinis(Vid.)" << std::endl;
 
-    // Write the sorted list
+ 
     for (const auto& studentas : sortedStudents) {
         out << std::setw(20) << studentas.getVardas() << std::setw(20) << studentas.getPavarde()
             << std::setw(15) << std::fixed << std::setprecision(2) << studentas.getVidurkis() << std::endl;

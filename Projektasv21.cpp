@@ -1,6 +1,4 @@
-﻿
-#include "studentasv21.h"
-#include "Skaiciavimasv21.h"
+﻿#include "studentasv21.h"
 #include <fstream>
 #include <chrono>
 #include <iostream>
@@ -49,7 +47,7 @@ int main() {
         if (inputMethod == "auto") {
 
 
-            std::vector<int> studentuSkaiciai = { 1000, 10000, 100000, 1000000 };
+            std::vector<int> studentuSkaiciai = {  10000000 };
             for (int n : studentuSkaiciai) {
                 Generavimas(n);
             }

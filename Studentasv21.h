@@ -18,7 +18,7 @@ private:
     double egzaminas_ = 0.00;
 
 public:
-    // Konstruktorius
+    
     Studentas() = default;
     Studentas(const std::string& vardas, const std::string& pavarde,
         const std::vector<int>& pazymiaiV, double egzaminas)
@@ -26,7 +26,7 @@ public:
         
     }
 
-    // Getteriai
+    // Geteriai
     std::string getVardas() const { return vardas_; }
     std::string getPavarde() const { return pavarde_; }
     std::vector<int> getPazymiaiV() const { return pazymiaiV_; }
@@ -35,7 +35,7 @@ public:
     double getMediana() const { return mediana_; }
     double getEgzaminas() const { return egzaminas_; }
 
-    // Setteriai
+    // Seteriai
     void setVardas(const std::string& vardas) { vardas_ = vardas; }
     void setPavarde(const std::string& pavarde) { pavarde_ = pavarde; }
     void setPazymiaiV(const std::vector<int>& pazymiaiV) { pazymiaiV_ = pazymiaiV; }
@@ -81,6 +81,10 @@ public:
         }
     }
 
+    ~Studentas() {//destruktorius 
+    
+   
+    }
 
     
 
