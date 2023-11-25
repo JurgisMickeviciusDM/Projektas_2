@@ -35,6 +35,31 @@
 # Išvada DT vektorius klasė ir struktūra
 Atlikus testavimus su vektorius DT ir vektorius DT klasė studentas, buvo pastebėta, kad su klase vektorius DT žymiai paspartino rūšiavimą ir įrašymą į failus, greitis padidėjo beveik dvigubai, kaip pvz 100000 su vektorius DT 114,5434s, tuo tarpu vektorius DT klasė 53,133.
 
+# Vektorius su strategijomis O1, O2, O3: 
+|          Testavimas          	|      o1_100000      	|     o2_100000     	|     o3_100000   	|      o1_1000000      	|     o2_1000000     	|     o3_1000000  |
+|:----------------------------:	|:--------------:      	|:-------------:	   |:-------------:	   |:---------------:	   |:------------------:	|:------------------: |
+|    <br>Failo nuskaitymas     	|    <br>2,6954   	      |    <br>2,7854 	   |    <br>2,6875 	   |    <br>24,745 	   |    <br>28,7843    	|   <br>26,0377  |
+|    <br>Rušiavimas            	|    <br>0,2871 	      |    <br>0,2451	   |    <br>0,2015 	   |    <br>2,7884  	   |    <br>2,2874      |<br>2,2356   	|
+|    <br>Sortinimas            	|    <br>0,1032  	      |    <br>0,0822 	   |    <br>0,0829	   |    <br>1,1407	   |    <br>0,899    	|<br>0,9497    	|
+|    <br>Įrašymas į vargšiukus 	|    <br>0,3894         	|    <br>0,4587	   |    <br>0,3254	   |    <br>3,8991  	   |    <br>3,7810   	|<br>3,736   	|
+|    <br>Sortinimas            	|    <br>0,3995       	|    <br>0,3874 	   |    <br>0,2971  	   |    <br>3,1045 	   |    <br>3,201   	|<br>3,1945    	|
+|    <br>Įrašymas į kietiakus  	|    <br>1,087  	      |    <br>1,075 	   |    <br>1,0056    	|    <br>10,7451 	   |    <br>9,6933    	|<br>9,6641    	|
+|    <br>Bendras               	|    <br>4,9616 	      |    <br>5,0338 	   |    <br>4,6 	   |    <br>46,4228 	   |    <br>46,3586    	|<br>43,582  	|
+
+|          Failas          	|      Failo dydis exe      	|   
+|:----------------------------:	|:--------------:      	|
+|    <br>Failo dydis "DEBUG"  	  |  <br> 309KB  |
+
+# Su O1 100000 ir 1000000
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/ed527970-5d7c-47fa-bdf8-30bbfaa72a58)
+
+# Su O2 100000 ir 1000000
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/1ce8a23d-6df2-4626-a223-08b5d8fe8777)
+
+# Su O3 100000 ir 1000000
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/9c73d51b-c2f1-493c-b853-4323a68bdf6e)
+
+
 # Vektorius su klase ir strategijomis O1, O2, O3: 
 |          Testavimas          	|      o1_100000      	|     o2_100000     	|     o3_100000   	|      o1_1000000      	|     o2_1000000     	|     o3_1000000  |
 |:----------------------------:	|:--------------:      	|:-------------:	   |:-------------:	   |:---------------:	   |:------------------:	|:------------------: |
@@ -49,7 +74,7 @@ Atlikus testavimus su vektorius DT ir vektorius DT klasė studentas, buvo pasteb
 |          Failas          	|      Failo dydis exe      	|   
 |:----------------------------:	|:--------------:      	|
 |    <br>Failo dydis "DEBUG"  	  |  <br> 533KB  |
-|    <br>Failo dydis "Realease"  	  |  <br> 115KB  |
+
 
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/401e9f8f-5e1c-4d4f-b20d-ba6d993d244b)
 Debug failo dydis 
