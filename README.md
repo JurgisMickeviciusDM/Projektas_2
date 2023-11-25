@@ -33,18 +33,17 @@
 # Išvada DT vektorius klasė ir struktūra
 Atlikus testavimus su vektorius DT ir vektorius DT klasė studentas, buvo pastebėta, kad su klase vektorius DT žymiai paspartino rūšiavimą ir įrašymą į failus, greitis padidėjo beveik dvigubai, kaip pvz 100000 su vektorius DT 114,5434s, tuo tarpu vektorius DT klasė 53,133.
 
-# laikai, isvados !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!??????????????????????????
 
 # Vektorius su strategijomis O1, O2, O3: 
 |          Testavimas          	|      o1_100000      	|     o2_100000     	|     o3_100000   	|      o1_1000000      	|     o2_1000000     	|     o3_1000000  |
 |:----------------------------:	|:--------------:      	|:-------------:	   |:-------------:	   |:---------------:	   |:------------------:	|:------------------: |
-|    <br>Failo nuskaitymas     	|    <br> 	      |    <br>2, 	   |    <br>2, 	   |    <br>24745 	   |    <br>28,7843    	|   <br>  |
-|    <br>Rušiavimas            	|    <br> 	      |    <br>0,	   |    <br>0, 	   |    <br>2,7884  	   |    <br>2,2874      |<br>2,   	|
-|    <br>Sortinimas            	|    <br> 	      |    <br>0, 	   |    <br>0,	   |    <br>1,	   |    <br>0,899    	|<br>0,    	|
-|    <br>Įrašymas į vargšiukus 	|    <br>        	|    <br>0,	   |    <br>0,	   |    <br>3,8991  	   |    <br>3,   	|<br>3,736   	|
-|    <br>Sortinimas            	|    <br>      	|    <br>0, 	   |    <br>0,  	   |    <br>3,1045 	   |    <br>3,   	|<br>3,    	|
-|    <br>Įrašymas į kietiakus  	|    <br> 	      |    <br>1, 	   |    <br>1,    	|    <br>10,7451 	   |    <br>9,    	|<br>9,    	|
-|    <br>Bendras               	|    <br> 	      |    <br>5, 	   |    <br>46 	   |    <br>46,4228 	   |    <br>46,    	|<br>43,  	|
+|    <br>Failo nuskaitymas     	|    <br>2,4561 	      |    <br>2,3478 	   |    <br>2,3615 	   |    <br>22,941	   |    <br>21,9641   	| <br>22,6164  |
+|    <br>Rušiavimas            	|    <br>0,3841 	      |    <br>0,3948	   |    <br>0,3415 	   |    <br>3,5441  	   |    <br>3,9145      |<br>3,2365   	|
+|    <br>Sortinimas            	|    <br>0,2841 	      |    <br>0,2654 	   |    <br>0,2941	   |    <br>3,7512	   |    <br>3,9841    	|<br>3,6462    	|
+|    <br>Įrašymas į vargšiukus 	|    <br>0,6465        	|    <br>0,6891	   |    <br>0,6156	   |    <br>6,9402  	   |    <br>6,9841   	|<br>6,8560   	|
+|    <br>Sortinimas            	|    <br>0,4912      	|    <br>0,4648	   |    <br>0,4925  	   |    <br>8,1973 	   |    <br>5,9414   	|<br>5,7951    	|
+|    <br>Įrašymas į kietiakus  	|    <br>1,0097 	      |    <br>0,9761	   |    <br>0,9364    	|    <br>14,3450	   |    <br>10,6910    	|<br>10,1057    	|
+|    <br>Bendras               	|    <br>5,2717 	      |    <br>5,138 	   |    <br>5,0416 	   |    <br>59,7188 	   |    <br>49,5647    	|<br>49,0194  	|
 
 |          Failas          	|      Failo dydis exe      	|   
 |:----------------------------:	|:--------------:      	|
@@ -61,7 +60,8 @@ Atlikus testavimus su vektorius DT ir vektorius DT klasė studentas, buvo pasteb
 
 # Su O3 100000 ir 1000000
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/9c73d51b-c2f1-493c-b853-4323a68bdf6e)
-
+# Išvada O1, O2, O3
+Atlikus matavimus su skirtingais flag'ais O1, O2, O3 ir paskaičiavus 5 paleidimų vidurkius gavome vidurkius. Galmie pastebėti, kad greičiausiai dirbo O3. Vertinannt greitį galime daryti išvadas, kad su vektoriumi vidutiniškai 1,48% greičiau O3 veikė negu O2 ir O1. 
 
 # Vektorius su klase ir strategijomis O1, O2, O3: 
 |          Testavimas          	|      o1_100000      	|     o2_100000     	|     o3_100000   	|      o1_1000000      	|     o2_1000000     	|     o3_1000000  |
@@ -88,7 +88,10 @@ Atlikus testavimus su vektorius DT ir vektorius DT klasė studentas, buvo pasteb
 # Su O3 100000 ir 1000000
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/8d920694-cce9-4958-a3c1-59f0c2244686)
 # Išvada O1, O2, O3
-Atlikus optimizavimą su flag'ais klasėje pastebėta, kad O1 ir O2 laikas atlikimo yra lygiai tas pats, tačiau su O3 greitis padidėja apie 6.5%, o tai yra reikšmingas laiko sumažėjimas, nes kuo didesnis failas, duomenų kuo daugiau, tuo greičiua vyks darbas su duomenimis, failu.
+Atlikus 5 matavimus ir išvedus vidurkį matavimų su flag'ais klasėje pastebėta, kad O1 ir O2 laikas atlikimo yra lygiai tas pats, tačiau su O3 greitis padidėja apie 6.5%, o tai yra reikšmingas laiko sumažėjimas, nes kuo didesnis failas, duomenų kuo daugiau, tuo greičiua vyks darbas su duomenimis, failu.
+
+# Apibendrinimas klasės ir struktūros O1, O2, O3
+Atlikus matavimus ir išvedus vidurkius buvo pastebėta, kad su kalse programa veikia greičiausiai, skirtumas taikant O3 flag'ą skiriasi nedaug, bet vertinant didžiausią failą matavime 1000000, pastebime, kad sparta išauga 11,1%, o tai naudotojui yra svarbu, nes sutaupo laiko. 
 
 # Aprašas pirmos užduoties
 
