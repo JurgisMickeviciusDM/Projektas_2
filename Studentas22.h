@@ -6,6 +6,7 @@
 #include <list>
 #include <numeric>
 #include <algorithm>
+#include <iostream> 
 
 class Studentas { //klase 
 private: //privatus vardas, pavarde, pazymiai egzaminas
@@ -19,14 +20,43 @@ private: //privatus vardas, pavarde, pazymiai egzaminas
 
 public:// laisvi, neprivatus
 
-    Studentas() = default;   // blogai     dinamiskai        random  dinamiskai ir su didelaiis masyvais 
-    //paleidinejimas ant realease butinai ir ma
-    // template naudoti 
+    Studentas() : vardas_(""), pavarde_(""), vidurkis_(0.0), mediana_(0.0), egzaminas_(0.0) {};
+
+       
     Studentas(const std::string& vardas, const std::string& pavarde,
         const std::vector<int>& pazymiaiV, double egzaminas)
         : vardas_(vardas), pavarde_(pavarde), pazymiaiV_(pazymiaiV), egzaminas_(egzaminas) {
         //konstruktorius ir parametrai viduje, kaip vardas pavarde pazymiai
         //jis priskiria reiksmes i privatiems kalses kintamiesiems 
+        calculateVidurkis();
+        calculateMediana();
+    }
+
+    Studentas(const Studentas& other) // copy konstrukrtorius
+        : vardas_(other.vardas_), pavarde_(other.pavarde_), pazymiaiV_(other.pazymiaiV_),
+        pazymiai_(other.pazymiai_), vidurkis_(other.vidurkis_), mediana_(other.mediana_),
+        egzaminas_(other.egzaminas_) {
+    }
+
+
+    // Copy assignment operatorius
+    Studentas& operator=(const Studentas& other) {
+        if (this != &other) {
+            vardas_ = other.vardas_;
+            pavarde_ = other.pavarde_;
+            pazymiaiV_ = other.pazymiaiV_;
+            pazymiai_ = other.pazymiai_;
+            vidurkis_ = other.vidurkis_;
+            mediana_ = other.mediana_;
+            egzaminas_ = other.egzaminas_;
+        }
+        return *this;
+    }
+
+    ~Studentas() { //destruktorius
+        pazymiaiV_.clear();
+        pazymiai_.clear();
+
     }
 
     // Geteriai gauti reiksmes 
@@ -83,11 +113,42 @@ public:// laisvi, neprivatus
             }
         }
     }
+    //nenaudojami operatoriiai lyginimui 
+    bool operator==(const Studentas& other) const {
+        return vardas_ == other.vardas_ && pavarde_ == other.pavarde_;
+    }
 
-    ~Studentas() {//destruktorius  tuscias, nes list ir vector automatiskai issivalo
-        pazymiaiV_.clear();
-        pazymiai_.clear();
+    bool operator!=(const Studentas& other) const {
+        return !(*this == other);
+    }
 
+    //ivesties ooperatorius
+    friend std::istream& operator>>(std::istream& is, Studentas& studentas) {
+        is >> studentas.vardas_ >> studentas.pavarde_ >> studentas.egzaminas_;
+
+        int grade;
+        while (is >> grade) {
+            if (grade >= 1 && grade <= 10) { 
+                studentas.pazymiaiV_.push_back(grade);
+            }
+            else {
+                std::cerr << "Neteisingas paşymys: " << grade << ". Paşymys turi bûti tarp 1 ir 10." << std::endl;
+                break; // Nutraukia ávedima
+            }
+        }
+
+        studentas.calculateVidurkis();
+        studentas.calculateMediana();
+
+        return is;
+    }
+
+    friend std::ostream& operator<<(std::ostream& os, const Studentas& studentas) {
+        
+        os << "Vardas: " << studentas.vardas_ << "\nPavarde: " << studentas.pavarde_
+            << "\nEgzaminas: " << studentas.egzaminas_ << "\nVidurkis: " << studentas.vidurkis_
+            << "\nMediana: " << studentas.mediana_ << '\n';
+        return os;
     }
 
 };
