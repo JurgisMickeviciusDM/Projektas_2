@@ -186,7 +186,7 @@ int main() {
                 return a.getPavarde() < b.getPavarde();
                 });
 
-            cout << fixed << setprecision(2); // 2 skaičiai po kablelio
+            cout << fixed << setprecision(2);
             cout << setw(20) << left << "Pavarde"
                 << setw(20) << left << "Vardas";
 
@@ -197,6 +197,21 @@ int main() {
                 cout << setw(20) << left << "Galutinis(med.)";
             }
             cout << endl;
+            cout << string(80, '_') << endl;
+
+            for (const Studentas& s : studentai) {
+                cout << setw(20) << left << s.getPavarde()
+                    << setw(20) << left << s.getVardas();
+                if (choice == "vidurkis" || choice == "abu") {
+                    cout << setw(20) << left << s.getVidurkis();
+                }
+                if (choice == "mediana" || choice == "abu") {
+                    cout << setw(20) << left << s.getMediana();
+                }
+                cout << endl;
+            }
+
+
             cout << string(80, '_') << endl;
 
             for (const Studentas& s : studentai) {

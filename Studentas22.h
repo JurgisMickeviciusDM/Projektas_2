@@ -89,31 +89,58 @@ public:// laisvi, neprivatus
         }
         int pazymiuSk;
         // Pažymių skaičiaus įvedimas su patikrinimu
-        std::cout << "Iveskite pazymiu skaiciu: ";
-        while (!(is >> pazymiuSk) || pazymiuSk < 0) {
-            is.clear();
-            is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Neteisinga ivestis. Iveskite pazymiu skaiciu dar karta: ";
-        }
+        std::string generuotiAtsitiktinai;
+        std::cout << "Ar norite generuoti pazymius atsitiktinai? (taip/ne): ";
+        is >> generuotiAtsitiktinai;
 
-        studentas.pazymiaiV_.clear();
-        for (int i = 0; i < pazymiuSk; ++i) {
-            int pazymys;
-            std::cout << "Iveskite " << i + 1 << "-aji pazymi: ";
-            while (!(is >> pazymys) || pazymys < 1 || pazymys > 10) {
+        // Transform the input to lowercase
+        std::transform(generuotiAtsitiktinai.begin(), generuotiAtsitiktinai.end(), generuotiAtsitiktinai.begin(),
+            [](unsigned char c) { return std::tolower(c); });
+
+        if (generuotiAtsitiktinai == "taip") {
+            std::cout << "Iveskite pazymiu skaiciu: ";
+            int pazymiuSk;
+            while (!(is >> pazymiuSk) || pazymiuSk < 0) {
                 is.clear();
                 is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                std::cout << "Neteisinga ivestis. Iveskite " << i + 1 << "-aji pazymi dar karta (1-10): ";
+                std::cout << "Neteisinga ivestis. Iveskite pazymiu skaiciu dar karta: ";
             }
-            studentas.pazymiaiV_.push_back(pazymys);
-        }
 
-        // Egzamino rezultato įvedimas su patikrinimu
-        std::cout << "Iveskite egzamino rezultata: ";
-        while (!(is >> studentas.egzaminas_) || studentas.egzaminas_ < 1 || studentas.egzaminas_ > 10) {
-            is.clear();
-            is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cout << "Neteisinga ivestis. Iveskite egzamino rezultata dar karta (1-10): ";
+            studentas.pazymiaiV_.clear();
+            for (int i = 0; i < pazymiuSk; ++i) {
+                studentas.pazymiaiV_.push_back(rand() % 10 + 1);
+            }
+
+            studentas.egzaminas_ = rand() % 10 + 1;
+        }
+        else {
+
+            std::cout << "Iveskite pazymiu skaiciu: ";
+            while (!(is >> pazymiuSk) || pazymiuSk < 0) {
+                is.clear();
+                is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Neteisinga ivestis. Iveskite pazymiu skaiciu dar karta: ";
+            }
+
+            studentas.pazymiaiV_.clear();
+            for (int i = 0; i < pazymiuSk; ++i) {
+                int pazymys;
+                std::cout << "Iveskite " << i + 1 << "-aji pazymi: ";
+                while (!(is >> pazymys) || pazymys < 1 || pazymys > 10) {
+                    is.clear();
+                    is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    std::cout << "Neteisinga ivestis. Iveskite " << i + 1 << "-aji pazymi dar karta (1-10): ";
+                }
+                studentas.pazymiaiV_.push_back(pazymys);
+            }
+
+            // Egzamino rezultato įvedimas su patikrinimu
+            std::cout << "Iveskite egzamino rezultata: ";
+            while (!(is >> studentas.egzaminas_) || studentas.egzaminas_ < 1 || studentas.egzaminas_ > 10) {
+                is.clear();
+                is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Neteisinga ivestis. Iveskite egzamino rezultata dar karta (1-10): ";
+            }
         }
 
         studentas.calculateVidurkis();
