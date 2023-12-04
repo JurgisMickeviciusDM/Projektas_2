@@ -60,18 +60,24 @@ public:// laisvi, neprivatus
     }
 
 
-    //inpur and output operators
+    //input and output operators
     friend std::istream& operator>>(std::istream& is, Studentas& studentas) {
-
+        std::cout << "Iveskite varda: ";
+        is >> studentas.vardas_;
+        std::cout << "Iveskite pavarde: ";
+        is >> studentas.pavarde_;
+       
         return is;
     }
+
 
     friend std::ostream& operator<<(std::ostream& os, const Studentas& studentas) {
         os << std::left << std::setw(20) << studentas.vardas_
             << std::setw(20) << studentas.pavarde_
-            << std::fixed << std::setprecision(2) << 
-            std::setw(10) << studentas.vidurkis_ << '\n';
-        
+            << std::fixed << std::setprecision(2)
+            << std::setw(10) << studentas.vidurkis_
+            << std::setw(10) << studentas.mediana_
+            << std::setw(10) << studentas.egzaminas_ << '\n';
         return os;
     }
 
