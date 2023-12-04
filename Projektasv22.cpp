@@ -169,154 +169,45 @@ int main() {
             }
 
             vector<Studentas> studentai;
+            studentai.reserve(skaicius); // Rezervuojama vietą vektoriaus dydžiui
+
             for (int j = 0; j < skaicius; j++) {
                 Studentas s;
-                string vardas, pavarde;
-                vector<int> pazymiaiV;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-                // Vardo ir pavardės įvedimas
-                do {
-                    cout << "Iveskite " << j + 1 << "-ojo studento/studentes varda: ";
-                    cin >> vardas;
-                } while (!all_of(vardas.begin(), vardas.end(), ::isalpha));
-
-                do {
-                    cout << "Iveskite " << j + 1 << "-ojo studento/studentes pavarde: ";
-                    cin >> pavarde;
-                } while (!all_of(pavarde.begin(), pavarde.end(), ::isalpha));
-
-                s.setVardas(vardas);
-                s.setPavarde(pavarde);
-
-                bool validChoice = false;
-                string autoGenChoice;
-
-                while (!validChoice) {
-                    cout << "Ar norite, kad " << j + 1 << "-ojo studento pazymiai butu generuojami atsitiktinai? (taip/ne): ";
-                    cin >> autoGenChoice;
-
-                    if (autoGenChoice == "taip") {
-                        int pazymiuKiekis = rand() % 10 + 1;
-                        for (int k = 0; k < pazymiuKiekis; k++) {
-                            int pazymys = rand() % 10 + 1;
-                            pazymiaiV.push_back(pazymys);
-                        }
-                        validChoice = true;
-                    }
-                    else if (autoGenChoice == "ne") {
-                        validChoice = true;
-                    }
-                    else {
-                        cout << "Neteisinga pasirinkimas! Bandykite dar karta." << endl;
-                    }
-                }
-
-                bool klaida;
-                do {
-                    klaida = false;
-
-                    if (autoGenChoice == "ne") {
-                        cout << "Iveskite " << j + 1 << "-ojo studento pazymius (desimtbale sistema) ir spauskite ENTER 2x, kad baigtumete ivedima:" << endl;
-                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                        string input;
-                        while (getline(cin, input) && !input.empty()) {
-                            try {
-                                int pazymys = stoi(input);
-                                if (pazymys >= 1 && pazymys <= 10) {
-                                    pazymiaiV.push_back(pazymys);
-                                }
-                            }
-                            catch (const invalid_argument&) {
-                                cout << "Neteisinga ivesta. Prasome ivesti pazymi nuo 1 iki 10: ";
-                                klaida = true;
-                                break;
-                            }
-                        }
-                    }
-                } while (klaida);
-
-                s.setPazymiaiV(pazymiaiV);
-
-                int egzaminas;
-                if (autoGenChoice == "taip") {
-                    egzaminas = rand() % 10 + 1;
-                }
-                else {
-                    bool validEgzaminas = false;
-                    while (!validEgzaminas) {
-                        cout << "Iveskite " << j + 1 << "-ojo studento egzamino rezultata nuo 1 iki 10: ";
-                        if (cin >> egzaminas) {
-                            if (egzaminas >= 1 && egzaminas <= 10) {
-                                validEgzaminas = true;
-                            }
-                        }
-                        else {
-                            cout << "Neteisinga ivesta. Prasome ivesti egzamino pazymi nuo 1 iki 10: ";
-                            cin.clear();
-                            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                        }
-                    }
-                }
-                s.setEgzaminas(egzaminas);
-
-                s.calculateVidurkis();
-                s.calculateMediana();
-
-
+                cout << "Iveskite " << j + 1 << "-ojo studento/studentes duomenis." << endl;
+                cin >> s; // Naudokite overloadintą operatorių >> studento duomenims gauti
                 studentai.push_back(s);
-                cout << j + 1 << "-ojo studento objekto adresas atmintyje: " << &s << endl;
             }
 
-            auto compareFromFile = [](const Studentas& a, const Studentas& b) {
-                int numA = stoi(a.getPavarde().substr(7));
-                int numB = stoi(b.getPavarde().substr(7));
-                return numA < numB;
-                };
-
-            if (inputMethod == "duomenys") {
-                sort(studentai.begin(), studentai.end(), compareFromFile);
-            }
-            else {
-                sort(studentai.begin(), studentai.end(), [](const Studentas& a, const Studentas& b) {
-                    return a.getPavarde() < b.getPavarde();
-                    });
-            }
+            // Studentų sąrašo rūšiavimas pagal pavardę
+            sort(studentai.begin(), studentai.end(), [](const Studentas& a, const Studentas& b) {
+                return a.getPavarde() < b.getPavarde();
+                });
 
             cout << fixed << setprecision(2); // 2 skaičiai po kablelio
-            if (inputMethod == "duomenys" || inputMethod == "ranka") {
-                cout << setw(20) << left << "Pavarde"
-                    << setw(20) << left << "Vardas";
+            cout << setw(20) << left << "Pavarde"
+                << setw(20) << left << "Vardas";
 
-                if (choice == "vidurkis" || choice == "abu") {
-                    cout << setw(20) << left << "Galutinis(vid.)";
-                }
-                if (choice == "mediana" || choice == "abu") {
-                    cout << setw(20) << left << "Galutinis(med.)";
-                }
-
-                cout << endl;
-                cout << "________________________________________________________________________________________" << endl;
+            if (choice == "vidurkis" || choice == "abu") {
+                cout << setw(20) << left << "Galutinis(vid.)";
             }
-
-            std::ostringstream output;
-            output << fixed << setprecision(2);
+            if (choice == "mediana" || choice == "abu") {
+                cout << setw(20) << left << "Galutinis(med.)";
+            }
+            cout << endl;
+            cout << string(80, '_') << endl;
 
             for (const Studentas& s : studentai) {
-                output << setw(20) << left << s.getPavarde()
-                    << setw(20) << left << s.getVardas();
-                if (choice == "vidurkis" || choice == "abu") {
-                    output << setw(20) << left << s.getVidurkis();
-                }
-                if (choice == "mediana" || choice == "abu") {
-                    output << setw(20) << left << s.getMediana();
-                }
-
-                output << endl;
+                cout << setw(20) << left << s.getPavarde()
+                    << setw(20) << left << s.getVardas()
+                    << setw(20) << left << s.getVidurkis()
+                    << setw(20) << left << s.getMediana()
+                    << endl;
             }
-            cout << output.str();
-
         }
-
+        
     }
     else if (pasirinkimass == "l") {
         int skaicius = 0;
@@ -538,7 +429,7 @@ int main() {
                 studentai.push_back(s);
             }
 
-            // Studentu saraso rikiavimas ir spausdinimas
+            // Studentu saraso rykiavimas ir spausdinimas
             if (inputMethod == "duomenys") {
                 sort(studentai.begin(), studentai.end(), [](const Studentas& a, const Studentas& b) {
                     return a.getPavarde() < b.getPavarde();

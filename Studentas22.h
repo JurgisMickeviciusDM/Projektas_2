@@ -7,6 +7,8 @@
 #include <numeric>
 #include <algorithm>
 #include <iostream> 
+#include <iomanip>
+
 
 class Studentas { //klase 
 private: //privatus vardas, pavarde, pazymiai egzaminas
@@ -62,13 +64,64 @@ public:// laisvi, neprivatus
 
     //input and output operators
     friend std::istream& operator>>(std::istream& is, Studentas& studentas) {
+        // Vardo įvedimas su patikrinimu
         std::cout << "Iveskite varda: ";
-        is >> studentas.vardas_;
+        while (true) {
+            is >> studentas.vardas_;
+            if (std::all_of(studentas.vardas_.begin(), studentas.vardas_.end(), ::isalpha)) {
+                break;
+            }
+            else {
+                std::cout << "Neteisinga ivestis. Iveskite varda dar karta: ";
+            }
+        }
+
+        // Pavardės įvedimas su patikrinimu
         std::cout << "Iveskite pavarde: ";
-        is >> studentas.pavarde_;
-       
+        while (true) {
+            is >> studentas.pavarde_;
+            if (std::all_of(studentas.pavarde_.begin(), studentas.pavarde_.end(), ::isalpha)) {
+                break;
+            }
+            else {
+                std::cout << "Neteisinga ivestis. Iveskite pavarde dar karta: ";
+            }
+        }
+        int pazymiuSk;
+        // Pažymių skaičiaus įvedimas su patikrinimu
+        std::cout << "Iveskite pazymiu skaiciu: ";
+        while (!(is >> pazymiuSk) || pazymiuSk < 0) {
+            is.clear();
+            is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Neteisinga ivestis. Iveskite pazymiu skaiciu dar karta: ";
+        }
+
+        studentas.pazymiaiV_.clear();
+        for (int i = 0; i < pazymiuSk; ++i) {
+            int pazymys;
+            std::cout << "Iveskite " << i + 1 << "-aji pazymi: ";
+            while (!(is >> pazymys) || pazymys < 1 || pazymys > 10) {
+                is.clear();
+                is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Neteisinga ivestis. Iveskite " << i + 1 << "-aji pazymi dar karta (1-10): ";
+            }
+            studentas.pazymiaiV_.push_back(pazymys);
+        }
+
+        // Egzamino rezultato įvedimas su patikrinimu
+        std::cout << "Iveskite egzamino rezultata: ";
+        while (!(is >> studentas.egzaminas_) || studentas.egzaminas_ < 1 || studentas.egzaminas_ > 10) {
+            is.clear();
+            is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "Neteisinga ivestis. Iveskite egzamino rezultata dar karta (1-10): ";
+        }
+
+        studentas.calculateVidurkis();
+        studentas.calculateMediana();
+
         return is;
     }
+
 
 
     friend std::ostream& operator<<(std::ostream& os, const Studentas& studentas) {
