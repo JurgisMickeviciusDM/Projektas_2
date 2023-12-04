@@ -160,15 +160,30 @@ public:// laisvi, neprivatus
     }
 
 
-
-    friend std::ostream& operator<<(std::ostream& os, const Studentas& studentas) {
+    
+  /*  friend std::ostream& operator<<(std::ostream& os, const Studentas& studentas) {
         os << std::left << std::setw(20) << studentas.vardas_
             << std::setw(20) << studentas.pavarde_
             << std::fixed << std::setprecision(2)
             << std::setw(10) << studentas.vidurkis_
-            << std::setw(10) << studentas.mediana_
-            << std::setw(10) << studentas.egzaminas_ << '\n';
+           
+  
         return os;
+    }*/
+
+    friend void printStudent(std::ostream& os, const Studentas& studentas, const std::string& choice) {
+        os << std::left << std::setw(20) << studentas.vardas_
+            << std::setw(20) << studentas.pavarde_;
+
+        if (choice == "vidurkis" || choice == "abu") {
+            os << std::fixed << std::setprecision(2)
+                << std::setw(10) << studentas.vidurkis_;
+        }
+        if (choice == "mediana" || choice == "abu") {
+            os << std::fixed << std::setprecision(2)
+                << std::setw(10) << studentas.mediana_;
+        }
+        os << std::endl;
     }
 
 

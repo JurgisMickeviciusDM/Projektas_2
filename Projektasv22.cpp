@@ -36,7 +36,7 @@ int main() {
     int skaicius = 0;
     vector<Studentas> studentai;
 
-        if (inputMethod == "auto") {
+        if (inputMethod == "auto") { 
 
 
             std::vector<int> studentuSkaiciai = { 1000, 10000, 100000 };
@@ -65,26 +65,24 @@ int main() {
         }
 
         else if (inputMethod == "duomenys") {
-            ifstream file; // Sukuriamas įvesties srautas failo skaitymui.
+            ifstream file;
             string filename = "studentai1000.txt";
 
             do {
                 file.open(filename);
                 if (!file) {
                     cerr << "Nepavyko atidaryti failo '" << filename << "'. Prasome ivesti nauja failo pavadinima: ";
-                    cin >> filename;// naujas pavadinimas
+                    cin >> filename;
                 }
-            } while (!file);//kol atidarys, tai yra nebus fialo
+            } while (!file);
 
-
-            // readina headeri i eilute
             string headerLine;
-            getline(file, headerLine); // // Nuskaitome pirmą failo eilutę - antraštinę eilutę.
-            istringstream headerStream(headerLine);   // Sukuriamas srautas, PADES skaityti antraštinės eilutės duomenis.
-            string word;//kintamasisi laikomas zodis atskirai
-            vector<string> headers;//verktor string tipo ir pavadinimas 
-            while (headerStream >> word) {  // Skaidome antraštinę eilutę į atskirus žodžius ir dedame juos į 'headers' vektorių.
-                headers.push_back(word); //zodis pridedamas prie header naudojant psuh back metoda, kai konteineris +1 i pabaiga 
+            getline(file, headerLine);
+            istringstream headerStream(headerLine);
+            string word;
+            vector<string> headers;
+            while (headerStream >> word) {
+                headers.push_back(word);
             }
 
             int ndCount = static_cast<int>(headers.size()) - 3;
@@ -93,20 +91,15 @@ int main() {
             string vardas, pavarde;
             while (file >> vardas >> pavarde) {
                 Studentas s;
-                s.setVardas(vardas);  //seteriai 
-                s.setPavarde(pavarde); //seteriai nsutatome varda ir pavarde 
+                s.setVardas(vardas);
+                s.setPavarde(pavarde);
 
                 vector<int> pazymiaiV;
                 string gradeStr;
                 for (int i = 0; i < ndCount; i++) {
                     file >> gradeStr;
-                    try {
-                        int grade = stoi(gradeStr);
-                        pazymiaiV.push_back(grade);
-                    }
-                    catch (const std::invalid_argument&) {
-                        continue;   //jei konvertavimas nepavyksta tai su catch pagauname ir tesiame su kitais pazymiais darba
-                        // Ignoruojame netinkamą pažymį, bet skaitymą tęsiame toliau
+                    if (isdigit(gradeStr[0])) {
+                        pazymiaiV.push_back(stoi(gradeStr));
                     }
                 }
                 s.setPazymiaiV(pazymiaiV);
@@ -115,43 +108,32 @@ int main() {
                 file >> egzaminas;
                 s.setEgzaminas(egzaminas);
 
-
                 s.calculateVidurkis();
                 s.calculateMediana();
 
-
                 studentai.push_back(s);
             }
+            file.close();
 
-            file.close();   // isvedimas i ekrana 
-
-            cout << setw(15) << left << "Vardas" // varda spausdins 
-                << setw(15) << left << "Pavarde"; //pavarde 
-
+            // Print headers
+            cout << setw(20) << left << "Pavarde"
+                << setw(20) << left << "Vardas";
             if (choice == "vidurkis" || choice == "abu") {
-                cout << setw(15) << left << "Vidurkis";   //vidurki 
+                cout << setw(2) << left << "Galutinis(vid.)";
             }
             if (choice == "mediana" || choice == "abu") {
-                cout << setw(15) << left << "Mediana"; //mediana
+                cout << setw(2) << left << "Galutinis(med.)";
             }
             cout << endl;
-            cout << string(60, '-') << endl;
 
-
-
-            for (const auto& studentas : studentai) { //per visus studentus, nuoroda i studentas yra  objekta, naudojame konstanta, kad nekistu data 
-                cout << setw(15) << left << studentas.getVardas()
-                    << setw(15) << left << studentas.getPavarde();
-                if (choice == "vidurkis" || choice == "abu") {
-                    cout << setw(15) << left << fixed << setprecision(2) << studentas.getVidurkis();
-                }
-                if (choice == "mediana" || choice == "abu") {
-                    cout << setw(15) << left << fixed << setprecision(2) << studentas.getMediana();
-                }
-                cout << endl;
+            // Print student details
+            for (const auto& studentas : studentai) {
+                printStudent(std::cout, studentas, choice);
             }
         }
-        else if (inputMethod == "ranka") {
+
+
+        else if (inputMethod == "ranka") { //BY HAND 
             int skaicius;
             cout << "Pasirinkite norima skaiciu studentu. Iveskite ju skaiciu(naudoti tik skaicius): ";
             while (!(cin >> skaicius) || skaicius <= 0) {
@@ -161,27 +143,20 @@ int main() {
             }
 
             vector<Studentas> studentai;
-            studentai.reserve(skaicius); // Rezervuojama vietą vektoriaus dydžiui
+            studentai.reserve(skaicius);
 
             for (int j = 0; j < skaicius; j++) {
                 Studentas s;
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
                 cout << "Iveskite " << j + 1 << "-ojo studento/studentes duomenis." << endl;
-                cin >> s; // Naudokite overloadintą operatorių >> studento duomenims gauti   
+                cin >> s;
                 studentai.push_back(s);
             }
 
-            // Studentų sąrašo rūšiavimas pagal pavardę
-            sort(studentai.begin(), studentai.end(), [](const Studentas& a, const Studentas& b) {
-                return a.getPavarde() < b.getPavarde();
-                });
-
-            cout << fixed << setprecision(2);
+            // Print headers
             cout << setw(20) << left << "Pavarde"
                 << setw(20) << left << "Vardas";
-
             if (choice == "vidurkis" || choice == "abu") {
                 cout << setw(20) << left << "Galutinis(vid.)";
             }
@@ -189,19 +164,12 @@ int main() {
                 cout << setw(20) << left << "Galutinis(med.)";
             }
             cout << endl;
-            cout << string(80, '_') << endl;
 
-
-            for (const Studentas& s : studentai) {
-                cout << setw(20) << left << s.getPavarde()
-                    << setw(20) << left << s.getVardas()
-                    << setw(20) << left << s.getVidurkis()
-                    << setw(20) << left << s.getMediana()
-                    << endl;
+            // Print student details
+            for (const auto& studentas : studentai) {
+                printStudent(std::cout, studentas, choice);
+               }
             }
-        
-        
-        }
  
 
 
