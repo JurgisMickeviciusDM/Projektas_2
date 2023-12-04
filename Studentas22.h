@@ -57,7 +57,7 @@ public:// laisvi, neprivatus
 
     ~Studentas() { //destruktorius
         pazymiaiV_.clear();
-        pazymiai_.clear();
+       
 
     }
 
@@ -161,17 +161,16 @@ public:// laisvi, neprivatus
 
 
     
-  /*  friend std::ostream& operator<<(std::ostream& os, const Studentas& studentas) {
-        os << std::left << std::setw(20) << studentas.vardas_
-            << std::setw(20) << studentas.pavarde_
-            << std::fixed << std::setprecision(2)
-            << std::setw(10) << studentas.vidurkis_
+   friend std::ostream& operator<<(std::ostream& os, const Studentas& studentas) {
+       os << std::left << std::setw(20) << studentas.vardas_
+           << std::setw(20) << studentas.pavarde_
+           << std::fixed << std::setprecision(2)
+           << std::setw(10) << studentas.vidurkis_;
            
-  
         return os;
-    }*/
+    }
 
-    friend void printStudent(std::ostream& os, const Studentas& studentas, const std::string& choice) {
+   /*end void printStudent(std::ostream& os, const Studentas& studentas, const std::string& choice) {
         os << std::left << std::setw(20) << studentas.vardas_
             << std::setw(20) << studentas.pavarde_;
 
@@ -185,7 +184,7 @@ public:// laisvi, neprivatus
         }
         os << std::endl;
     }
-
+    */
 
     // Geteriai gauti reiksmes 
     std::string getVardas() const { return vardas_; }

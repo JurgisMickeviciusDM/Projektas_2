@@ -15,11 +15,8 @@
 #include "Generavimas22.h"
 
 using namespace std;
-void saveToFile(const list<Studentas>& studentasList, const string& filename, const string& choice1);
 void Generavimas(int n);
-void Rusiuoti(std::list<Studentas>& studentai, std::list<Studentas>& vargsiukai, std::list<Studentas>& kietiakiai, char choice2);
 void naudotojas(string& inputMethod, string& choice, string& header1, string& header2, string& choice1, string& choice2);
-list<Studentas> skaitytiStudentus(int n);
 void VisoLaikas();
 void saveToFileV(const vector<Studentas>& studentasList, const string& filename, const string& choice1);
 void RusiuotiV(std::vector<Studentas>& studentai, std::vector<Studentas>& vargsiukai, std::vector<Studentas>& kietiakiai, char choice2);
@@ -29,9 +26,9 @@ int main() {
     srand(static_cast<unsigned int>(time(0)));
 
 
-    string inputMethod, choice, header1, header2, choice1, choice2;
+    string inputMethod, choice, choice1, choice2;
 
-    naudotojas(inputMethod, choice, header1, header2, choice1, choice2);
+    naudotojas(inputMethod, choice, choice1, choice2);
     char sortChoice = choice2.empty() ? ' ' : choice2[0];
     int skaicius = 0;
     vector<Studentas> studentai;
@@ -117,18 +114,12 @@ int main() {
 
             // Print headers
             cout << setw(20) << left << "Pavarde"
-                << setw(20) << left << "Vardas";
-            if (choice == "vidurkis" || choice == "abu") {
-                cout << setw(2) << left << "Galutinis(vid.)";
-            }
-            if (choice == "mediana" || choice == "abu") {
-                cout << setw(2) << left << "Galutinis(med.)";
-            }
-            cout << endl;
-
+                << setw(20) << left << "Vardas"
+                << setw(20) << left << "Galutinis(vid.)";
+            
             // Print student details
             for (const auto& studentas : studentai) {
-                printStudent(std::cout, studentas, choice);
+                std::cout << studentas << std::endl;
             }
         }
 
@@ -156,19 +147,14 @@ int main() {
 
             // Print headers
             cout << setw(20) << left << "Pavarde"
-                << setw(20) << left << "Vardas";
-            if (choice == "vidurkis" || choice == "abu") {
-                cout << setw(20) << left << "Galutinis(vid.)";
-            }
-            if (choice == "mediana" || choice == "abu") {
-                cout << setw(20) << left << "Galutinis(med.)";
-            }
-            cout << endl;
+                << setw(20) << left << "Vardas"
+                << setw(20) << left << "Galutinis(vid.)";
+
 
             // Print student details
             for (const auto& studentas : studentai) {
-                printStudent(std::cout, studentas, choice);
-               }
+                std::cout << studentas << std::endl;
+            }
             }
  
 

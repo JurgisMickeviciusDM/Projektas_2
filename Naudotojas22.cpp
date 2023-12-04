@@ -7,7 +7,7 @@ void toLowercase(string& str) {
 }
 
 
-void naudotojas(string& inputMethod, string& choice, string& header1, string& header2, string& choice1, string& choice2) {
+void naudotojas(string& inputMethod, string& choice, string& choice1, string& choice2) {
     do {
         cout << "Pasirinkite ar naudosite duomenis is failo, rasyti ,,Duomenys'' ar naudosite rankiniu budu ivedamus duomenis, rasyti ,,Ranka'' ar naudosite autogeneruojamus failus ,,Auto'' ";
         cin >> inputMethod;
@@ -23,9 +23,8 @@ void naudotojas(string& inputMethod, string& choice, string& header1, string& he
             cin >> choice;
             toLowercase(choice);
 
-            if (choice == "galutinis") {
-                header1 = "Galutinis(vid.)";
-                header2 = "";
+            if (choice == "Galutinis(vid.)") {
+                
             }
             else {
                 cout << "Neteisinga pasirinkimas! Bandykite dar karta. GALIMA TIK GALUTINIS" << endl;
@@ -70,27 +69,7 @@ void naudotojas(string& inputMethod, string& choice, string& header1, string& he
         } while (choice2 != "s" && choice2 != "d" && choice2 != "dt");
 
     }
-    else {
-        do {
-            cout << "Prasome pasirinkti ka norite skaiciuoti vidurki ar mediana. Parasykite('vidurkis') arba ('mediana') arba ('abu')";
-            cin >> choice;
-            toLowercase(choice);
-
-            if (choice == "vidurkis") {
-                header1 = "Galutinis(vid.)";
-            }
-            else if (choice == "mediana") {
-                header1 = "Galutinis(med.)";
-            }
-            else if (choice == "abu") {
-                header1 = "Galutinis(vid.)";
-                header2 = "Galutinis(med.)";
-            }
-            else {
-                cout << "Neteisinga pasirinkimas! Bandykite dar karta." << endl;
-            }
-        } while (choice != "vidurkis" && choice != "mediana" && choice != "abu");
-    }
+    
     cin.ignore(); // leis per nauj ivesti 
 }
 
