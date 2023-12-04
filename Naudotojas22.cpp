@@ -5,16 +5,7 @@ using namespace std;
 void toLowercase(string& str) {
     transform(str.begin(), str.end(), str.begin(), ::tolower);
 }
-void pasirinkimas(std::string& pasirinkimass) {
-    do {
-        cout << "Pasirinkite ar naudosite vectro V ar list L ";
-        cin >> pasirinkimass;
-        toLowercase(pasirinkimass);
-        if (pasirinkimass != "v" && pasirinkimass != "l") {
-            cout << "Neteisingai parasete! Bandykite dar karta." << endl;
-        }
-    } while (pasirinkimass != "l" && pasirinkimass != "v");
-}
+
 
 void naudotojas(string& inputMethod, string& choice, string& header1, string& header2, string& choice1, string& choice2) {
     do {

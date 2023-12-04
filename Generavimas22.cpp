@@ -32,41 +32,6 @@ void VisoLaikas() {
 }
 //  Skaito studentø duomenis ið failo ir saugo á list<Studentas>.
 
-list<Studentas> skaitytiStudentus(int n) {
-    auto starts = chrono::high_resolution_clock::now();
-    string filename = "studentai" + to_string(n) + ".txt";
-    ifstream in(filename, ios::in | ios::binary);
-    if (!in) {
-        cerr << "Klaida atidarant failà: " << filename << std::endl;
-        return {};
-    }
-
-    list<Studentas> studentai;
-    string eilute, vardas, pavarde;
-    getline(in, eilute); // Skaitymas eilutës duomenø (antraðtës arba informacijos).
-
-
-    while (in >> vardas >> pavarde) {
-        vector<int> pazymiaiV(9);
-        for (int& pazymys : pazymiaiV) {
-            in >> pazymys;
-        }
-        double egzaminas;
-        in >> egzaminas;
-
-        Studentas studentas(vardas, pavarde, pazymiaiV, egzaminas);
-        studentas.calculateVidurkis();
-        ;
-        studentai.push_back(move(studentas));  // Ádedama á sàraðà
-    }
-
-    auto finishs = chrono::high_resolution_clock::now();
-    chrono::duration<double> elapsed = finishs - starts;
-    a += elapsed.count();
-    cout << "Duomenu nuskaitymas " << n << " studentu: " << elapsed.count() << " sekundes" << std::endl;
-    in.close();
-    return studentai;
-}
 
 
 bool Vardo_lyginimas(const string& nameA, const string& nameB) {
@@ -104,53 +69,6 @@ bool Pavardes_lyginimas(const string& nameA, const string& nameB) {
 
 
 
-void saveToFile(const list<Studentas>& studentasList, const string& filename, const string& choice1) {
-    list<Studentas> sortedStudents = studentasList;
-    auto start = chrono::high_resolution_clock::now();
-    auto startSort = chrono::high_resolution_clock::now();
-
-    if (choice1 == "vardus") {
-        sortedStudents.sort([](const Studentas& a, const Studentas& b) {
-            return Vardo_lyginimas(a.getVardas(), b.getVardas()); //geteris 
-            });
-    }
-    else if (choice1 == "pavardes") {
-        sortedStudents.sort([](const Studentas& a, const Studentas& b) {
-            return Pavardes_lyginimas(a.getVardas(), b.getVardas());
-            });
-    }
-    else if (choice1 == "vidurkius") {
-        sortedStudents.sort([](const Studentas& a, const Studentas& b) {
-            return a.getVidurkis() < b.getVidurkis(); //geteriai atsirado 
-            });
-    }
-
-    auto finishSort = chrono::high_resolution_clock::now();
-    chrono::duration<double> elapsedSort = finishSort - startSort;
-    g += elapsedSort.count();
-    cout << "Sortinimas: " << elapsedSort.count() << " sekundes" << endl;
-
-    ios::sync_with_stdio(false); // Padidinti  greitá 
-    cin.tie(NULL);
-
-    ofstream out(filename); // Failas atidaromas rasymui 
-    if (!out) { // Tikrinimas del atidarymo 
-        cerr << "Klaida atidarant failà raðymui: " << filename << endl;
-        return;
-    }
-
-    out << left << setw(20) << "Vardas" << setw(20) << "Pavarde" << setw(15) << "Galutinis(Vid.)" << endl; // Isdestymas 
-    for (const auto& studentas : sortedStudents) { // Spausdina visus studentus 
-        out << setw(20) << studentas.getVardas() << setw(20) << studentas.getPavarde() << setw(15) << fixed << setprecision(2) << studentas.getVidurkis() << endl;
-    }
-    out.close();
-
-    auto end = chrono::high_resolution_clock::now();
-    chrono::duration<double> elapsed = end - start;
-    b += elapsed.count();
-    cout << "Isvesta " << studentasList.size() << " irasu i " << filename << ". Vykdymo laikas: " << elapsed.count() << " sekundziu." << endl;
-}
-
 void Generavimas(int n) {
     string filename = "studentai" + to_string(n) + ".txt";
     if (_access(filename.c_str(), 0) == 0) {//egzistavima trikina
@@ -187,52 +105,6 @@ void Generavimas(int n) {
     std::cout << "Generavimas studentu " << n << " " << elapsed.count() << " sekundes" << std::endl;
 }
 
-
-
-void Rusiuoti(std::list<Studentas>& studentai, std::list<Studentas>& vargsiukai, std::list<Studentas>& kietiakiai, char choice2) {
-    using namespace std::chrono;
-    auto startSorting = high_resolution_clock::now();
-
-    if (choice2 == 's') {
-        for (const auto& studentas : studentai) {
-            if (studentas.getVidurkis() < 5.0) {  //studentas.vidurkis buvo
-                vargsiukai.push_back(studentas);
-            }
-            else {
-                kietiakiai.push_back(studentas);
-            }
-        }
-    }
-    else if (choice2 == 'd') {
-        auto it = studentai.begin();
-        while (it != studentai.end()) {
-            if (it->getVidurkis() < 5.0) {
-                vargsiukai.push_back(std::move(*it));
-                it = studentai.erase(it);
-            }
-            else {
-                ++it;
-            }
-        }
-        kietiakiai.splice(kietiakiai.end(), studentai);
-    }
-    else if (choice2 == 'dt') {
-        auto partitionPoint = std::stable_partition(studentai.begin(), studentai.end(),
-            [](const Studentas& s) { return s.getVidurkis() >= 5.0; });
-
-        vargsiukai.splice(vargsiukai.end(), studentai, studentai.begin(), partitionPoint);
-        kietiakiai.splice(kietiakiai.end(), studentai);
-    }
-    else {
-        std::cerr << "Neteisingas vartotojo pasirinkimas. Galimi variantai: 's', 'd' arba 'dt'." << std::endl;
-        return;
-    }
-
-    auto finishSorting = high_resolution_clock::now();
-    std::chrono::duration<double> elapsedSorting = finishSorting - startSorting;
-    d += elapsedSorting.count();
-    cout << "Rusiavimas: " << elapsedSorting.count() << " sekundes" << endl;
-}
 
 
 void RusiuotiV(std::vector<Studentas>& studentai, std::vector<Studentas>& vargsiukai, std::vector<Studentas>& kietiakiai, char choice2) {

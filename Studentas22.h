@@ -87,39 +87,49 @@ public:// laisvi, neprivatus
                 std::cout << "Neteisinga ivestis. Iveskite pavarde dar karta: ";
             }
         }
-        int pazymiuSk;
+
         // Pažymių skaičiaus įvedimas su patikrinimu
         std::string generuotiAtsitiktinai;
-        std::cout << "Ar norite generuoti pazymius atsitiktinai? (taip/ne): ";
-        is >> generuotiAtsitiktinai;
+        while (true) {
+            std::cout << "Ar norite generuoti pazymius atsitiktinai? (taip/ne): ";
+            is >> generuotiAtsitiktinai;
 
-        // Transform the input to lowercase
-        std::transform(generuotiAtsitiktinai.begin(), generuotiAtsitiktinai.end(), generuotiAtsitiktinai.begin(),
-            [](unsigned char c) { return std::tolower(c); });
+            // Transform the input to lowercase
+            std::transform(generuotiAtsitiktinai.begin(), generuotiAtsitiktinai.end(), generuotiAtsitiktinai.begin(),
+                [](unsigned char c) { return std::tolower(c); });
 
-        if (generuotiAtsitiktinai == "taip") {
-            std::cout << "Iveskite pazymiu skaiciu: ";
-            int pazymiuSk;
-            while (!(is >> pazymiuSk) || pazymiuSk < 0) {
+            if ((generuotiAtsitiktinai == "taip" || generuotiAtsitiktinai == "ne") &&
+                std::all_of(generuotiAtsitiktinai.begin(), generuotiAtsitiktinai.end(), ::isalpha)) {
+                break;
+            }
+            else {
+                std::cout << "Neteisinga ivestis. Iveskite 'taip' arba 'ne': ";
                 is.clear();
                 is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                std::cout << "Neteisinga ivestis. Iveskite pazymiu skaiciu dar karta: ";
+            }
+        }
+
+        int pazymiuSk;
+        if (generuotiAtsitiktinai == "taip") {
+            std::cout << "Iveskite pazymiu skaiciu: ";
+            while (!(is >> pazymiuSk) || pazymiuSk <= 0) {
+                is.clear();
+                is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "Neteisinga ivestis. Iveskite teigiamą pazymiu skaiciu: ";
             }
 
             studentas.pazymiaiV_.clear();
             for (int i = 0; i < pazymiuSk; ++i) {
                 studentas.pazymiaiV_.push_back(rand() % 10 + 1);
             }
-
             studentas.egzaminas_ = rand() % 10 + 1;
         }
         else {
-
             std::cout << "Iveskite pazymiu skaiciu: ";
-            while (!(is >> pazymiuSk) || pazymiuSk < 0) {
+            while (!(is >> pazymiuSk) || pazymiuSk <= 0) {
                 is.clear();
                 is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                std::cout << "Neteisinga ivestis. Iveskite pazymiu skaiciu dar karta: ";
+                std::cout << "Neteisinga ivestis. Iveskite teigiamą pazymiu skaiciu: ";
             }
 
             studentas.pazymiaiV_.clear();
@@ -166,7 +176,7 @@ public:// laisvi, neprivatus
     std::string getVardas() const { return vardas_; }
     std::string getPavarde() const { return pavarde_; }
     std::vector<int> getPazymiaiV() const { return pazymiaiV_; }
-    std::list<int> getPazymiai() const { return pazymiai_; }
+    //std::list<int> getPazymiai() const { return pazymiai_; }
     double getVidurkis() const { return vidurkis_; } // rodykles i lelementtus 
     double getMediana() const { return mediana_; }
     double getEgzaminas() const { return egzaminas_; }
@@ -175,35 +185,19 @@ public:// laisvi, neprivatus
     void setVardas(const std::string& vardas) { vardas_ = vardas; }
     void setPavarde(const std::string& pavarde) { pavarde_ = pavarde; }
     void setPazymiaiV(const std::vector<int>& pazymiaiV) { pazymiaiV_ = pazymiaiV; }
-    void setPazymiai(const std::list<int>& pazymiai) { pazymiai_ = pazymiai; }
+    //void setPazymiai(const std::list<int>& pazymiai) { pazymiai_ = pazymiai; }
     void setEgzaminas(double egzaminas) { egzaminas_ = egzaminas; }
 
    void calculateVidurkis() {
-        if (!pazymiai_.empty()) {
-            // Skaiciuoti vidurká naudojant list
-            vidurkis_ = std::accumulate(pazymiai_.begin(), pazymiai_.end(), 0.0) / pazymiai_.size();
-        }
-        else if (!pazymiaiV_.empty()) {
+        
+        if (!pazymiaiV_.empty()) {
             // Skaiciuoti vidurki naudojant vector
             vidurkis_ = std::accumulate(pazymiaiV_.begin(), pazymiaiV_.end(), 0.0) / pazymiaiV_.size();
         }
     }
 
     void calculateMediana() {
-        if (!pazymiai_.empty()) {
-            // Rusiavimui sarao
-            pazymiai_.sort();
-            size_t size = pazymiai_.size();// dydis 
-            auto mid = next(pazymiai_.begin(), size / 2);
-            if (size % 2 == 0) {
-                auto midPrev = prev(mid, 1);
-                mediana_ = (*mid + *midPrev) / 2.0;
-            }
-            else {
-                mediana_ = *mid;
-            }
-        }
-        else if (!pazymiaiV_.empty()) {
+         if (!pazymiaiV_.empty()) {
             // Skaièiuoti medianà naudojant vector
             std::vector<int> sortedGrades = pazymiaiV_;
             sort(sortedGrades.begin(), sortedGrades.end());
