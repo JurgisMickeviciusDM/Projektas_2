@@ -15,14 +15,14 @@ private: //privatus vardas, pavarde, pazymiai egzaminas
     std::string vardas_;
     std::string pavarde_;
     std::vector<int> pazymiaiV_;
-    std::list<int> pazymiai_;
+    
     double vidurkis_ = 0.00;
-    double mediana_ = 0.00;
+   
     double egzaminas_ = 0.00; //egzamino rezultatas saugomas 
 
 public:// laisvi, neprivatus
 
-    Studentas() : vardas_(""), pavarde_(""), vidurkis_(0.0), mediana_(0.0), egzaminas_(0.0) {};
+    Studentas() : vardas_(""), pavarde_(""), vidurkis_(0.0), egzaminas_(0.0) {};
 
 
     Studentas(const std::string& vardas, const std::string& pavarde,
@@ -31,12 +31,12 @@ public:// laisvi, neprivatus
         //konstruktorius ir parametrai viduje, kaip vardas pavarde pazymiai
         //jis priskiria reiksmes i privatiems kalses kintamiesiems 
         calculateVidurkis();
-        calculateMediana();
+        //calculateMediana();
     }
 
     Studentas(const Studentas& other) // copy konstrukrtorius
         : vardas_(other.vardas_), pavarde_(other.pavarde_), pazymiaiV_(other.pazymiaiV_),
-        pazymiai_(other.pazymiai_), vidurkis_(other.vidurkis_), mediana_(other.mediana_),
+         vidurkis_(other.vidurkis_), 
         egzaminas_(other.egzaminas_) {
     }
 
@@ -47,9 +47,9 @@ public:// laisvi, neprivatus
             vardas_ = other.vardas_;
             pavarde_ = other.pavarde_;
             pazymiaiV_ = other.pazymiaiV_;
-            pazymiai_ = other.pazymiai_;
+            
             vidurkis_ = other.vidurkis_;
-            mediana_ = other.mediana_;
+            
             egzaminas_ = other.egzaminas_;
         }
         return *this;
@@ -57,12 +57,11 @@ public:// laisvi, neprivatus
 
     ~Studentas() { //destruktorius
         pazymiaiV_.clear();
-       
-
+    
     }
 
 
-    //input and output operators
+    //input and output operatoriai
     friend std::istream& operator>>(std::istream& is, Studentas& studentas) {
         // Vardo įvedimas su patikrinimu
         std::cout << "Iveskite varda: ";
@@ -154,14 +153,14 @@ public:// laisvi, neprivatus
         }
 
         studentas.calculateVidurkis();
-        studentas.calculateMediana();
+        //studentas.calculateMediana();
 
         return is;
     }
 
 
     
-   friend std::ostream& operator<<(std::ostream& os, const Studentas& studentas) {
+  friend std::ostream& operator<<(std::ostream& os, const Studentas& studentas) {
        os << std::left << std::setw(20) << studentas.vardas_
            << std::setw(20) << studentas.pavarde_
            << std::fixed << std::setprecision(2)
@@ -169,7 +168,15 @@ public:// laisvi, neprivatus
            
         return os;
     }
+  /*
+   friend std::ostream& operator<<(std::ostream& os, const Studentas& studentas) {
+       os << std::left << std::setw(20) << studentas.getPavarde()
+           << std::setw(20) << studentas.getVardas()
+           << std::setw(20) << std::fixed << std::setprecision(2) << studentas.getVidurkis();
+       return os;
+   }*/
 
+  
    /*end void printStudent(std::ostream& os, const Studentas& studentas, const std::string& choice) {
         os << std::left << std::setw(20) << studentas.vardas_
             << std::setw(20) << studentas.pavarde_;
@@ -183,8 +190,8 @@ public:// laisvi, neprivatus
                 << std::setw(10) << studentas.mediana_;
         }
         os << std::endl;
-    }
-    */
+    }*/
+    
 
     // Geteriai gauti reiksmes 
     std::string getVardas() const { return vardas_; }
@@ -192,7 +199,6 @@ public:// laisvi, neprivatus
     std::vector<int> getPazymiaiV() const { return pazymiaiV_; }
     //std::list<int> getPazymiai() const { return pazymiai_; }
     double getVidurkis() const { return vidurkis_; } // rodykles i lelementtus 
-    double getMediana() const { return mediana_; }
     double getEgzaminas() const { return egzaminas_; }
 
     // Seteriai nustatymui privat reiksmem 
@@ -202,29 +208,13 @@ public:// laisvi, neprivatus
     //void setPazymiai(const std::list<int>& pazymiai) { pazymiai_ = pazymiai; }
     void setEgzaminas(double egzaminas) { egzaminas_ = egzaminas; }
 
-   void calculateVidurkis() {
-        
+    void calculateVidurkis() {
         if (!pazymiaiV_.empty()) {
-            // Skaiciuoti vidurki naudojant vector
-            vidurkis_ = std::accumulate(pazymiaiV_.begin(), pazymiaiV_.end(), 0.0) / pazymiaiV_.size();
+            double sum = std::accumulate(pazymiaiV_.begin(), pazymiaiV_.end(), 0.0);
+            double vidurkis = sum / pazymiaiV_.size();
+            vidurkis_ = 0.4 * vidurkis + 0.6 * egzaminas_;
         }
     }
-
-    void calculateMediana() {
-         if (!pazymiaiV_.empty()) {
-            // Skaièiuoti medianà naudojant vector
-            std::vector<int> sortedGrades = pazymiaiV_;
-            sort(sortedGrades.begin(), sortedGrades.end());
-            size_t size = sortedGrades.size();
-            if (size % 2 == 0) {
-                mediana_ = (static_cast<double>(sortedGrades[size / 2 - 1]) + sortedGrades[size / 2]) / 2.00;
-            }
-            else {
-                mediana_ = sortedGrades[size / 2];
-            }
-        }
-    }
-
 
 };
 
