@@ -20,18 +20,17 @@ private: //privatus vardas, pavarde, pazymiai egzaminas
    
     double egzaminas_ = 0.00; //egzamino rezultatas saugomas 
 
-public:// laisvi, neprivatus
+public:// laisvi, neprivatus konstruktorius
 
-    Studentas() : vardas_(""), pavarde_(""), vidurkis_(0.0), egzaminas_(0.0) {};
+    Studentas() : vardas_(""), pavarde_(""), vidurkis_(0.0), egzaminas_(0.0) {}; //tuscias konstruktorius
 
 
-    Studentas(const std::string& vardas, const std::string& pavarde,
+    Studentas(const std::string& vardas, const std::string& pavarde, //pagrindinis konstruktorius
         const std::vector<int>& pazymiaiV, double egzaminas)
         : vardas_(vardas), pavarde_(pavarde), pazymiaiV_(pazymiaiV), egzaminas_(egzaminas) {
         //konstruktorius ir parametrai viduje, kaip vardas pavarde pazymiai
-        //jis priskiria reiksmes i privatiems kalses kintamiesiems 
+        //jis priskiria reiksmes i privatiems klases kintamiesiems 
         calculateVidurkis();
-        //calculateMediana();
     }
 
     Studentas(const Studentas& other) // copy konstrukrtorius
@@ -41,7 +40,8 @@ public:// laisvi, neprivatus
     }
 
 
-    // Copy assignment operatorius
+    // Copy assignment operatorius // galima vieno studento duomenis priskirti  kitam
+
     Studentas& operator=(const Studentas& other) {
         if (this != &other) {
             vardas_ = other.vardas_;
@@ -60,6 +60,7 @@ public:// laisvi, neprivatus
     
     }
 
+    //  studento duomenų įvedimas 
 
     //input and output operatoriai
     friend std::istream& operator>>(std::istream& is, Studentas& studentas) {
@@ -153,13 +154,13 @@ public:// laisvi, neprivatus
         }
 
         studentas.calculateVidurkis();
-        //studentas.calculateMediana();
+        
 
         return is;
     }
 
 
-    
+    //output operatorius  isvesties 
   friend std::ostream& operator<<(std::ostream& os, const Studentas& studentas) {
        os << std::left << std::setw(20) << studentas.vardas_
            << std::setw(20) << studentas.pavarde_
@@ -197,7 +198,6 @@ public:// laisvi, neprivatus
     std::string getVardas() const { return vardas_; }
     std::string getPavarde() const { return pavarde_; }
     std::vector<int> getPazymiaiV() const { return pazymiaiV_; }
-    //std::list<int> getPazymiai() const { return pazymiai_; }
     double getVidurkis() const { return vidurkis_; } // rodykles i lelementtus 
     double getEgzaminas() const { return egzaminas_; }
 
@@ -205,7 +205,6 @@ public:// laisvi, neprivatus
     void setVardas(const std::string& vardas) { vardas_ = vardas; }
     void setPavarde(const std::string& pavarde) { pavarde_ = pavarde; }
     void setPazymiaiV(const std::vector<int>& pazymiaiV) { pazymiaiV_ = pazymiaiV; }
-    //void setPazymiai(const std::list<int>& pazymiai) { pazymiai_ = pazymiai; }
     void setEgzaminas(double egzaminas) { egzaminas_ = egzaminas; }
 
     void calculateVidurkis() {

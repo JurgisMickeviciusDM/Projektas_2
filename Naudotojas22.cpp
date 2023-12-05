@@ -23,7 +23,7 @@ void naudotojas(string& inputMethod, string& choice, string& choice1, string& ch
             cin >> choice;
             toLowercase(choice);
 
-            if (choice == "Galutinis(vid.)") {
+            if (choice == "galutinis") {
                 
             }
             else {
@@ -46,7 +46,7 @@ void naudotojas(string& inputMethod, string& choice, string& choice1, string& ch
 
             }
             else {
-                cout << "Neteisinga pasirinkimas! Bandykite dar karta. GALIMA TIK GALUTINIS" << endl;
+                cout << "Neteisinga pasirinkimas! Bandykite dar karta. " << endl;
             }
         } while (choice1 != "vardus" && choice1 != "pavardes" && choice1 != "vidurkius");
 

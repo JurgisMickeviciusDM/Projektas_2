@@ -106,25 +106,25 @@ int main() {
                 s.setEgzaminas(egzaminas);
 
                 s.calculateVidurkis();
-                s.calculateMediana();
+              
 
                 studentai.push_back(s);
             }
             file.close();
 
-            // Print headers
+            //  virsutine eilute
             cout << setw(20) << left << "Pavarde"
                 << setw(20) << left << "Vardas"
-                << setw(20) << left << "Galutinis(vid.)";
+                << setw(20) << left << "Galutinis(vid.)" << '\n';
             
-            // Print student details
+            // outputas isvesties operatorius 
             for (const auto& studentas : studentai) {
                 std::cout << studentas << std::endl;
             }
         }
 
 
-        else if (inputMethod == "ranka") { //BY HAND 
+        else if (inputMethod == "ranka") {  
             int skaicius;
             cout << "Pasirinkite norima skaiciu studentu. Iveskite ju skaiciu(naudoti tik skaicius): ";
             while (!(cin >> skaicius) || skaicius <= 0) {
@@ -141,17 +141,17 @@ int main() {
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 cout << "Iveskite " << j + 1 << "-ojo studento/studentes duomenis." << endl;
-                cin >> s;
+                cin >> s; // ivesties operatorius 
                 studentai.push_back(s);
             }
 
-            // Print headers
+            // virsutine eilute 
             cout << setw(20) << left << "Pavarde"
                 << setw(20) << left << "Vardas"
-                << setw(20) << left << "Galutinis(vid.)";
+                << setw(20) << left << "Galutinis(vid.)" << '\n';
 
 
-            // Print student details
+            // outputas isvesties operatorius 
             for (const auto& studentas : studentai) {
                 std::cout << studentas << std::endl;
             }

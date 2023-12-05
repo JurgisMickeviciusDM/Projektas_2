@@ -144,21 +144,50 @@ void RusiuotiV(std::vector<Studentas>& studentai, std::vector<Studentas>& vargsi
     std::cout << "Rusiavimas uþtruko: " << elapsedSorting.count() << " sekundes" << std::endl;
 }
 
+bool LyginimasVardas(const Studentas& a, const Studentas& b) {
+    const std::string& vardasA = a.getVardas();
+    const std::string& vardasB = b.getVardas();
+
+    for (size_t i = 0; i < std::min(vardasA.size(), vardasB.size()); ++i) {
+        if (std::isdigit(vardasA[i]) && std::isdigit(vardasB[i])) {
+            int numA = std::stoi(vardasA.substr(i));
+            int numB = std::stoi(vardasB.substr(i));
+            if (numA != numB) return numA < numB;
+        }
+        else if (vardasA[i] != vardasB[i]) {
+            return vardasA[i] < vardasB[i];
+        }
+    }
+    return vardasA.size() < vardasB.size();
+}
+
+
+bool LyginimasPavarde(const Studentas& a, const Studentas& b) {
+    const std::string& PavardeA = a.getPavarde();
+    const std::string& PavardeB = b.getPavarde();
+
+    for (size_t i = 0; i < std::min(PavardeA.size(), PavardeB.size()); ++i) {
+        if (std::isdigit(PavardeA[i]) && std::isdigit(PavardeB[i])) {
+            int numA = std::stoi(PavardeA.substr(i));
+            int numB = std::stoi(PavardeB.substr(i));
+            if (numA != numB) return numA < numB;
+        }
+        else if (PavardeA[i] != PavardeB[i]) {
+            return PavardeA[i] < PavardeB[i];
+        }
+    }
+    return PavardeA.size() < PavardeB.size();
+}
 
 void saveToFileV(const std::vector<Studentas>& studentasList, const std::string& filename, const std::string& choice1) {
     std::vector<Studentas> sortedStudents = studentasList;
-    auto startSort = std::chrono::high_resolution_clock::now(); //isaugome studentus  pagal kriteriiju choice 1
-
+    auto startSort = std::chrono::high_resolution_clock::now();
 
     if (choice1 == "vardus") {
-        std::sort(sortedStudents.begin(), sortedStudents.end(), [](const Studentas& a, const Studentas& b) {
-            return a.getVardas() < b.getVardas();
-            });
+        std::sort(sortedStudents.begin(), sortedStudents.end(), LyginimasVardas);
     }
     else if (choice1 == "pavardes") {
-        std::sort(sortedStudents.begin(), sortedStudents.end(), [](const Studentas& a, const Studentas& b) {
-            return a.getPavarde() < b.getPavarde();
-            });
+        std::sort(sortedStudents.begin(), sortedStudents.end(), LyginimasPavarde);
     }
     else if (choice1 == "vidurkius") {
         std::sort(sortedStudents.begin(), sortedStudents.end(), [](const Studentas& a, const Studentas& b) {
@@ -169,8 +198,7 @@ void saveToFileV(const std::vector<Studentas>& studentasList, const std::string&
     auto finishSort = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsedSort = finishSort - startSort;
 
-
-    extern double g; // tam kad graziai rusiuotu vidurkius jie naudojami kaip globalûs kintamieji,
+    extern double g;
     extern double b;
     g += elapsedSort.count();
     std::cout << "Rusiavimas: " << elapsedSort.count() << " sekundes." << std::endl;
@@ -182,11 +210,10 @@ void saveToFileV(const std::vector<Studentas>& studentasList, const std::string&
     }
 
     out << std::left << std::setw(20) << "Vardas" << std::setw(20) << "Pavarde" << std::setw(15) << "Galutinis(Vid.)" << std::endl;
-
+    // outputas isvesties operatorius 
 
     for (const auto& studentas : sortedStudents) {
-        out << std::setw(20) << studentas.getVardas() << std::setw(20) << studentas.getPavarde()
-            << std::setw(15) << std::fixed << std::setprecision(2) << studentas.getVidurkis() << std::endl;
+        out << studentas << std::endl;
     }
 
     out.close();
@@ -194,7 +221,7 @@ void saveToFileV(const std::vector<Studentas>& studentasList, const std::string&
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - startSort;
     b += elapsed.count();
-    std::cout << "Irasyta  " << sortedStudents.size() << " irasu i faila " << filename << ". Vykdymo laikas: " << elapsed.count() << " sekundziu." << std::endl;
+    std::cout << "Irasyta " << sortedStudents.size() << " irasu i faila " << filename << ". Vykdymo laikas: " << elapsed.count() << " sekundziu." << std::endl;
 }
 
 vector<Studentas> skaitytiStudentusV(int n) {
@@ -213,7 +240,7 @@ vector<Studentas> skaitytiStudentusV(int n) {
     getline(in, eilute);
 
     string vardas, pavarde;
-    double egzaminas;
+    //double egzaminas;
     vector<int> pazymiaiV(9);
 
     while (in >> vardas >> pavarde) {
@@ -226,7 +253,7 @@ vector<Studentas> skaitytiStudentusV(int n) {
 
         Studentas studentas(vardas, pavarde, pazymiaiV, egzaminas);
         studentas.calculateVidurkis();
-        studentas.calculateMediana();
+        //studentas.calculateMediana();
 
         studentai.emplace_back(studentas);        // studentai.emplace_back(move(studentas));
     }
