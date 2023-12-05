@@ -1,99 +1,6 @@
-# PROJEKTAS_2(Senos užduoties aprašas pateikta žemiau)
-# V1.1
-# Vektorius Naudojo DT strategija  
-|          Testavimas          	|      1000      	|     10000     	|     100000    	|     1000000     	|      10000000      	|
-|:----------------------------:	|:--------------:	|:-------------:	|:-------------:	|:---------------:	|:------------------:	|
-|    <br>Failo nuskaitymas     	|    <br>0,017   	|    <br>0,2237 	|    <br>2,1475 	|    <br>21,8651  	|    <br>232,7451    	|
-|    <br>Rušiavimas            	|    <br>0,0024  	|    <br>0,0296 	|    <br>0,3358 	|    <br>3,7863   	|    <br>329,102     	|
-|    <br>Sortinimas            	|    <br>0,0023  	|    <br>0,0831 	|    <br>1,2972 	|    <br>16,3789  	|    <br>219,1107    	|
-|    <br>Įrašymas į vargšiukus 	|    <br>0,009   	|    <br>0,1478 	|    <br>1,6258 	|    <br>19,5587  	|    <br>252,1138    	|
-|    <br>Sortinimas            	|    <br>0,01035 	|    <br>0,1145 	|    <br>1,941  	|    <br>24,1078  	|    <br>294,7841    	|
-|    <br>Įrašymas į kietiakus  	|    <br>0,014   	|    <br>0,1675 	|    <br>2,2178 	|    <br>28,8466  	|    <br>348,1716    	|
-|    <br>Bendras               	|    <br>0,05505 	|    <br>0,7662 	|    <br>9,5651 	|    <br>114,5434 	|    <br>1676,027    	|
+# PROJEKTAS_2
 
-![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/d877c01f-f2fd-4ca0-a6b2-367701b56e52)
-![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/68ddb570-eb26-48cf-9c88-ad0e02710c86)
-
-
-# Vektorius Naudojo DT strategija naudojant klase studentas 
-|          Testavimas          	|      1000      	|     10000     	|     100000    	|     1000000     	|      10000000      	|
-|:----------------------------:	|:--------------:	|:-------------:	|:-------------:	|:---------------:	|:------------------:	|
-|    <br>Failo nuskaitymas     	|    <br>0,017   	|    <br>0,2541 	|    <br>2,754 	|    <br>28,7546 	|    <br>289,54    	|
-|    <br>Rušiavimas            	|    <br>0,0024  	|    <br>0,0247	|    <br>0,2745	|    <br>3,456  	|    <br>190,5652     	|
-|    <br>Sortinimas            	|    <br>0,0023  	|    <br>0,0145 	|    <br>0,1456	|    <br>1,387  	|    <br>13,5546    	|
-|    <br>Įrašymas į vargšiukus 	|    <br>0,009   	|    <br>0,056 	|    <br>0,3784 	|    <br>4,512  	|    <br>40,3541   	|
-|    <br>Sortinimas            	|    <br>0,0101 	|    <br>0,0,074	|    <br>0,487 	|    <br>3,7981 	|    <br>90,613    	|
-|    <br>Įrašymas į kietiakus  	|    <br>0,0014   	|    <br>0,105 	|    <br>1,345	|    <br>11,2253  	|    <br>158,1132    	|
-|    <br>Bendras               	|    <br>0,0422 	|    <br>0,4543	|    <br>5,3845 	|    <br>53,133	|    <br> 782,7401  	|
-
-![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/6cc20ff5-5d87-4a8e-8129-597ef7ba2489)
-
-![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/9d26fff2-98fa-4bcb-b7fe-e129f1204c2c)
-
-# Išvada DT vektorius klasė ir struktūra
-Atlikus testavimus su vektorius DT ir vektorius DT klasė studentas, buvo pastebėta, kad su klase vektorius DT žymiai paspartino rūšiavimą ir įrašymą į failus, greitis padidėjo beveik dvigubai, kaip pvz 100000 su vektorius DT 114,5434s, tuo tarpu vektorius DT klasė 53,133.
-
-
-# Vektorius su strategijomis O1, O2, O3: 
-|          Testavimas          	|      o1_100000      	|     o2_100000     	|     o3_100000   	|      o1_1000000      	|     o2_1000000     	|     o3_1000000  |
-|:----------------------------:	|:--------------:      	|:-------------:	   |:-------------:	   |:---------------:	   |:------------------:	|:------------------: |
-|    <br>Failo nuskaitymas     	|    <br>2,4561 	      |    <br>2,3478 	   |    <br>2,3615 	   |    <br>22,941	   |    <br>21,9641   	| <br>22,6164  |
-|    <br>Rušiavimas            	|    <br>0,3841 	      |    <br>0,3948	   |    <br>0,3415 	   |    <br>3,5441  	   |    <br>3,9145      |<br>3,2365   	|
-|    <br>Sortinimas            	|    <br>0,2841 	      |    <br>0,2654 	   |    <br>0,2941	   |    <br>3,7512	   |    <br>3,9841    	|<br>3,6462    	|
-|    <br>Įrašymas į vargšiukus 	|    <br>0,6465        	|    <br>0,6891	   |    <br>0,6156	   |    <br>6,9402  	   |    <br>6,9841   	|<br>6,8560   	|
-|    <br>Sortinimas            	|    <br>0,4912      	|    <br>0,4648	   |    <br>0,4925  	   |    <br>8,1973 	   |    <br>5,9414   	|<br>5,7951    	|
-|    <br>Įrašymas į kietiakus  	|    <br>1,0097 	      |    <br>0,9761	   |    <br>0,9364    	|    <br>14,3450	   |    <br>10,6910    	|<br>10,1057    	|
-|    <br>Bendras               	|    <br>5,2717 	      |    <br>5,138 	   |    <br>5,0416 	   |    <br>59,7188 	   |    <br>49,5647    	|<br>49,0194  	|
-
-|          Failas          	|      Failo dydis exe      	|   
-|:----------------------------:	|:--------------:      	|
-|    <br>Failo dydis "DEBUG" O1 	  |  <br> 504KB  |
-|    <br>Failo dydis "DEBUG"  O2	  |  <br> 533KB  |
-|    <br>Failo dydis "DEBUG"  O3	  |  <br> 533KB  |
-
-
-# Su O1 100000 ir 1000000
-![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/ed527970-5d7c-47fa-bdf8-30bbfaa72a58)
-
-# Su O2 100000 ir 1000000
-![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/1ce8a23d-6df2-4626-a223-08b5d8fe8777)
-
-# Su O3 100000 ir 1000000
-![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/9c73d51b-c2f1-493c-b853-4323a68bdf6e)
-# Išvada O1, O2, O3
-Atlikus matavimus su skirtingais flag'ais O1, O2, O3 ir paskaičiavus 5 paleidimų vidurkius gavome vidurkius. Galmie pastebėti, kad greičiausiai dirbo O3. Vertinannt greitį galime daryti išvadas, kad su vektoriumi vidutiniškai 1,48% greičiau O3 veikė negu O2 ir O1. 
-
-# Vektorius su klase ir strategijomis O1, O2, O3: 
-|          Testavimas          	|      o1_100000      	|     o2_100000     	|     o3_100000   	|      o1_1000000      	|     o2_1000000     	|     o3_1000000  |
-|:----------------------------:	|:--------------:      	|:-------------:	   |:-------------:	   |:---------------:	   |:------------------:	|:------------------: |
-|    <br>Failo nuskaitymas     	|    <br>2,6954   	      |    <br>2,7854 	   |    <br>2,6875 	   |    <br>24,745 	   |    <br>28,7843    	|   <br>26,0377  |
-|    <br>Rušiavimas            	|    <br>0,2871 	      |    <br>0,2451	   |    <br>0,2015 	   |    <br>2,7884  	   |    <br>2,2874      |<br>2,2356   	|
-|    <br>Sortinimas            	|    <br>0,1032  	      |    <br>0,0822 	   |    <br>0,0829	   |    <br>1,1407	   |    <br>0,899    	|<br>0,9497    	|
-|    <br>Įrašymas į vargšiukus 	|    <br>0,3894         	|    <br>0,4587	   |    <br>0,3254	   |    <br>3,8991  	   |    <br>3,7810   	|<br>3,736   	|
-|    <br>Sortinimas            	|    <br>0,3995       	|    <br>0,3874 	   |    <br>0,2971  	   |    <br>3,1045 	   |    <br>3,201   	|<br>3,1945    	|
-|    <br>Įrašymas į kietiakus  	|    <br>1,087  	      |    <br>1,075 	   |    <br>1,0056    	|    <br>10,7451 	   |    <br>9,6933    	|<br>9,6641    	|
-|    <br>Bendras               	|    <br>4,9616 	      |    <br>5,0338 	   |    <br>4,6 	   |    <br>46,4228 	   |    <br>46,3586    	|<br>43,582  	|
-
-|          Failas          	|      Failo dydis exe      	|   
-|:----------------------------:	|:--------------:      	|
-|    <br>Failo dydis "DEBUG" O1 	  |  <br> 291KB  |
-|    <br>Failo dydis "DEBUG"  O2	  |  <br> 309KB  |
-|    <br>Failo dydis "DEBUG"  O3	  |  <br> 309KB  |
-
-
-# Su O1 100000 ir 1000000
-![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/6f2d1f49-c693-4d58-a311-ea028c0300f6)
-# Su O2 100000 ir 1000000
-![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/1324ecf9-2c17-40e6-95bd-57bf28d8f4d5)
-# Su O3 100000 ir 1000000
-![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/8d920694-cce9-4958-a3c1-59f0c2244686)
-# Išvada O1, O2, O3
-Atlikus 5 matavimus ir išvedus vidurkį matavimų su flag'ais klasėje pastebėta, kad O1 ir O2 laikas atlikimo yra lygiai tas pats, tačiau su O3 greitis padidėja apie 6.5%, o tai yra reikšmingas laiko sumažėjimas, nes kuo didesnis failas, duomenų kuo daugiau, tuo greičiua vyks darbas su duomenimis, failu.
-
-# Apibendrinimas klasės ir struktūros O1, O2, O3
-Atlikus matavimus ir išvedus vidurkius buvo pastebėta, kad su kalse programa veikia greičiausiai, skirtumas taikant O3 flag'ą skiriasi nedaug, bet vertinant didžiausią failą matavime 1000000, pastebime, kad sparta išauga 11,1%, o tai naudotojui yra svarbu, nes sutaupo laiko. 
-
-# Aprašas pirmos užduoties
+# Aprašas pirmos užduoties v0.1
 
 # Paleidimas
 
@@ -214,3 +121,113 @@ Atlikus pakartotinius galutinius matavimus ir išvedus matavimų vidurkį gauti 
 |    <br>Bendras               	|    <br>0,0449 	|    <br>0,4786 	|    <br>5,2258 	|    <br>67,0398 	|    <br>898,1577    	|
 
 
+# V1.1
+# Vektorius Naudojo DT strategija  
+|          Testavimas          	|      1000      	|     10000     	|     100000    	|     1000000     	|      10000000      	|
+|:----------------------------:	|:--------------:	|:-------------:	|:-------------:	|:---------------:	|:------------------:	|
+|    <br>Failo nuskaitymas     	|    <br>0,017   	|    <br>0,2237 	|    <br>2,1475 	|    <br>21,8651  	|    <br>232,7451    	|
+|    <br>Rušiavimas            	|    <br>0,0024  	|    <br>0,0296 	|    <br>0,3358 	|    <br>3,7863   	|    <br>329,102     	|
+|    <br>Sortinimas            	|    <br>0,0023  	|    <br>0,0831 	|    <br>1,2972 	|    <br>16,3789  	|    <br>219,1107    	|
+|    <br>Įrašymas į vargšiukus 	|    <br>0,009   	|    <br>0,1478 	|    <br>1,6258 	|    <br>19,5587  	|    <br>252,1138    	|
+|    <br>Sortinimas            	|    <br>0,01035 	|    <br>0,1145 	|    <br>1,941  	|    <br>24,1078  	|    <br>294,7841    	|
+|    <br>Įrašymas į kietiakus  	|    <br>0,014   	|    <br>0,1675 	|    <br>2,2178 	|    <br>28,8466  	|    <br>348,1716    	|
+|    <br>Bendras               	|    <br>0,05505 	|    <br>0,7662 	|    <br>9,5651 	|    <br>114,5434 	|    <br>1676,027    	|
+
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/d877c01f-f2fd-4ca0-a6b2-367701b56e52)
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/68ddb570-eb26-48cf-9c88-ad0e02710c86)
+
+
+# Vektorius Naudojo DT strategija naudojant klase studentas 
+|          Testavimas          	|      1000      	|     10000     	|     100000    	|     1000000     	|      10000000      	|
+|:----------------------------:	|:--------------:	|:-------------:	|:-------------:	|:---------------:	|:------------------:	|
+|    <br>Failo nuskaitymas     	|    <br>0,017   	|    <br>0,2541 	|    <br>2,754 	|    <br>28,7546 	|    <br>289,54    	|
+|    <br>Rušiavimas            	|    <br>0,0024  	|    <br>0,0247	|    <br>0,2745	|    <br>3,456  	|    <br>190,5652     	|
+|    <br>Sortinimas            	|    <br>0,0023  	|    <br>0,0145 	|    <br>0,1456	|    <br>1,387  	|    <br>13,5546    	|
+|    <br>Įrašymas į vargšiukus 	|    <br>0,009   	|    <br>0,056 	|    <br>0,3784 	|    <br>4,512  	|    <br>40,3541   	|
+|    <br>Sortinimas            	|    <br>0,0101 	|    <br>0,0,074	|    <br>0,487 	|    <br>3,7981 	|    <br>90,613    	|
+|    <br>Įrašymas į kietiakus  	|    <br>0,0014   	|    <br>0,105 	|    <br>1,345	|    <br>11,2253  	|    <br>158,1132    	|
+|    <br>Bendras               	|    <br>0,0422 	|    <br>0,4543	|    <br>5,3845 	|    <br>53,133	|    <br> 782,7401  	|
+
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/6cc20ff5-5d87-4a8e-8129-597ef7ba2489)
+
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/9d26fff2-98fa-4bcb-b7fe-e129f1204c2c)
+
+# Išvada DT vektorius klasė ir struktūra
+Atlikus testavimus su vektorius DT ir vektorius DT klasė studentas, buvo pastebėta, kad su klase vektorius DT žymiai paspartino rūšiavimą ir įrašymą į failus, greitis padidėjo beveik dvigubai, kaip pvz 100000 su vektorius DT 114,5434s, tuo tarpu vektorius DT klasė 53,133.
+
+
+# Vektorius su  flag'ais O1, O2, O3:  
+|          Testavimas          	|      o1_100000      	|     o2_100000     	|     o3_100000   	|      o1_1000000      	|     o2_1000000     	|     o3_1000000  |
+|:----------------------------:	|:--------------:      	|:-------------:	   |:-------------:	   |:---------------:	   |:------------------:	|:------------------: |
+|    <br>Failo nuskaitymas     	|    <br>2,4561 	      |    <br>2,3478 	   |    <br>2,3615 	   |    <br>22,941	   |    <br>21,9641   	| <br>22,6164  |
+|    <br>Rušiavimas            	|    <br>0,3841 	      |    <br>0,3948	   |    <br>0,3415 	   |    <br>3,5441  	   |    <br>3,9145      |<br>3,2365   	|
+|    <br>Sortinimas            	|    <br>0,2841 	      |    <br>0,2654 	   |    <br>0,2941	   |    <br>3,7512	   |    <br>3,9841    	|<br>3,6462    	|
+|    <br>Įrašymas į vargšiukus 	|    <br>0,6465        	|    <br>0,6891	   |    <br>0,6156	   |    <br>6,9402  	   |    <br>6,9841   	|<br>6,8560   	|
+|    <br>Sortinimas            	|    <br>0,4912      	|    <br>0,4648	   |    <br>0,4925  	   |    <br>8,1973 	   |    <br>5,9414   	|<br>5,7951    	|
+|    <br>Įrašymas į kietiakus  	|    <br>1,0097 	      |    <br>0,9761	   |    <br>0,9364    	|    <br>14,3450	   |    <br>10,6910    	|<br>10,1057    	|
+|    <br>Bendras               	|    <br>5,2717 	      |    <br>5,138 	   |    <br>5,0416 	   |    <br>59,7188 	   |    <br>49,5647    	|<br>49,0194  	|
+
+|          Failas          	|      Failo dydis exe      	|   
+|:----------------------------:	|:--------------:      	|
+|    <br>Failo dydis "DEBUG" O1 	  |  <br> 504KB  |
+|    <br>Failo dydis "DEBUG"  O2	  |  <br> 533KB  |
+|    <br>Failo dydis "DEBUG"  O3	  |  <br> 533KB  |
+
+
+# Su O1 100000 ir 1000000
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/ed527970-5d7c-47fa-bdf8-30bbfaa72a58)
+
+# Su O2 100000 ir 1000000
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/1ce8a23d-6df2-4626-a223-08b5d8fe8777)
+
+# Su O3 100000 ir 1000000
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/9c73d51b-c2f1-493c-b853-4323a68bdf6e)
+# Išvada O1, O2, O3
+Atlikus matavimus su skirtingais flag'ais O1, O2, O3 ir paskaičiavus 5 paleidimų vidurkius gavome vidurkius. Galmie pastebėti, kad greičiausiai dirbo O3. Vertinannt greitį galime daryti išvadas, kad su vektoriumi vidutiniškai 1,48% greičiau O3 veikė negu O2 ir O1. 
+
+# Vektorius su klase ir flag'ais O1, O2, O3: 
+|          Testavimas          	|      o1_100000      	|     o2_100000     	|     o3_100000   	|      o1_1000000      	|     o2_1000000     	|     o3_1000000  |
+|:----------------------------:	|:--------------:      	|:-------------:	   |:-------------:	   |:---------------:	   |:------------------:	|:------------------: |
+|    <br>Failo nuskaitymas     	|    <br>2,6954   	      |    <br>2,7854 	   |    <br>2,6875 	   |    <br>24,745 	   |    <br>28,7843    	|   <br>26,0377  |
+|    <br>Rušiavimas            	|    <br>0,2871 	      |    <br>0,2451	   |    <br>0,2015 	   |    <br>2,7884  	   |    <br>2,2874      |<br>2,2356   	|
+|    <br>Sortinimas            	|    <br>0,1032  	      |    <br>0,0822 	   |    <br>0,0829	   |    <br>1,1407	   |    <br>0,899    	|<br>0,9497    	|
+|    <br>Įrašymas į vargšiukus 	|    <br>0,3894         	|    <br>0,4587	   |    <br>0,3254	   |    <br>3,8991  	   |    <br>3,7810   	|<br>3,736   	|
+|    <br>Sortinimas            	|    <br>0,3995       	|    <br>0,3874 	   |    <br>0,2971  	   |    <br>3,1045 	   |    <br>3,201   	|<br>3,1945    	|
+|    <br>Įrašymas į kietiakus  	|    <br>1,087  	      |    <br>1,075 	   |    <br>1,0056    	|    <br>10,7451 	   |    <br>9,6933    	|<br>9,6641    	|
+|    <br>Bendras               	|    <br>4,9616 	      |    <br>5,0338 	   |    <br>4,6 	   |    <br>46,4228 	   |    <br>46,3586    	|<br>43,582  	|
+
+|          Failas          	|      Failo dydis exe      	|   
+|:----------------------------:	|:--------------:      	|
+|    <br>Failo dydis "DEBUG" O1 	  |  <br> 291KB  |
+|    <br>Failo dydis "DEBUG"  O2	  |  <br> 309KB  |
+|    <br>Failo dydis "DEBUG"  O3	  |  <br> 309KB  |
+
+
+# Su O1 100000 ir 1000000
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/6f2d1f49-c693-4d58-a311-ea028c0300f6)
+# Su O2 100000 ir 1000000
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/1324ecf9-2c17-40e6-95bd-57bf28d8f4d5)
+# Su O3 100000 ir 1000000
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/8d920694-cce9-4958-a3c1-59f0c2244686)
+# Išvada O1, O2, O3
+Atlikus 5 matavimus ir išvedus vidurkį matavimų su flag'ais klasėje pastebėta, kad O1 ir O2 laikas atlikimo yra lygiai tas pats, tačiau su O3 greitis padidėja apie 6.5%, o tai yra reikšmingas laiko sumažėjimas, nes kuo didesnis failas, duomenų kuo daugiau, tuo greičiua vyks darbas su duomenimis, failu.
+
+# Apibendrinimas klasės ir struktūros O1, O2, O3
+Atlikus matavimus ir išvedus vidurkius buvo pastebėta, kad su kalse programa veikia greičiausiai, skirtumas taikant O3 flag'ą skiriasi nedaug, bet vertinant didžiausią failą matavime 1000000, pastebime, kad sparta išauga 11,1%, o tai naudotojui yra svarbu, nes sutaupo laiko. 
+
+# V1.2
+
+Toliau yra tesiama užduotis, šiuo atveju, aš sukuriu "Rule of three", taip pat įvesties ir išvesties operatorius(nuotraukos žemiau):
+# klasė:
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/a2a17a02-3d71-495d-a068-caa04cd10e5f)
+# Operatorius įvesties: 
+Įvesties operatoriuspanaudotas pagrindinai su rankiniu būdu, kadangi tai fiksuota ir pvz. duomenys esantis faile nereikalauja papildomo įvedimo, kaip vardas, pavardė ir kiti parametrai.
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/841e3fb9-9c0b-4985-8eb7-ef9d37c9757f)
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/c17c81c7-6497-4595-b94c-d223bc471dac)
+# Operatorius išvesties:
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/831f08a4-09f7-46b9-a01c-7c64ae359da0)
+# Operatorių panaduojiams main'e ir savetofileV funkcijoje:
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/3cad3c8f-26fd-4f9d-a422-2595c28727a4)
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/3b1857ee-d162-4bf5-9dd6-5c580a4c0a2e)
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/65f84372-88c4-48cc-b027-2b7be6e6ae39)
+Taigi V1.2 sukuriame operatorius įvesties ir išvesties, juos pritaikome avo kode, jį patobuliname ir pakeičiame, kad viskas veiktų, taip pat galiotš taisykle "Rule of three", kuri reiškia, jog turi būti that kopijavimo konstruktorius,  copy assignment operatorius ir destruktorius.
