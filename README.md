@@ -216,7 +216,7 @@ Atlikus matavimus ir išvedus vidurkius buvo pastebėta, kad su kalse programa v
 
 # V1.2
 
-Toliau yra tesiama užduotis, šiuo atveju, aš sukuriu "Rule of three", taip pat įvesties ir išvesties operatorius(nuotraukos žemiau):
+Toliau yra tęsiama užduotis, šiuo atveju, aš sukuriu "Rule of three", taip pat įvesties ir išvesties operatorius(nuotraukos žemiau):
 # klasė:
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/a2a17a02-3d71-495d-a068-caa04cd10e5f)
 # Operatorius įvesties: 
@@ -229,4 +229,4 @@ Toliau yra tesiama užduotis, šiuo atveju, aš sukuriu "Rule of three", taip pa
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/3cad3c8f-26fd-4f9d-a422-2595c28727a4)
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/3b1857ee-d162-4bf5-9dd6-5c580a4c0a2e)
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/65f84372-88c4-48cc-b027-2b7be6e6ae39)
-Taigi V1.2 sukuriame operatorius įvesties ir išvesties, juos pritaikome avo kode, jį patobuliname ir pakeičiame, kad viskas veiktų, taip pat galiotš taisykle "Rule of three", kuri reiškia, jog turi būti that kopijavimo konstruktorius,  copy assignment operatorius ir destruktorius.
+Taigi V1.2 sukuriame operatorius įvesties ir išvesties, juos pritaikome avo kode, jį patobuliname ir pakeičiame, kad viskas veiktų, taip pat galioja taisyklė "Rule of three", kuri reiškia, jog turi būti that kopijavimo konstruktorius,  copy assignment operatorius ir destruktorius.
