@@ -230,3 +230,18 @@ Toliau yra tęsiama užduotis, šiuo atveju, aš sukuriu "Rule of three", taip p
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/3b1857ee-d162-4bf5-9dd6-5c580a4c0a2e)
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/65f84372-88c4-48cc-b027-2b7be6e6ae39)
 Taigi V1.2 sukuriame operatorius įvesties ir išvesties, juos pritaikome avo kode, jį patobuliname ir pakeičiame, kad viskas veiktų, taip pat galioja taisyklė "Rule of three", kuri reiškia, jog turi būti that kopijavimo konstruktorius,  copy assignment operatorius ir destruktorius.
+
+# V1.5
+Buvo sukurta vietoj turimos v1.2 versijos studento klasės dvi klasės, tai yra abstrakti klasė "Zmogus", kurioje yra pateikiama pagrindine informacija vardas ir pavarde. Taip pat buvo suksurta išvestinė klasė Studentas. Programos esminės vietos išliko nepakitusios labai, toliau išliko "Rule of three", pagrindiniame kode "Projektasv25.cpp" išliko įvesties ir išvesties operatoriai, kaip ir v1.2 versijoje. 
+# Esminė kodo vieta abstrakti klasė "Zmogus" ir išvestinė klasė "Studentas"
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/74507a8a-843e-434d-90c9-56a2d69e58a2)
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/777525a0-5d96-433f-a589-9382e145ceeb)
+# Kodo vieta, kuri demonstruoja, kad realizuotos abstrakčios klasė Zmogus(jos objektų kūrimas negalimas)
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/b31f19da-db5d-422c-ab21-ac7230d1e789)
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/9d242a05-141c-48f2-8384-93c17765fd65)
+Užkomentavus zmogus laikinas, rograma veikia, kadangi nėra bandoma realizuoti abstrakčios kalsės objektų
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/9e4849e3-5b2f-46de-a197-6ceb22ade74b)
+
+
+
+
