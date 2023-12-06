@@ -33,7 +33,7 @@ public:
 };
 */
 
-class Zmogus {
+class Zmogus { //abstrakti  klase zmogus 
 protected:
     std::string vardas_;
     std::string pavarde_;
@@ -42,38 +42,41 @@ public:
     Zmogus(const std::string& vardas, const std::string& pavarde)
         : vardas_(vardas), pavarde_(pavarde) {}
 
-    virtual ~Zmogus() {}
+    virtual ~Zmogus() { }//virtualus destruktorius 
 
-    virtual std::string getVardas() const { return vardas_; }
+    virtual std::string getVardas() const { return vardas_; } // geteriia virtualus 
     virtual std::string getPavarde() const { return pavarde_; }
 
-    virtual void setVardas(const std::string& vardas) { vardas_ = vardas; }
+    virtual void setVardas(const std::string& vardas) { vardas_ = vardas; }//seteriai virtualus 
     virtual void setPavarde(const std::string& pavarde) { pavarde_ = pavarde; }
 
-    virtual void informacija() const = 0; 
+    virtual void informacija() const = 0;  //virtuali klase informacija yra abstrakti 
 };
 
-class Studentas : public Zmogus {
+class Studentas : public Zmogus {// isvestine klase is zmogaus paveldima  vardas ir pavarde 
 private:
-    std::vector<int> pazymiaiV_;
+    std::vector<int> pazymiaiV_;//vektorius saugo pazymius 
     double vidurkis_ = 0.00;
-    double egzaminas_ = 0.00;
+    double egzaminas_ = 0.00;//egzamino rezultatas saugomas 
 
-public:
+public:// laisvi, neprivatus konstruktorius
 
-    Studentas() : Zmogus("", ""), vidurkis_(0.0), egzaminas_(0.0) {}
+    Studentas() : Zmogus("", ""), vidurkis_(0.0), egzaminas_(0.0) {}  //tuscias konstruktorius
     Studentas(const std::string& vardas, const std::string& pavarde, const std::vector<int>& pazymiaiV, double egzaminas)
         : Zmogus(vardas, pavarde), pazymiaiV_(pazymiaiV), egzaminas_(egzaminas) {
         calculateVidurkis();
-    }
+    }//konstruktorius ir parametrai viduje, kaip vardas pavarde pazymiai
+        //jis priskiria reiksmes i privatiems klases kintamiesiems 
 
-        Studentas(const Studentas& other)
+        Studentas(const Studentas& other) // copy konstrukrtorius
             : Zmogus(other.getVardas(), other.getPavarde()),
             pazymiaiV_(other.pazymiaiV_),
             vidurkis_(other.vidurkis_),
            
             egzaminas_(other.egzaminas_) {
         }
+      
+        // Copy assignment operatorius // galima vieno studento duomenis priskirti  kitam
 
         Studentas& operator=(const Studentas& other) {
             if (this != &other) {
@@ -92,7 +95,7 @@ public:
         }
 
 
-        //input and output operatoriai
+        //input and output operatoriai ivesties 
         friend std::istream& operator>>(std::istream& is, Studentas& studentas) {
             // Vardo įvedimas su patikrinimu
             std::cout << "Iveskite varda: ";
@@ -190,7 +193,7 @@ public:
         }
 
 
-
+        //output operatorius isvesties 
     friend std::ostream& operator<<(std::ostream& os, const Studentas& studentas) {
         os << std::left << std::setw(20) << studentas.vardas_
             << std::setw(20) << studentas.pavarde_
@@ -228,12 +231,11 @@ public:
     std::string getVardas() const { return vardas_; }
     std::string getPavarde() const { return pavarde_; }
     std::vector<int> getPazymiaiV() const { return pazymiaiV_; }
-    //std::list<int> getPazymiai() const { return pazymiai_; }
     double getVidurkis() const { return vidurkis_; } // rodykles i lelementtus 
     
     double getEgzaminas() const { return egzaminas_; }
 
-
+    //abstrakti funkcija informacija 
     virtual void informacija() const override {
         std::cout << "Studentas: " << getVardas() << " " << getPavarde()
             << " Vidurkis: " << vidurkis_ << std::endl;
@@ -243,7 +245,6 @@ public:
     void setVardas(const std::string& vardas) { vardas_ = vardas; }
     void setPavarde(const std::string& pavarde) { pavarde_ = pavarde; }
     void setPazymiaiV(const std::vector<int>& pazymiaiV) { pazymiaiV_ = pazymiaiV; }
-    //void setPazymiai(const std::list<int>& pazymiai) { pazymiai_ = pazymiai; }
     void setEgzaminas(double egzaminas) { egzaminas_ = egzaminas; }
 
     void calculateVidurkis() {

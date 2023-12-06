@@ -43,7 +43,7 @@ int main() {
    //Studentas studentas("Jurgis", "Mickevicius", 5, 9);
    //Studentas.informacija();
 
-    Zmogus laikinas;  //negalima sukurti 
+   Zmogus laikinas;  //negalima sukurti abstrakti klase parodome, kad taip negalima, nes meta kalida uzkoemntavus jau viskas gerai veikia
 
     laikinas.setVardas("Jurgis");
     laikinas.setPavarde("Mickevicius");
