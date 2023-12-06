@@ -239,7 +239,7 @@ Buvo sukurta vietoj turimos v1.2 versijos studento klasės dvi klasės, tai yra 
 # Kodo vieta, kuri demonstruoja, kad realizuotos abstrakčios klasė Zmogus(jos objektų kūrimas negalimas)
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/b31f19da-db5d-422c-ab21-ac7230d1e789)
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/9d242a05-141c-48f2-8384-93c17765fd65)
-Užkomentavus zmogus laikinas, rograma veikia, kadangi nėra bandoma realizuoti abstrakčios kalsės objektų
+# Užkomentavus zmogus laikinas, programa veikia, kadangi nėra bandoma realizuoti abstrakčios kalsės objektų
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/9e4849e3-5b2f-46de-a197-6ceb22ade74b)
 
 
