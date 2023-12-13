@@ -240,7 +240,11 @@ Buvo sukurta vietoj turimos v1.2 versijos studento klasės dvi klasės, tai yra 
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/b31f19da-db5d-422c-ab21-ac7230d1e789)
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/9d242a05-141c-48f2-8384-93c17765fd65)
 # Užkomentavus zmogus laikinas, programa veikia, kadangi nėra bandoma realizuoti abstrakčios klasės objektų
-![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/9e4849e3-5b2f-46de-a197-6ceb22ade74b)
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/9e4849e3-5b2f-46de-a197-6ceb22ade74b)  
+
+# V3.0
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/03cd639a-9e5b-4811-80c4-47c01881c02f)
+
 
 
 
