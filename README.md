@@ -249,7 +249,9 @@ Po build
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/8512cbc9-695b-4b29-ac98-83b0c5c7fee6)
 
 
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/dfd75d58-af7e-4029-af66-aaf65519a50e)
 
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/96d6207c-b65a-4461-9f27-742ab80bc005)
 
 
 
