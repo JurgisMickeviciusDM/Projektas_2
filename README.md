@@ -259,7 +259,8 @@ Sukuriama galutinė versija, kurioje galima įsidiegti exe tipo failą į kompiu
    ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/caace696-c0d2-4b46-b6a2-ab090542cb40)
 4. Jeigu norime galime pašalinti
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/14a531d2-7758-4e47-9ba2-4e4a91165d29)
-![Uploading image.png…]()
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/d64d2e90-ff51-4174-822e-a59ada720dab)
+
 Kuriant vaizdas:
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/03cd639a-9e5b-4811-80c4-47c01881c02f)
 Po build 
