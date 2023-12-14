@@ -243,6 +243,7 @@ Buvo sukurta vietoj turimos v1.2 versijos studento klasės dvi klasės, tai yra 
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/9e4849e3-5b2f-46de-a197-6ceb22ade74b)
 
 # v2.0
+Sukurta versija v2.0, joje yra pateikiama dokumetacija programos ir CMakeListsfailai, aprašoma žemiau, kaip reiktų pasileisti programą, kad ji fucionuotų ir pilnai viską atliktų. Programos veikiams išliko toks pat, kaip ir V1.5.
 Paleidimas CMake:
 1. Parsisiunčiame reikalingus failus iš GitHub.(Generavimasv1.cpp ; Naudotojasv1.cpp; Projektasv10.cpp;RUNMEE; CMakeLists; Generavimasv1; Naudotojasv1; Skaičiavimasv1; Studentasv1)
 2. Visus cpp sudedame į folderį ,,src'':(Generavimas_2_0.cpp; Projektas_2_0.cpp)
@@ -252,15 +253,16 @@ Paleidimas CMake:
 4.Rašome  cmake -S . -B .\build
 5.Rašome  cmake --build .\build
 5.1 SVarbu nepamiršti į Debug folderį įsikelti studentų failų, kad nereikėtų laukti, kol sugeneruos, kadangi, tai gali atimti daug laiko.
-6. Atsidarome nauja folderį build. Jame saugomas exe failas, reikalingas paleisti programą
-7. Einame į Build folderį, spaudžiame Debuf, tada projektas_2_0.exe
-8. Programa pradeda darbą
+
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/3121ab57-0971-4ca4-893c-aef0a645f449)
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/23b4fde7-722c-49a8-95e6-aa69d0183c8b)
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/7f75004c-f3ff-47ab-81d0-081a65b9dac3)
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/2afe8a4e-c541-4ba0-bada-5cbc291f7c06)
+6. Atsidarome nauja folderį build. Jame saugomas exe failas, reikalingas paleisti programą
+7. Einame į Build folderį, spaudžiame Debuf, tada projektas_2_0.exe
+8. Programa pradeda darbą
 
-
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/abe5d6fc-bde4-429b-927f-08a571468f5a)
 
 
 
