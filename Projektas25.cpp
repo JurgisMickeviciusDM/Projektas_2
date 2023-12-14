@@ -11,7 +11,7 @@
 #include <ctime>
 #include <sstream>
 #include <numeric>
-#include "Naudotojas25.h"
+
 #include "Generavimas25.h"
 
 using namespace std;
@@ -25,31 +25,36 @@ vector<Studentas> skaitytiStudentusV(int n);
 int main() {
 
     
-    /*
-    try {
-        Zmogus z("Jurgis", "Mickevicius"); // Bandymas sukurti Zmogus klasės objektą
-        std::cout << "Sukurtas Zmogus objektas (neturėtų būti įmanoma)" << std::endl;
-    }
-    catch (const std::bad_alloc& e) {
-        std::cerr << "Klaida bandant sukurti Zmogus objektą : " << e.what() << std::endl;
-    }
-   */
+  
     
-    //Studentas s("Jurgis", "Mickevicius");
-   // s.informacija();
+  {
+        Studentas* studentas0 = new Studentas("Jurgis", "Mickevicius", { 5, 7, 8 }, 9); //vardas, pavarde, pazymiai ir egzaminas 
+        delete studentas0;
+        std::cout << "Destruktorius  ivykdyta" << std::endl;
 
-    //Zmogus zmogus("Jurgis", "Mickevicius"); // Ši eilutė sukels klaidą kompiliavimo metu
+    }
 
-   //Studentas studentas("Jurgis", "Mickevicius", 5, 9);
-   //Studentas.informacija();
+    // Demonstravimas: COPY Konstruktorius
+    Studentas studentas1("Jurgis", "Mickevicius", { 6, 8, 9 }, 10);
+    Studentas studentasKopija = studentas1;
+    std::cout << "Kopijos konstruktorius: " << studentasKopija << std::endl;
 
+    // Demonstravimas: Priskyrimo operatorius
+    Studentas studentas2("Jurgis", "Mickevicius", { 7, 8, 9 }, 8);
+    Studentas studentasPriskyrimui;
+    studentasPriskyrimui = studentas2;
+    std::cout << "Priskyrimo operatorius: " << studentasPriskyrimui << std::endl;
+    
+    
+
+  /*
    Zmogus laikinas;  //negalima sukurti abstrakti klase parodome, kad taip negalima, nes meta kalida uzkoemntavus jau viskas gerai veikia
 
     laikinas.setVardas("Jurgis");
     laikinas.setPavarde("Mickevicius");
     laikinas.informacija();
     cout << "-------------------" << endl;
-
+    */
 
     Studentas laikinas1; //galima nes is isvestines 
 
@@ -57,28 +62,7 @@ int main() {
     laikinas1.setPavarde("Mickevicius");
     laikinas1.informacija();
     cout << "-------------------" << endl;
-        /*std::vector<int> pazymiaiV;
-        double egzaminas = 0.0;
-        Studentas s("Jurgis", "Mickevicius", pazymiaiV, egzaminas);
-        */
-        /*
-        try {
-            Zmogus z("Jurgis", "Mickevicius"); // This line will cause a compile-time error
-            std::cout << "Zmogus object created (should not be possible)" << std::endl;
-        }
-        catch (const std::bad_alloc& e) {
-            std::cerr << "Error trying to create a Zmogus object: " << e.what() << std::endl;
-        }*/
-
-
-        /*
-        Studentas s;
-
-        s.setVardas("Jurgis");
-        s.setPavarde("Mickevicius");
-        s.informacija();
-        cout << "-------------------" << endl;
-        */;
+     
 
     srand(static_cast<unsigned int>(time(0)));
 
@@ -214,7 +198,7 @@ int main() {
         }
     }
 
-
+    cout << "Atlikta" <<endl ;
 
     return 0;
 }

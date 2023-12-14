@@ -10,29 +10,6 @@
 #include <iomanip>
 
 
-/*
-
-class Zmogus {
-protected:
-    std::string vardas_;
-    std::string pavarde_;
-
-public:
-    Zmogus(const std::string& vardas, const std::string& pavarde)
-        : vardas_(vardas), pavarde_(pavarde) {}
-
-    virtual ~Zmogus() = 0;
-
-    // Getteriai
-    std::string getVardas() const { return vardas_; }
-    std::string getPavarde() const { return pavarde_; }
-
-    // Seteriai
-    void setVardas(const std::string& vardas) { vardas_ = vardas; }
-    void setPavarde(const std::string& pavarde) { pavarde_ = pavarde; }
-};
-*/
-
 class Zmogus { //abstrakti  klase zmogus 
 protected:
     std::string vardas_;
@@ -202,29 +179,7 @@ public:// laisvi, neprivatus konstruktorius
 
         return os;
     }
-    /*
-     friend std::ostream& operator<<(std::ostream& os, const Studentas& studentas) {
-         os << std::left << std::setw(20) << studentas.getPavarde()
-             << std::setw(20) << studentas.getVardas()
-             << std::setw(20) << std::fixed << std::setprecision(2) << studentas.getVidurkis();
-         return os;
-     }*/
 
-
-     /*end void printStudent(std::ostream& os, const Studentas& studentas, const std::string& choice) {
-          os << std::left << std::setw(20) << studentas.vardas_
-              << std::setw(20) << studentas.pavarde_;
-
-          if (choice == "vidurkis" || choice == "abu") {
-              os << std::fixed << std::setprecision(2)
-                  << std::setw(10) << studentas.vidurkis_;
-          }
-          if (choice == "mediana" || choice == "abu") {
-              os << std::fixed << std::setprecision(2)
-                  << std::setw(10) << studentas.mediana_;
-          }
-          os << std::endl;
-      }*/
 
 
       // Geteriai gauti reiksmes 
