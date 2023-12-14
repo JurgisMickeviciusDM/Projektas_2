@@ -250,14 +250,17 @@ Sukuriama galutinė versija, kurioje galima įsidiegti exe tipo failą į kompiu
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/35090d95-5f1e-45af-bbfa-ddc60ee8c08b)
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/83ae7eb4-ac43-42cc-8e21-98dce5022ea4)
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/3d09a5e2-2185-49b7-afa6-0f4a5717e7a7)
-
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/bde2cd7a-f76a-49c3-afeb-45884d02fa4d)
 
 2. Atsiranda ikona:
-   ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/a034bbf4-e7da-467a-b886-1e872d07de8d)
+   
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/a034bbf4-e7da-467a-b886-1e872d07de8d)
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/01ae0d3c-542f-434e-a7f0-9f914dd57a19)
+
 3. Darbalaukyje
-   ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/caace696-c0d2-4b46-b6a2-ab090542cb40)
-4. Jeigu norime galime pašalinti
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/caace696-c0d2-4b46-b6a2-ab090542cb40)
+
+4. Jeigu norime galime pašalinti programą atsidare parametrus -> programėlės
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/14a531d2-7758-4e47-9ba2-4e4a91165d29)
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/d64d2e90-ff51-4174-822e-a59ada720dab)
 
