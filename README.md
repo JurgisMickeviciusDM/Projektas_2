@@ -244,13 +244,28 @@ Buvo sukurta vietoj turimos v1.2 versijos studento klasės dvi klasės, tai yra 
 
 # V3.0
 Sukuriama galutinė versija, kurioje galima įsidiegti exe tipo failą į kompiuterį. Žemiau bus pateikta eiga.
+1. Spaudžiate ant ,,Setupas" ir vykdome visus veiksmsu iš eilės.
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/d22bad87-4ba4-4b26-97a9-c70686114ffe)
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/dbe298ed-2ad3-43f0-ac4c-32c8f98d0738)
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/35090d95-5f1e-45af-bbfa-ddc60ee8c08b)
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/83ae7eb4-ac43-42cc-8e21-98dce5022ea4)
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/3d09a5e2-2185-49b7-afa6-0f4a5717e7a7)
+
+
+2. Atsiranda ikona:
+   ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/a034bbf4-e7da-467a-b886-1e872d07de8d)
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/01ae0d3c-542f-434e-a7f0-9f914dd57a19)
+3. Darbalaukyje
+   ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/caace696-c0d2-4b46-b6a2-ab090542cb40)
+4. Jeigu norime galime pašalinti
+![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/14a531d2-7758-4e47-9ba2-4e4a91165d29)
+![Uploading image.png…]()
+Kuriant vaizdas:
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/03cd639a-9e5b-4811-80c4-47c01881c02f)
 Po build 
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/8512cbc9-695b-4b29-ac98-83b0c5c7fee6)
-
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/dfd75d58-af7e-4029-af66-aaf65519a50e)
 
-![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/96d6207c-b65a-4461-9f27-742ab80bc005)
 
 
 
