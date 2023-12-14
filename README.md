@@ -243,11 +243,10 @@ Buvo sukurta vietoj turimos v1.2 versijos studento klasės dvi klasės, tai yra 
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/9e4849e3-5b2f-46de-a197-6ceb22ade74b)  
 
 # V3.0
+Sukuriama galutinė versija, kurioje galima įsidiegti exe tipo failą į kompiuterį. Žemiau bus pateikta eiga.
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/03cd639a-9e5b-4811-80c4-47c01881c02f)
-
 Po build 
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/8512cbc9-695b-4b29-ac98-83b0c5c7fee6)
-
 
 ![image](https://github.com/JurgisMickeviciusDM/Projektas_2/assets/144474535/dfd75d58-af7e-4029-af66-aaf65519a50e)
 
