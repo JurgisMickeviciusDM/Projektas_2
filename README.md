@@ -1,5 +1,13 @@
 # PROJEKTAS_2
 
+| Laboratorinis 	|                                                                                                       Pradėti                                                                                                       	|  Baigti  	| Deadline     	|
+|:-------------:	|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:	|:--------:	|--------------	|
+|    <br>Lab1   	| 02-09                                                                                                                                                                                                               	| 02-14/15 	| 02-23 siųsti 	|
+|    <br>Lab2   	| 02-18(susirasti duomenis)<br>02-20(sukurti uzdavinius/tikslus)<br>02-20                                                                                                                                             	| 03-03/07 	| 03-15 siųsti 	|
+|    <br>Lab3   	| 03-08(duomenys ir tikslai)                                                                                                                                                                                          	| 03-29    	| 04-05 siųsti 	|
+|    <br>Lab4   	| 04-03(duomenys ir tikslai)                                                                                                                                                                                          	| 04-21    	| 05-03 sisųti 	|
+| Lab5          	| Paieška žmonių, nes reikės galimai 4/5asmenų <br>pradėti darbą būtų gerai 04-24, nes dar lauks tyriamasis darbas,<br>gal leis dalinai naudoti senų metų, kaip Rūtelė leido iš įvado<br>tiriamąjam tik PATOBULINUS.  	| 05-05    	| 05-17 siųsti 	|
+| Projektas     	| 05-05/07                                                                                                                                                                                                            	| 05-24    	| 05-24 siųsti 	|
 
 # V0.1 Versija:
 
